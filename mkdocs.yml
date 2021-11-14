@@ -1,0 +1,30 @@
+site_name: uwuu.ca
+site_description: Various resources and guides for somewhat niche subjects.
+theme:
+  name: material
+  custom_dir: overrides
+  features:
+    - navigation.top
+    - navigation.tabs
+  palette:
+    - media: "(prefers-color-scheme: light)"
+      scheme: default
+      primary: deep purple
+      toggle:
+        icon: material/toggle-switch-off-outline
+        name: Switch to dark mode
+    - media: "(prefers-color-scheme: dark)"
+      scheme: slate
+      primary: pink
+      toggle:
+        icon: material/toggle-switch
+        name: Switch to light mode
+
+markdown_extensions:
+    - admonition
+    - tables
+    - pymdownx.tilde
+
+plugins:
+  - literate-nav:
+      nav_file: nav.md
