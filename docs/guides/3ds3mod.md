@@ -31,7 +31,8 @@ This process works by *replacing* existing songs in the game (not by adding them
 
 ## Section 0: Computer setup
 
-This section only needs to be done once. If you have already doen this, you can skip this section.
+!!! info "No repeat required"
+This section only needs to be done once. If you have already done this to your computer, you can skip this section.
 
 As TJA files tend to come with Japanese text, files need to be extracted with a computer set to Japanese locale, or else [mojibake](https://en.wikipedia.org/wiki/Mojibake) will be generated in its places. Naturally, the converter won't appreciate this very much.
 
@@ -56,7 +57,7 @@ You should also enable file extensions using File Explorer to avoid any potentia
 	
 ## Section 1: TJA encoding
 
-Okku requires that TJA files be encoded as **UTF-8**. You can do this in bulk with a tool like [KanjiTranslator](https://www.kashim.com/kanjitranslator/, but this tutorial will cover manually re-encoding the file with Notepad.
+Okku requires that TJA files be encoded as **UTF-8**. You can do this in bulk with a tool like [KanjiTranslator](https://www.kashim.com/kanjitranslator/), but this tutorial will cover manually re-encoding the file with Notepad.
 
 1. Double-click your TJA file and open it with Notepad.<br>
 ![Image: TJA file](/images/taiko_6.png)<br>
@@ -78,13 +79,19 @@ In this section, we will convert your TJA file and its audio to Namco's file and
 1. Okku will show a few boxes, then output `Done!` once it has succeded. At this point, Okku can be closed and the converted files will be in the same directory as the original TJA and audio file.<br>
 ![Image: Final result](/images/taiko_11.png)<br>
 
+!!! tip "Converting multiple difficulties"
+	If you're converting multiple difficulties for one song, keep in mind that Okku will constantly overwrite the last converted file. Therefore, you should move the generated files elsewhere between each convert. My personal recommendation would be to create another folder with the song's name and to name the fumen files by their difficulty so you don't mix them up (though, worst case scenario, you can usually guess based on file size). 
+
+	There is no need to convert audio multiple times, so once you've converted an audio track once, you should move the audio file that is accompanying the TJA file somewhere else. Okku will warn you for further charts that the audio is missing - accept the warning and it'll convert the chart quickly as there is no audio to convert.
+	
+	
 ## Section 3: Song replacement
 
 In this section, we will use LayeredFS to replace a base song in the game with your newly converted file.
 
 1. Double-click on `3ds_Folder_structure.7z` file inside of `3dsTaiko` and extract its contents to the root of your SD card.
-	- The root of the SD card is tine initial directory where you can see the `Nintendo 3DS` folder, but aren't inside of it.
-	- You can do this wirelessly via FTP, but it'll be a lot slower as the folder structure involves many empty folders.
+	- The root of the SD card is the initial directory where you can see the `Nintendo 3DS` folder, but aren't inside of it.
+	- You can also do this wirelessly via FTP, but it'll be a lot slower as the folder structure involves many empty folders.
 1. On the 3DS SD card, navigate to `luma` -> `titles` -> `0004000000190E00` -> `romfs` -> `_data` -> `sound` -> `song`.
 1. This is the hard part: Rename your converted `NAAC` file to the name of an actual, existing song. The smaller file (`!!audio_s.naac`) is the song sample that plays in the song select screen, while the larger file (`!!audio.naac`) is the full song.
 	- For a list of base song IDs in Taiko 3DS3, see [this image](/images/2Naac.png).
@@ -99,7 +106,7 @@ In this section, we will use LayeredFS to replace a base song in the game with y
 	- h = hard (むずかしい)
 	- m = master (おに)
 	- if applicable, ex = extra (裏)
-	- `_remst` / `_remst2` logic does not apply for these file names. For example, the fumen for `ymyrp2` would still be `ymyrp2_m.bin`.
+	- `_remst` / `_remst2` logic does not apply for these file names. For example, the master chart fumen for `ymyrp2` would still be `ymyrp2_m.bin`.
 1. Take out your SD card and put it into your 3DS.
 
 !!! success "Success!"
