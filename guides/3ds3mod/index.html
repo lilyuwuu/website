@@ -10,9 +10,8 @@
       
       
       
-      
       <link rel="icon" href="../../assets/images/favicon.png">
-      <meta name="generator" content="mkdocs-1.2.3, mkdocs-material-7.3.6">
+      <meta name="generator" content="mkdocs-1.2.3, mkdocs-material-8.2.1">
     
     
       
@@ -20,10 +19,10 @@
       
     
     
-      <link rel="stylesheet" href="../../assets/stylesheets/main.a57b2b03.min.css">
+      <link rel="stylesheet" href="../../assets/stylesheets/main.e8d9bf0c.min.css">
       
         
-        <link rel="stylesheet" href="../../assets/stylesheets/palette.3f5d1f46.min.css">
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.e6a45f82.min.css">
         
       
     
@@ -33,14 +32,13 @@
         
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
         <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,400i,700%7CRoboto+Mono&display=fallback">
-        <style>:root{--md-text-font-family:"Roboto";--md-code-font-family:"Roboto Mono"}</style>
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
       
     
     
-    
+    <script>__md_scope=new URL("../..",location),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
     
       
-
 
     
     
@@ -57,9 +55,8 @@
     <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="deep-purple" data-md-color-accent="">
   
     
-    <script>function __prefix(e){return new URL("../..",location).pathname+"."+e}function __get(e,t=localStorage){return JSON.parse(t.getItem(__prefix(e)))}</script>
     
-      <script>var palette=__get("__palette");if(null!==palette&&"object"==typeof palette.color)for(var key in palette.color)document.body.setAttribute("data-md-color-"+key,palette.color[key])</script>
+      <script>var palette=__md_get("__palette");if(palette&&"object"==typeof palette.color)for(var key of Object.keys(palette.color))document.body.setAttribute("data-md-color-"+key,palette.color[key])</script>
     
     <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
     <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
@@ -75,6 +72,7 @@
     <div data-md-component="announce">
       
     </div>
+    
     
       
 
@@ -339,7 +337,6 @@
       </a>
       
         
-
 
 <nav class="md-nav md-nav--secondary" aria-label="Table of contents">
   
@@ -1125,7 +1122,6 @@
                   <div class="md-sidebar__inner">
                     
 
-
 <nav class="md-nav md-nav--secondary" aria-label="Table of contents">
   
   
@@ -1193,8 +1189,9 @@
             <article class="md-content__inner md-typeset">
               
                 
-                
-                <h1 id="taiko-3ds3-custom-songs">Taiko 3DS3 Custom Songs</h1>
+
+
+<h1 id="taiko-3ds3-custom-songs">Taiko 3DS3 Custom Songs</h1>
 <div class="admonition info">
 <p class="admonition-title">See this mod in action</p>
 <p>These instructions have been applied to create a Taiko 3DS3 modpack! Check it out <a href="/projects/taikomlpmod">here</a>.</p>
@@ -1231,7 +1228,10 @@
 </li>
 </ul>
 <h2 id="section-0-computer-setup">Section 0: Computer setup</h2>
-<p>This section only needs to be done once. If you have already doen this, you can skip this section.</p>
+<div class="admonition info">
+<p class="admonition-title">No repeat required</p>
+</div>
+<p>This section only needs to be done once. If you have already done this to your computer, you can skip this section.</p>
 <p>As TJA files tend to come with Japanese text, files need to be extracted with a computer set to Japanese locale, or else <a href="https://en.wikipedia.org/wiki/Mojibake">mojibake</a> will be generated in its places. Naturally, the converter won't appreciate this very much.</p>
 <div class="admonition info">
 <p class="admonition-title">About changing locale</p>
@@ -1252,7 +1252,7 @@
 <p>You should also enable file extensions using File Explorer to avoid any potential ambiguities with file names. See the image below for how to enable file extensions. On Windows 11, you can enable them from <code>View</code> -&gt; <code>Show</code> -&gt; <code>File name extensions</code>.</p>
 <p><img alt="Image: File extensions Win10" src="/images/taiko_ext.png" /></p>
 <h2 id="section-1-tja-encoding">Section 1: TJA encoding</h2>
-<p>Okku requires that TJA files be encoded as <strong>UTF-8</strong>. You can do this in bulk with a tool like [KanjiTranslator](https://www.kashim.com/kanjitranslator/, but this tutorial will cover manually re-encoding the file with Notepad.</p>
+<p>Okku requires that TJA files be encoded as <strong>UTF-8</strong>. You can do this in bulk with a tool like <a href="https://www.kashim.com/kanjitranslator/">KanjiTranslator</a>, but this tutorial will cover manually re-encoding the file with Notepad.</p>
 <ol>
 <li>Double-click your TJA file and open it with Notepad.<br>
 <img alt="Image: TJA file" src="/images/taiko_6.png" /><br></li>
@@ -1275,12 +1275,17 @@
 <li>Okku will show a few boxes, then output <code>Done!</code> once it has succeded. At this point, Okku can be closed and the converted files will be in the same directory as the original TJA and audio file.<br>
 <img alt="Image: Final result" src="/images/taiko_11.png" /><br></li>
 </ol>
+<div class="admonition tip">
+<p class="admonition-title">Converting multiple difficulties</p>
+<p>If you're converting multiple difficulties for one song, keep in mind that Okku will constantly overwrite the last converted file. Therefore, you should move the generated files elsewhere between each convert. My personal recommendation would be to create another folder with the song's name and to name the fumen files by their difficulty so you don't mix them up (though, worst case scenario, you can usually guess based on file size). </p>
+<p>There is no need to convert audio multiple times, so once you've converted an audio track once, you should move the audio file that is accompanying the TJA file somewhere else. Okku will warn you for further charts that the audio is missing - accept the warning and it'll convert the chart quickly as there is no audio to convert.</p>
+</div>
 <h2 id="section-3-song-replacement">Section 3: Song replacement</h2>
 <p>In this section, we will use LayeredFS to replace a base song in the game with your newly converted file.</p>
 <ol>
 <li>Double-click on <code>3ds_Folder_structure.7z</code> file inside of <code>3dsTaiko</code> and extract its contents to the root of your SD card.<ul>
-<li>The root of the SD card is tine initial directory where you can see the <code>Nintendo 3DS</code> folder, but aren't inside of it.</li>
-<li>You can do this wirelessly via FTP, but it'll be a lot slower as the folder structure involves many empty folders.</li>
+<li>The root of the SD card is the initial directory where you can see the <code>Nintendo 3DS</code> folder, but aren't inside of it.</li>
+<li>You can also do this wirelessly via FTP, but it'll be a lot slower as the folder structure involves many empty folders.</li>
 </ul>
 </li>
 <li>On the 3DS SD card, navigate to <code>luma</code> -&gt; <code>titles</code> -&gt; <code>0004000000190E00</code> -&gt; <code>romfs</code> -&gt; <code>_data</code> -&gt; <code>sound</code> -&gt; <code>song</code>.</li>
@@ -1299,7 +1304,7 @@
 <li>h = hard (むずかしい)</li>
 <li>m = master (おに)</li>
 <li>if applicable, ex = extra (裏)</li>
-<li><code>_remst</code> / <code>_remst2</code> logic does not apply for these file names. For example, the fumen for <code>ymyrp2</code> would still be <code>ymyrp2_m.bin</code>.</li>
+<li><code>_remst</code> / <code>_remst2</code> logic does not apply for these file names. For example, the master chart fumen for <code>ymyrp2</code> would still be <code>ymyrp2_m.bin</code>.</li>
 </ul>
 </li>
 <li>Take out your SD card and put it into your 3DS.</li>
@@ -1314,11 +1319,6 @@
 <li><strong>Team Papafox</strong> for the creation of Okku</li>
 </ul>
 </div>
-                
-              
-              
-                
-
 
               
             </article>
@@ -1344,7 +1344,9 @@
         </a>
         
       </div>
-      
+      <div class="md-social">
+  
+</div>
     </div>
   </div>
 </footer>
@@ -1353,10 +1355,10 @@
     <div class="md-dialog" data-md-component="dialog">
       <div class="md-dialog__inner md-typeset"></div>
     </div>
-    <script id="__config" type="application/json">{"base": "../..", "features": ["navigation.top", "navigation.tabs"], "translations": {"clipboard.copy": "Copy to clipboard", "clipboard.copied": "Copied to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.placeholder": "Type to start searching", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.term.missing": "Missing", "select.version.title": "Select version"}, "search": "../../assets/javascripts/workers/search.fcfe8b6d.min.js", "version": null}</script>
+    <script id="__config" type="application/json">{"base": "../..", "features": ["navigation.top", "navigation.tabs"], "translations": {"clipboard.copy": "Copy to clipboard", "clipboard.copied": "Copied to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.placeholder": "Type to start searching", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.term.missing": "Missing", "select.version.title": "Select version"}, "search": "../../assets/javascripts/workers/search.bd0b6b67.min.js"}</script>
     
     
-      <script src="../../assets/javascripts/bundle.b1047164.min.js"></script>
+      <script src="../../assets/javascripts/bundle.8aa65030.min.js"></script>
       
     
   </body>
