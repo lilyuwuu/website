@@ -6,6 +6,6 @@ Please let me know if any of the external links on this page 404.
 
 ## Contact me
 
-Discord: lily ♪#0208
+Discord: @lilyshy
 
 E-mail: lily at this domain
