@@ -38,6 +38,6 @@ Seriously, go check out some pony fandom music! The compilation group [Ponies@Da
 
 ## Contact me
 
-If you need something from me (or just want to chat), feel free to contact me! You can reach me **@lilyshy on Discord** (my friend requests should be open, but if you need a mutual server, try [Nintendo Homebrew](https://discord.gg/C29hYvh).
+If you need something from me (or just want to chat), feel free to contact me! You can reach me **@lilyshy on Discord** (my friend requests should be open, but if you need a mutual server, try [Nintendo Homebrew](https://discord.gg/C29hYvh)).
 
 Discord's the best way to contact me, but you can also contact me by e-mail (**lily at this domain**). I don't check it very often, though.
