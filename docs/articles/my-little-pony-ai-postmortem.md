@@ -112,8 +112,6 @@ About 3 hours pass (~11pm CEST) and the discussion has made its way to Manechat,
 
 Two more hours pass (~3:30am CEST) and both translations are posted to [Twitter](https://x.com/TobbyMLP/status/1795626982245601542) by TobbyMLP, with the key headline: **A season 2 of Make Your Mark was cancelled because of Hasbro being dead set on using AI voices for it**. Equestria Daily, having gone to bed for the day at 4am CEST, doesn't report on the 'development' quite yet, though murmurs begin in the [nightly discussion](https://www.equestriadaily.com/2024/05/nightly-discussion-3592.html). Meanwhile, Tobby's post continues to spread on Twitter, culminating at around 1,500 retweets (many of them QRTs) by the morning of May 29th, CEST (evening of May 28th in North America).
 
-Separately, on Twitter the previous day at about 6pm CEST, [a post](https://x.com/LilianAzemonPro/status/1795490231497683213) under the #TouchePasMaVF campaign 'confirms' that Tell Your Tale is voiced by AI. This post is generally not seen by the English MLP community, nor the English MLP community's posts by the #TouchePasMaVF campaign. 
-
 While the information goes around Twitter, it also makes it way to other platforms, such as [Reddit](https://www.reddit.com/r/mylittlepony/comments/1d35jl1/adding_to_the_g5_ai_fiasco_make_your_mark_was/), [4chan](https://archive.is/ZDIlt), [Facebook](https://www.facebook.com/photo.php?fbid=860613902777616&set=pb.100064870410740.-2207520000&type=3), [Tumblr](https://www.tumblr.com/g5mlp/751789996858605569/theres-been-quite-a-bit-of-new-information?source=share), and Discord.
 
 ## The Element of Skepticism
