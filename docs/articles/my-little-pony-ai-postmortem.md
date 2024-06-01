@@ -298,9 +298,9 @@ Below is a timeline in chronlogical order of the events that occurred, to the be
 - May 29, 9:50pm: Makaryo [tweets](https://x.com/_Maka_11/status/1795906055593185359) that one of their works was reposted by Guillaume Troton as a nonsensical "behind the scenes".
 - May 29, 10pm: Equestria Daily [posts](https://www.equestriadaily.com/2024/05/the-ai-voiceover-drama-continues-french.html) its own likely confirmation of the debunking.
 - May 30, 1:30am: Troton [posts](/images/instagram.jpg) a strange Instagram theory seemingly claiming credit as a whistleblower and then... something about AI robotic horses.
-- May 30, 7:30pm: Hasbro [clarifies](https://x.com/Hasbro/status/1796597346429747272) on Twitter that Make Your Mark was not made with any AI tools.
-- May 30, 8:15pm: Equestria Daily [reports](https://www.equestriadaily.com/2024/05/hasbro-confirms-stance-on-not-using-ai.html) on the above tweet.
-- May 30, 9:30pm: Hasbro [re-clarifies](https://x.com/Hasbro/status/1796628592635613557) on Twitter that Make Your Mark AND Tell Your Tale were not made with any AI tools.
-- May 30, 9:50pm: Equestria Daily [reports](https://www.equestriadaily.com/2024/05/no-ai-for-tell-your-tale-or-make-your.html) on the above tweet.
+- May 31, 7:30pm: Hasbro [clarifies](https://x.com/Hasbro/status/1796597346429747272) on Twitter that Make Your Mark was not made with any AI tools.
+- May 31, 8:15pm: Equestria Daily [reports](https://www.equestriadaily.com/2024/05/hasbro-confirms-stance-on-not-using-ai.html) on the above tweet.
+- May 31, 9:30pm: Hasbro [re-clarifies](https://x.com/Hasbro/status/1796628592635613557) on Twitter that Make Your Mark AND Tell Your Tale were not made with any AI tools.
+- May 31, 9:50pm: Equestria Daily [reports](https://www.equestriadaily.com/2024/05/no-ai-for-tell-your-tale-or-make-your.html) on the above tweet.
 
 
