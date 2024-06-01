@@ -8,7 +8,7 @@ Hi, I'm lily. I like to do things on the Internet. Here are some of the things I
 
 ### 3DS modding
 
-I've dabbled in the lands of DS/3DS homebrew for quite a while (having owned a DS flashcart since the late 2000s, a Sky3DS in 2015 and having dabbled with tubehax and menuhax in 2015-2016), but I would generally say I've been more directly involved in the 3DS homebrew/modding scene since around early 2017 (almost seven years!), around the tail end of arm9loaderhax-based installations (it was quite complicated back then!). 
+I've dabbled in the lands of DS/3DS homebrew for quite a while (having owned a DS flashcart since the late 2000s, a Sky3DS in 2015 and having dabbled with tubehax and menuhax in 2015-2016), but I would generally say I've been more directly involved in the 3DS homebrew/modding scene since around early 2017 (over seven years!), around the tail end of arm9loaderhax-based installations (it was quite complicated back then!). 
 
 I've always been inclined towards helping people, so it was around 2017 when I started helping people with 3DS-related issues for most of that time over at [Nintendo Homebrew on Discord](https://discord.gg/C29hYvh) - something I continue to do to this day. (I also hang around [GBATemp](https://gbatemp.net/forums/nintendo-3ds.199/) and Reddit sometimes.)
 

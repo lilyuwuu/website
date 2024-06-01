@@ -24,7 +24,10 @@ markdown_extensions:
     - admonition
     - tables
     - pymdownx.tilde
-
+    - pymdownx.details
+    - pymdownx.superfences
+    - pymdownx.tabbed:
+        alternate_style: true
 plugins:
   - literate-nav:
       nav_file: nav.md
