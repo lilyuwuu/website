@@ -23,6 +23,7 @@ theme:
 markdown_extensions:
     - admonition
     - tables
+    - attr_list
     - pymdownx.tilde
     - pymdownx.details
     - pymdownx.superfences
