@@ -6,6 +6,7 @@ theme:
   features:
     - navigation.top
     - navigation.tabs
+    - content.footnote.tooltips
   palette:
     - media: "(prefers-color-scheme: light)"
       scheme: default
@@ -24,6 +25,7 @@ markdown_extensions:
     - admonition
     - tables
     - attr_list
+    - footnotes
     - pymdownx.tilde
     - pymdownx.details
     - pymdownx.superfences

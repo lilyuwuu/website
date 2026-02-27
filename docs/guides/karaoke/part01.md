@@ -1,5 +1,9 @@
 # Part 1: Audio
 
+!!! danger "Before you start..."
+
+    You should make ABSOLUTELY SURE that the song you want to make does not already exist. For normal songs, check [USDB](https://usdb.animux.de/) and see if it's highly rated (and/or test to ensure that it's actually playable). For pony fandom songs, ask someone on the My Little Karaoke [Discord](https://discord.gg/UsGcpnv). It would be very unfortunate to chart a song that already exists, especially if that existing chart is already pretty good.
+
 !!! tldr "TL;DR"
 
     1. Acquire your audio. Most people will do this from YouTube, as it makes it easy for other people to download the same audio.
@@ -81,4 +85,4 @@ Once you've chosen your song and have your audio in the format of your choice, y
 
 ---
 
-Quick navigation: [Index](..) / [Preface A](../prefaceA) / [Preface B](../prefaceB) / **Part 1: Audio** / [Part 2: Lyrics](../part02) / [Part 3: BPM](../part03) / [Part 4: Tapping](../part04) / [Part 5: Finetuning](../part05) / [Part 6: Pitching](../part06) / [Part 7: Golden Notes](../part07) / [Part 8: Testing](../part08)
+Quick navigation: [Index](..) / [Preface A](../prefaceA) / [Preface B](../prefaceB) / **Part 1: Audio** / [Part 2: Lyrics](../part02) / [Part 3: BPM](../part03) / [Part 4: Tapping](../part04) / [Part 5: Finetuning](../part05) / [Part 6: Pitching](../part06) / [Part 7: Golden Notes](../part07) / [Part 8: Testing](../part08) / [Part 9: Submission](../part09)

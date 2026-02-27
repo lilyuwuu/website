@@ -78,4 +78,4 @@ Now that the song is tapped, we will need to finetune the note positions before 
 
 ---
 
-Quick navigation: [Index](..) / [Preface A](../prefaceA) / [Preface B](../prefaceB) / [Part 1: Audio](../part01) / [Part 2: Lyrics](../part02) / [Part 3: BPM](../part03) / **Part 4: Tapping** / [Part 5: Finetuning](../part05) / [Part 6: Pitching](../part06) / [Part 7: Golden Notes](../part07) / [Part 8: Testing](../part08)
+Quick navigation: [Index](..) / [Preface A](../prefaceA) / [Preface B](../prefaceB) / [Part 1: Audio](../part01) / [Part 2: Lyrics](../part02) / [Part 3: BPM](../part03) / **Part 4: Tapping** / [Part 5: Finetuning](../part05) / [Part 6: Pitching](../part06) / [Part 7: Golden Notes](../part07) / [Part 8: Testing](../part08) / [Part 9: Submission](../part09)

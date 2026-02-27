@@ -1,9 +1,5 @@
 # UltraStar Karaoke Charting / Song Creation Tutorial
 
-!!! warning "Still a work in progress"
-
-    This guide isn't complete yet, but I figured I'd publish what I had for now and update it as I keep writing it. 2026/02/26
-
 ## Background
 
 In 2024, after playing some [My Little Karaoke](https://mylittlekaraoke.com) at a convention, I realised something: while the game definitely had a lot of songs that I recognised, there were many songs that I wanted to sing that weren't in the game yet. From there, I decided to take matters into my own hands and began to chart some songs, thinking it couldn't be that hard. Since then, I have charted [over 400 songs](https://docs.google.com/spreadsheets/d/1WeCvwP6gfaCMreJkmoB1zXO-3RzdamK-E2U1AZ6qzK4/edit?gid=0#gid=0) (primarily for the My Little Pony fandom) and have gotten pretty efficient at it, with a reputation for high-quality and speedy charting.
@@ -48,10 +44,16 @@ This guide is divided into several sections. The **prefaces** will cover the com
     - Contents: **Finding the BPM**; verifying BPM; songs with multiple/variable BPMs
 - [Part 4: Tapping](part04)
     - Contents: **Initial timing with UltraStar-Creator**
-- [Part 5: Finetuning](part05) (WIP)
-- [Part 6: Pitching](part06) (WIP)
-- [Part 7: Golden Notes](part07) (WIP)
-- [Part 8: Testing](part08) (WIP)
+- [Part 5: Finetuning](part05)
+    - Contents: **initial GAP**, **keyboard shortcuts**, note starts, note lengths, line breaks
+- [Part 6: Pitching](part06)
+    - Contents: MIDI note playback, relative pitch, AI(ML) assistance, **asking for help**
+- [Part 7: Golden Notes](part07)
+    - Contents: **Limits**, suggested placement, automatic placement
+- [Part 8: Testing](part08)
+    - Contents: **Why you should test**
+- [Part 9: Submission](part09)
+    - Contents: TXT distribution
 
 ## If you need help
 
@@ -69,4 +71,4 @@ To be moved to another section.
 
 ---
 
-Quick navigation: **Index** / [Preface A](prefaceA) / [Preface B](prefaceB) / [Part 1: Audio](/part01) / [Part 2: Lyrics](part02) / [Part 3: BPM](part03) / [Part 4: Tapping](part04) / [Part 5: Finetuning](part05) / [Part 6: Pitching](part06) / [Part 7: Golden Notes](part07) / [Part 8: Testing](part08)
+Quick navigation: **Index** / [Preface A](prefaceA) / [Preface B](prefaceB) / [Part 1: Audio](/part01) / [Part 2: Lyrics](part02) / [Part 3: BPM](part03) / [Part 4: Tapping](part04) / [Part 5: Finetuning](part05) / [Part 6: Pitching](part06) / [Part 7: Golden Notes](part07) / [Part 8: Testing](part08) / [Part 9: Submission](part09)
