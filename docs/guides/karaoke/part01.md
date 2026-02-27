@@ -4,7 +4,7 @@
 
     You should make ABSOLUTELY SURE that the song you want to make does not already exist. For normal songs, check [USDB](https://usdb.animux.de/) and see if it's highly rated (and/or test to ensure that it's actually playable). For pony fandom songs, ask someone on the My Little Karaoke [Discord](https://discord.gg/UsGcpnv). It would be very unfortunate to chart a song that already exists, especially if that existing chart is already pretty good.
 
-!!! tldr "TL;DR"
+!!! abstract "TL;DR"
 
     1. Acquire your audio. Most people will do this from YouTube, as it makes it easy for other people to download the same audio.
         + For your first song, you may want to select something that is rhythmically consistent and with an unchanging BPM. For this tutorial, I'll be using **Not the Same** by **Green Hay** (a parody of Green Day's "Whatsername").

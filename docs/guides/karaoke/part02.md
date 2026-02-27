@@ -1,6 +1,6 @@
 # Part 2: Lyrics
 
-!!! tldr "TL;DR"
+!!! abstract "TL;DR"
 
     1. Find the song lyrics. Common sources are YouTube video descriptions, comments, artist Bandcamp pages, and online lyric sites (e.g. Genius).
         + If you're using Genius, make sure to account for the "things you may like" box and for non-traditional spaces, which may mess with UltraStar-Creator.

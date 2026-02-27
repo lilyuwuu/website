@@ -1,6 +1,6 @@
 # Part 3: BPM
 
-!!! tldr "TL;DR"
+!!! abstract "TL;DR"
 
     1. Find the song's BPM. There are three main ways to do this:
         - a. Google `name of song` + `BPM` and look for the most consistent result. This will generally only work for popular songs or parodies of popular songs.
