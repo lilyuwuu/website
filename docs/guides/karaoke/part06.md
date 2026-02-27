@@ -36,7 +36,7 @@ This is the method that's described on [Karedi's tutorial](https://karedi.gitboo
 
 While Yass includes a digital piano, you can also use a physical piano (or MIDI keyboard, or synthesizer, or whatever) if you think it might be more helpful. If you understand music theory, you may also be able to use your understanding of note relations to help you pitch. For example, if you know through trial and error that the first note is an F#, and then the next note you hear has a 'minor third' relationship with F#, then you know that the second note is an A.
 
-If you have a good pitch memory -- for example, you know *for a fact* and can *mentally hear* that the first note in Toto's *Africa* is a C# -- then you can use that reference note to figure out the pitch of all notes. For instance, the first note in our song has an *major fourth* relationship with C#, therefore it is an F#.
+If you have a good pitch memory -- for example, you know *for a fact* and can *mentally hear* that the first note in Toto's *Africa* is a C# -- then you can use that reference note to figure out the pitch of all notes. For instance, the first note in our song has an *perfect fourth* relationship with C#, therefore it is an F#[^3]
 
 Yass also has a feature to set the key of the song. For most traditional songs, you can perform a web search to figure out what key they're in. In this instance, most search results are telling me that the key of the original song (Whatsername) is D major, so that is probably also the case for our parody example song.
 
@@ -101,3 +101,5 @@ Quick navigation: [Index](..) / [Preface A](../prefaceA) / [Preface B](../prefac
 [^1]: Specifically, I have [absolute pitch](https://en.wikipedia.org/wiki/Absolute_pitch), which means I think of pitches in terms of their note names (that is to say: I hear a pitch and can immediately name what note it is). This is obviously very useful for pitching, but it doesn't really work as advice to give to other people. Unless you try to learn [relative pitch](https://en.wikipedia.org/wiki/Relative_pitch)? I think Method 2 is sort of going down that route.
 
 [^2]: In the machine learning sense, not in the large language model sense.
+
+[^3]: Technically it's not sung with a very clear pitch, so I would possibly mark it as rap, but if I were to give it a pitch I would infer it would be a F# because that is melodically what makes sense.
