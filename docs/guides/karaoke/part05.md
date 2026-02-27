@@ -12,7 +12,8 @@
         + Prioritize note timings -- the start of notes -- before moving onto note lengths. Use SHIFT and the arrow keys to move notes left and right.
         + In most circumstances, no two notes should touch. Ideally, there is a gap of **at least two units** between each note, as that makes the chart more flexible to the various pieces of hardware that people have without making the game that much easier.
     1. **Note lengths**: A note should last until *just before* you hear the unpitched part of a syllable (for example, an "s" sound). If in doubt, you should bias towards ending the note earlier rather than later.
-        + Use ALT and the arrow keys to shorten or lengthen a note by one unit.
+        + Use ALT and the arrow keys to shorten or lengthen a note by one unit, without changing the starting position.
+        + Use CTRL and the arrow keys if you would like to adjust the starting position of the note, without changing the ending position.
         + If, at this point, you've noticed a pitch change in a note that you did not account for in [Part 2: Lyrics](../part02), hit the - (minus) key to split the current note into two, then shorten the first note and move the second note (often a ~) to your desired location.
     1. When you've finished a line, **hit Ctrl + A, then Space** to ensure that all notes in the line are timed correctly.
         + If a note is noticeably off, move it to the *right* if it is noticeably early, or to the *left* if it is noticeably late. Examples:
@@ -31,6 +32,8 @@ Arguably the most time-consuming part of song creation is **fine-tuning**. This 
 Fine-tuning is the most important aspect to determine a song's playability. If the notes are not timed correctly, players will have a bad time. Pitches can be fixed; bad charts may have to be remade entirely.
 
 This fine-tuning process is normally accomplished with a **song editor**. A more verbose overview of the song editors that exist is available in [Preface B](../prefaceB), but we will be using **Yass Reloaded** in this tutorial for its convenience features.
+
+If you'd like, you can download the [pre-finetuned version of the chart](/resources/karaoke/not-the-same-pre-finetuning.txt) and follow along, or manipulate it on your own. Don't forget the [audio](https://princewhateverer.bandcamp.com/track/not-the-same)!
 
 ---
 

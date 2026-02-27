@@ -13,17 +13,18 @@
 
 !!! warning "Copyright notice"
 
-    Like most things, music is copyrighted. This means that you should generally avoid distributing music unless you have a license (or permission) to do so. For this reason, people generally distribute the TXT files and expect others to acquire the audio in some other way. When using something like the [USDB Syncer](https://github.com/bohning/usdb_syncer), music is downloaded from YouTube *by the user*, which shifts the onus from you, the chart creator, to the user.
+    Like most things, music is copyrighted. This means that you should generally avoid distributing music unless you have a license (or permission) to do so. For this reason, people generally distribute the **TXT files** and expect **others** to acquire the audio in some other way. When using something like the [USDB Syncer](https://github.com/bohning/usdb_syncer), music is downloaded from YouTube *by the user*, which shifts the onus from you, the chart creator, to the user.
 
 Welcome to the actual beginning of the tutorial! The first step of creating a karaoke chart is to **source your audio**. There are a variety of ways to do this: Maybe you have a song on a physical CD, in which case you will want to rip it to an audio file. Maybe the song only exists on YouTube, in which case you will want to download it with something like [yt-dlp](https://github.com/yt-dlp/yt-dlp).
 
-Personally, for most fandom songs, I first check if the author has a Bandcamp, and then buy the song (or download the 128kbps stream). These are generally easier to distribute as it's easier to get permission from the artist (or you may be distributing it in a very limited capacity anyway, like in-person or on a very small forum). For more traditional, non-fandom songs, YouTube videos -- particularly automatically generated ones, like `Artist - Topic` -- will be easiest, as others will be able to download them, possibly even automatically.
+Personally, for most fandom songs, I first check if the author has a Bandcamp, and then buy the song (or download the 128kbps stream). These are generally easier to distribute as it's easier to get permission from the artist (or you may be distributing it in a very limited capacity anyway, like in-person or on a very small forum). For more traditional, non-fandom songs, YouTube videos -- particularly automatically generated ones, like `Artist - Topic` -- will be easiest, as others will be able to download them, possibly even automatically. The automatically generated videos are also most likely to be directly pulled from albums, which will omit any weird silence or intros or outros that might exist in a user-uploaded video.
 
 **For your first song**, I would recommend a song that **you know well** and that is **very rhythmically consistent**, because it will be the easiest for you to chart. It should have these attributes:
 
 - The BPM **does not change** throughout the song (it stays on one speed for the whole song)
 - The singer(s) almost always sings on time with the music (they do little to no flowery stuff like singing notes early or late)
 - There are few to no spoken word parts or rap (these are generally a bit harder to chart as you may have to rely on timing outside of the rhythm of the song, and it may be near impossible to pitch)
+- You know the song (you should not chart a song you have barely heard as your first song)
 
 Fortunately, this actually applies to a lot of music! Strategies for songs with more complex rhythms will be discussed later on in the guide.
 
@@ -37,11 +38,11 @@ The audio for this song is available [here](https://princewhateverer.bandcamp.co
 
 ??? tip "Ripping audio from YouTube"
 
-    If you're grabbing audio from YouTube (e.g. with [yt-dlp](https://github.com/yt-dlp/yt-dlp)), you can use `yt-dlp -f bestaudio -x` to extract the best possible audio, or `yt-dlp -f bestaudio -x --audio-format vorbis` to download and automatically convert the audio to Ogg Vorbis. You will need Deno and ffmpeg in order to do this.
+    If you're grabbing audio from YouTube (e.g. with [yt-dlp](https://github.com/yt-dlp/yt-dlp)), you can use `yt-dlp -f bestaudio -x` to extract the best possible audio, or `yt-dlp -f bestaudio -x --audio-format <format>` to download and automatically convert the audio to the format of your choice (e.g. `vorbis` for Ogg Vorbis, `mp3` for MP3). **yt-dlp requires [Deno](https://deno.com/) for ripping content from YouTube, and [ffmpeg](https://www.ffmpeg.org/) for format manipulation.
 
     ![Image: Audio being ripped from YouTube](/resources/karaoke/audio-download.png)
 
-    Unfortunately, use of the command line is not currently covered by this tutorial, but any web converters (e.g. [Cobalt](https://cobalt.tools)) should also work. YouTube audio quality isn't all that good anyway.
+    Unfortunately, use of the command line is not currently covered by this tutorial. If you can't use the command line, any web converters (e.g. [Cobalt](https://cobalt.tools)) should also work. YouTube audio quality isn't all that good anyway.
 
 !!! note "A note on YouTube music, GAPs, and CD audio"
 
@@ -49,7 +50,7 @@ The audio for this song is available [here](https://princewhateverer.bandcamp.co
 
 ## Supported audio formats
 
-*Generally speaking*, karaoke software (covering games *and* song editors) can handle most of the common formats -- MP3, AAC, FLAC, OGG, WAV -- but might struggle with some more obscure formats, like OPUS or ATRAC. The current bottleneck is the tapping software UltraStar-Creator, which only supports M4A(AAC), MP3 and OGG. For these reasons, **I usually use MP3 320kbps CBR** for anything I distribute. You're free to use any other format -- you might just have to convert it multiple times depending on what programs you use.
+*Generally speaking*, karaoke software (covering games *and* song editors) can handle most of the common formats -- MP3, AAC, FLAC, OGG, WAV -- but might struggle with some more obscure formats, like ATRAC. The current bottleneck is the tapping software UltraStar-Creator, which only supports M4A(AAC), MP3 and OGG. For these reasons, **I usually use MP3 320kbps CBR** for anything I distribute. You're free to use any other format -- you might just have to convert it multiple times depending on what programs you use.
 
 !!! warning "MP3 delay"
 
@@ -57,7 +58,7 @@ The audio for this song is available [here](https://princewhateverer.bandcamp.co
 
 !!! tip "Re-encoding audio with ffmpeg"
 
-    The general syntax for converting audio that I use in ffmpeg is `ffmpeg -i <filename> -ab <bitrate> <output filename>` -- for example, `ffmpeg -i song.mp3 -ab 320k output.mp3`.
+    The general syntax for converting audio that I use in ffmpeg is `ffmpeg -i <filename> -ab <bitrate> <output filename>` -- for example, `ffmpeg -i song.flac -ab 320k output.mp3`.
 
 ## Vocal stems
 

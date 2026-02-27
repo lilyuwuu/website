@@ -15,7 +15,7 @@
 
 The next step to creating a chart is to get the **lyrics** of the chart. Usually, lyrics are available on websites like Genius, or in the YouTube comments section of videos.
 
-Wherever you get your lyrics, you should listen through the song once or twice and make sure they are **correct**. An issue I've seen with some UltraStar charts is people seemingly writing the lyrics on their own and subsequently getting them wrong -- **avoid this**. It is completely normal, even if you are very proficient in the language of the song you're trying to chart, to be unable to make out the lyrics. If someone's already done the work of figuring out the lyrics for you, and those lyrics make sense to your hear, then use those.
+Wherever you get your lyrics, you should listen through the song once or twice and make sure they are **correct**. An issue I've seen with some UltraStar charts is people seemingly writing the lyrics on their own and subsequently getting them wrong -- **avoid this**. It is completely normal, even if you are very proficient in the language of the song you're trying to chart, to be unable to make out the lyrics. That's just how singing tends to be. If someone's already done the work of figuring out the lyrics for you, and those lyrics make sense to your ear, then just use those.
 
 ??? tip "If your song of choice is CJK (Chinese, Japanese, Korean)"
 
@@ -33,15 +33,22 @@ Wherever you get your lyrics, you should listen through the song once or twice a
     - Genius puts a "things you may like" box in the middle of song lyrics which will basically be impossible to avoid copy pasting. Make sure to remove it before you start tapping the song.
     - For whatever reason, Genius doesn't always use normal spaces to separate words. I've sometimes seen Genius include other Unicode spaces that look identical to spaces, but might not be properly parsed by UltraStar-Creator -- for example, the [four-per-em space](https://unicode-explorer.com/c/2005). You may want to put your text into a [Unicode inspector](https://apps.timwhitlock.info/unicode/inspect) to ensure that all of the spaces in the lyrics are actually spaces.
 
-Conveniently, the artists of the song put the lyrics on their [Bandcamp page](https://princewhateverer.bandcamp.com/track/not-the-same), so I'll be using that. There are some small changes -- for example, repetition of lyrics -- that I'll have to make in order to have the full lyrics. In my experience, this is common in artist-published lyrics, which is why you should **always** listen to the song at least once to correct any possible mistakes and account for any repetitions.
+For our example song, the artists actually put the lyrics on their [Bandcamp page](https://princewhateverer.bandcamp.com/track/not-the-same), so I'll be using that. There are some small changes -- for example, repetition of lyrics -- that I'll have to make in order to have the full lyrics. In my experience, this is common in artist-published lyrics, which is why you should **always** listen to the song at least once to correct any possible mistakes and account for any repetitions.
 
-Another bonus: when you find lyrics yourself, you usually don't have to figure out where line breaks go. In this case, I might only barely touch the line breaks go for stylistic reasons. You will probably only have to touch line breaks (i.e. add them yourself) if you get a very long line of lyrics. Some editors, like Yass Reloaded, will warn you if a line is too long.
+Another bonus: when you find lyrics yourself, you usually don't have to figure out where line breaks go. In this case, I might only barely touch line breaks for stylistic reasons. You will probably only have to touch line breaks (i.e. add them yourself) if you get a very long line of lyrics. Some editors, like Yass Reloaded, will warn you if a line is too long.
+
+!!! warning "Songs with dialogue or rap"
+
+    Some songs have spoken parts, dialogue, or rap within them. Sometimes, lyrics do not include these spoken parts. Ideally, **you should include spoken parts in your song where possible** (and then later mark it as rap or freestyle). You should also **split the syllables** of these spoken parts (but you likely will not need to concern yourself with pitch changes within said parts).
+
+    Whether you include dialogue is ultimately up to you -- there are charts out there without their dialogue charted, and adding it *will* likely add difficulty to the charting process -- but I would personally recommend it if you think you can do it, as it will result in a higher-quality chart.
+
 
 !!! tip "About punctuation and paragraph breaks"
 
     Songs sometimes include punctuation in lyrics. The ones that I would like to highlight are **question marks, exclamation points, and periods/full-stops**.
 
-    Generally speaking, you should **not include** these punctuation in the song. This is mainly a stylistic choice, and there may be songs where punctuation is appropriate. I also generally keep punctuation in if there is a spoken dialogue part in the song.
+    Generally speaking, you should **not include** these punctuation in the song (commas are fine). This is mainly a stylistic choice, and there may be songs where punctuation is appropriate. I also generally keep punctuation in if there is a spoken dialogue part in the song.
 
     Paragraph breaks are useful for *your own* readability. For example, when you copy paste lyrics from Google, paragraph breaks are lost, making the lyrics and individual sections harder to read or dinstinguish. However, they don't actually have any impact on the chart. Only line breaks do, since karaoke is shown two lines at a time (the current line being sung and the upcoming line).
 
@@ -82,7 +89,7 @@ Another bonus: when you find lyrics yourself, you usually don't have to figure o
     Wish I could turn back time<br>
     Relive the days when you were mine
 
-Throughout this page, I will use the **first six lines** as example points. An audio excerpt is embedded below:
+On this page, I will work through **first six lines** to demonstrate how to split syllables. An audio excerpt of these six lines is embedded below:
 
 <audio controls>
   <source src="/resources/karaoke/not-the-same-main.mp3" type="audio/mpeg">
@@ -97,7 +104,7 @@ Your browser doesn't support embedded audio :(
 
     - The songs I chart often contain words that won't be in the lyric-split dictionary -- for example, "everypony".
     - While words *often* have an objective answer as to how they should be split into syllables, **this isn't always the case**. Singers can and will be creative.
-    - Any mistakes that automatic lyric splitting may create will have to be rectified by you anyway, so it's kind of a net zero in time saved, in my opinion.
+    - Any mistakes that automatic lyric splitting may create (e.g. a word that is split when it shouldn't be, or vice versa) will have to be rectified by you anyway, so it's kind of a net zero in time saved, in my opinion.
 The next step is to split the lyrics into normal **syllables**. Singing is similar to talking, so *usually* the principles of spoken syllables also apply to sung words.
 
 This concept may already be intuitive to you, but in case it isn't: A syllable is often described as a 'beat' in language, generally made up of a vowel and its surrounding consonants. Let's examine the first six lines:
@@ -109,11 +116,18 @@ This concept may already be intuitive to you, but in case it isn't: A syllable i
     Life's getting better but I can't seem to move on
     Things aren't the same since you've been gone
 
-For our purposes, words are separated either by **spaces** or by the **plus symbol** (+). For example, the sentence "Hel+lo world" will be split into three syllables: Hel, lo, and world.
+For our purposes, words are separated either by **spaces** or by the **plus symbol** (+). For example, the sentence "Hel+lo world" will be split into three syllables: Hel, lo, and world. In the first line, there are seven words, so that's at least seven syllables. The words "into" and "Ponyville" have more than one syllable (two and three, respectively).
 
 When splitting lyrics, you might need to ask yourself: "if I were to say it out loud, what would it sound like?". This is doubly true for words you might not be familiar with, like, in this case, "Ponyville". **I would recommend listening to the song as you split syllables**, just in case the artist decided to be a little creative with how they sang their syllables.
 
-Here is how I would initially split these lines:
+!!! warning "Numbers in lyrics"
+
+    Some songs have numbers in them -- for example, Bowling for Soup's *1985*. In most cases, any numbers will need to be **written out** in their spoken form. There are two main reasons for this:
+
+    - Numbers can be spoken differently. In the case of 1985, you could read it as one-thousand nine-hundred and eighty-five or nineteen eighty-five or probably other ways too. A singer will have no way of reading 
+    - Numbers can span for more syllables than there are characters. "1985" is read as five syllables (nine+teen eigh+ty five), which is more than can be displayed in four characters without adding something like a tilde.
+
+If you want to practice splitting lyrics with this song, then try it and then compare it with the lyrics below once you're finished:
 
 ??? info "First six lines split by syllable"
 
@@ -124,7 +138,16 @@ Here is how I would initially split these lines:
     Life's get+ting bet+ter but I can't seem to move on<br>
     Things aren't the same since you've been gone
 
-If you want, you can stop here, but I would recommend later splitting this into **sung syllables** / **pitch changes**. This will save time later on!
+??? question "Why didn't I get the same answer?"
+
+    Syllables can be inherently ambiguous. In this example, "our" could be interpreted as two syllables (the "ow" sound and the "er") sound, but I chose not to indicate that because:
+
+    - It sounded more to me like the singer was shortening the "our" sound to "are", which is common in English
+    - The second half of "our" would be covered by a pitch change anyway, which will be covered in the next section
+
+    The point of syllable splitting is mainly to save time later on, and to make tapping more intuitive. **It does not need to be perfect.** If splitting "our" into two syllables is more intuitive to you, then that is not necessarily a mistake. It is perfectly fine.
+
+If you want, you can stop here (and continue to the next part), but I would recommend later splitting this into **sung syllables** / **pitch changes**. This will save time later on!
 
 ## Splitting lyrics: sung syllables and pitch changes
 
@@ -189,7 +212,7 @@ And, in full:
 
 !!! info "Alternate lyric styles"
 
-    Some people choose to instead use **hyphens** and/or **duplicate letters** to separate dragged out words. So, instead of `on+~ our+~`, it would be `o-on o-our`, or alternatively `o+~n o+~ur`. This choice is purely stylistic and has no bearing on the gameplay quality of the chart.
+    Some people choose to instead use **hyphens** and/or **duplicate letters** to separate dragged out words. So, instead of `on+~ our+~`, it would be `o-on o-our`, or alternatively `o+~n o+~ur` (displayed in-game as `o~n o~ur`). This choice is purely stylistic and has no bearing on the gameplay quality of the chart.
 
     On older versions of UltraStar-Creator, you may have to use `+-` instead of `-`, as `-` by itself is not recognised as a syllable separator. In that case, you would write `o+-on o+-our`.
 
@@ -203,7 +226,7 @@ Your browser doesn't support embedded audio :(
 
 I hope the idea of sung syllables is becoming a bit clearer by now. If not, don't worry -- it's something that takes practice, and you don't necessarily have to do this at the lyric splitting stage. If you miss a more subtle syllable change, **you can always add it later on** *after* you've tapped the song. The main point of doing it now is that you **save time** because you don't have to split the note and then shorten both notes and move the new note to a new position if you have already tapped it out in advance.
 
-On this line, the `ber` in `re+mem+ber` has a pitch change, as does the word `laugh`, which goes down a tone at the end.
+On this line, the `ber` in `re+mem+ber` has a pitch change (E -> F#), as does the word `laugh`, which goes down a tone at the end (E -> D).
 
 `I made a point to re+mem+ber+~ the way you laugh+~`
 
@@ -217,7 +240,11 @@ You could also notate the `laugh+~` as `la-augh`, if you want.
 Your browser doesn't support embedded audio :(
 </audio>
 
+This line is melodically a clone of the previous line.
+
 `Since you're not here it feels like I'm+~ stuck in the past+~`
+
+It might help to play the audio and then mentally 'tap' out a syllable every time there's a new word or you see the + symbol.
 
 - Alternatives: `I-I'm`, `pa-ast`
 
@@ -228,9 +255,9 @@ Your browser doesn't support embedded audio :(
   <source src="/resources/karaoke/not-the-same-line5.mp3" type="audio/mpeg">
 Your browser doesn't support embedded audio :(
 
-`Life's get+ting bet+ter but I can't+~ seem to move on+~`
+This line is melodically a clone of the previous two lines.
 
-It might help to play the audio and then mentally 'tap' out a syllable every time there's a new word or you see the + symbol.
+`Life's get+ting bet+ter but I can't+~ seem to move on+~`
 
 - Alternatives: `ca-an't`, `o-on`
 </audio>
@@ -294,7 +321,7 @@ And now, let's extend that out to the whole song:
     She's in my head<br>
     Like yes+ter+day+~
 
-    And when the clock strikes twelve<br>
+    And when the clock strikes twelve+~<br>
     I sit in dark+ness by my+self+~<br>
     Wish I could turn back time<br>
     Re+live the days when you were mine+~
@@ -333,12 +360,12 @@ And now, let's extend that out to the whole song:
     She's in my head<br>
     Like yesterday~
 
-    And when the clock strikes twelve<br>
+    And when the clock strikes twelve~<br>
     I sit in darkness by myself~<br>
     Wish I could turn back time<br>
     Relive the days when you were mine~
 
-??? question "A new line break, for the astute"
+??? question "Why is there an extra line break?"
 
     If you were reading every lyric carefully, you may have noticed a new line break was added between `Words we'd say` and `Gone away`. This was a stylistic choice that I personally felt aligned better with the song, since there is an audible gap between "Words we'd say" and "Gone away". Line breaks are entirely subjective, and as long as you're giving singers time to catch up to the lyrics, they're entirely up to you!
 

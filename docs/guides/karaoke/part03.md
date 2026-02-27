@@ -16,7 +16,7 @@ The next step is to find the BPM (beats per minute, speed) of the song. If you m
 
 ![Image: Beats aligned perfectly](/resources/karaoke/beat-alignment.png)
 
-In the image, you will notice that each note starts at a strong gray line, even though more beats of precision exist (namely, the three gray lines that are between each strong gray line). **This is intentional**. For most rhythmically consistent songs, notes will start exactly on the gray thick lines, and the timing will be near-perfect:
+In the image, you will notice that each note starts at a strong gray line, even though more beats of precision exist (namely, the three gray lines that are between each strong gray line). **This is intentional**. For most rhythmically consistent songs, notes will start exactly on the strong gray lines, and the timing will be near-perfect:
 
 ??? success "Video: On-beat note alignment"
 
@@ -36,7 +36,7 @@ Compare this to a song without a consistent BPM, where you might be stuck using 
     Your browser doesn't support embedded videos :(
     </video>
 
-Of course, "harder" doesn't mean "impossible". But it can be very discouraging to have to place each and every note manually, compared to a consistent BPM song where you can just place them on the thick lines and (for the most part) call it a day. So, save yourself the effort and figure out the BPM *now* to save a heck of a lot of time *later*.
+Of course, "harder" doesn't mean "impossible". But it can be very discouraging to have to place each and every note manually, compared to a consistent BPM song where you can just place them on the strong gray lines and (for the most part) call it a day. So, save yourself the effort and figure out the BPM *now* to save a heck of a lot of time *later*.
 
 There are multiple methods to find the BPM. Here they are laid out:
 
@@ -121,16 +121,18 @@ It is generally recommended to multiply any given song's true BPM by **two** or 
 
 ??? question "What about multiplying by three?"
 
-    Multiplying by three is also acceptable, but it means that notes will only align to every other thick line, rather than every thick line. Here's an example of a song where I multiplied the BPM by three, from 130 to 390:
+    Multiplying by three is also acceptable, but it means that notes will only align to every *other* strong gray line, rather than every strong gray line. Here's an example of a song where I multiplied the BPM by three, from 130 to 390:
 
     *Song: [4everfreebrony - Future (What Are The Odds)](https://www.youtube.com/watch?v=DPjF6hVpAiU)*
     ![BPM multiplied by three](/resources/karaoke/bpm-x3.png)
 
-    In general, I would recommend multiplying by **two** to start with, and then recalculating to multiplying by three **only if you need the granularity**, and **only if** multiplying by four is excessive (e.g. from 120 to 360 instead of 480). If the BPM is already low enough for multiplying to four to make sense (e.g. BPM of 100 multiplied to four to get 400), you should just do that instead of multiplying by two (i.e. 400 instead of 200).
+    In general, I would recommend multiplying by **two** to start with, and then recalculating to multiplying by three **only if you need the granularity**, and **only if** multiplying by four is excessive. For example, for a 120 BPM song, 480 is excessive, so we would initially chart with 240, and then recalculate that to 360 if we need the granularity later on.
 
-So, in our case, since the song's true BPM is 120, we'll double it to 240 (which is, incidentally, pretty close to what UltraStar-Creator automatically calculated for us).
+    If multiplying by four is possible, then you should do it, even if it slightly goes above 400. For example, a BPM of 102 multiplies by four to 408. This is generally preferred over 204.
 
-## If the BPM is inconsistent
+In our case, since the song's true BPM is 120, we'll double it to 240 (which is, incidentally, pretty close to what UltraStar-Creator automatically calculated for us).
+
+## Songs with an inconsistent BPM
 
 If this is your first song, **I highly recommend against doing a song with variable BPMs**. It is generally more complicated to explain, and worst-case scenario, you will have to align each note individually, which can really kill your motivation.
 
@@ -138,9 +140,9 @@ Otherwise, what you should do depends on the nature of the song's variable BPMs.
 
 ### If the song has one main BPM but changes speed for a few lines
 
-If the song has one main BPM, but changes speed (slows down, speeds up) for a small part of the song (less than 20% of the song), then you should just use the BPM of the majority of the song. For example, if most of the song's BPM is 120, then consider your BPM to be 120.
+If the song has one main BPM, but changes speed (slows down, speeds up) for a small part of the song (less than 20% of the song), then you should just use the BPM of the majority of the song. For example, if most of the song's BPM is 120, then use 120 (and then multiply it by two to 240).
 
-For the portion of the song with a different BPM, you will probably want more granularity. Continuing with the example BPM of 120, I would recommend doing everything in 240 to start with, and then multiplying to 360 only after you have set the note positions for the main part of the song. That way, when you recalculate the BPM, everything in the main part will already be correctly positioned (meaning you don't have to do the mental math of where a note needs to go when the BPM is multiplied by three), and you will have more granularity to work with in the part with a different BPM.
+For the portion of the song with a different BPM, you will probably want more granularity. Continuing with the example BPM of 120, I would recommend doing everything in 240 to start with, and then recalculating to 360 only *after* you have set the note positions for the main part of the song (i.e., everything other than the slowdown/speedup). That way, when you recalculate the BPM, everything in the main part will already be correctly positioned (meaning you don't have to do the mental math of where a note needs to go when the BPM is multiplied by three), and you will have more granularity to work with in the part with a different BPM.
 
 ### If the song has two (or more) main BPMs
 

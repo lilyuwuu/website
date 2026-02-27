@@ -6,7 +6,7 @@
 
 ## Background
 
-In 2024, after playing some [My Little Karaoke](https://mylittlekaraoke.com) at a convention, I realised something: while the game definitely had a lot of songs that I recognised, there were many that I liked that weren't in the game yet. From there, I decided to take matters into my own hands and began to chart some songs, thinking it couldn't be that hard. Since then, I have charted [over 400 songs](https://docs.google.com/spreadsheets/d/1WeCvwP6gfaCMreJkmoB1zXO-3RzdamK-E2U1AZ6qzK4/edit?gid=0#gid=0) (primarily for the My Little Pony fandom) and have gotten pretty efficient at it, with a reputation for high-quality and speedy charting.
+In 2024, after playing some [My Little Karaoke](https://mylittlekaraoke.com) at a convention, I realised something: while the game definitely had a lot of songs that I recognised, there were many songs that I wanted to sing that weren't in the game yet. From there, I decided to take matters into my own hands and began to chart some songs, thinking it couldn't be that hard. Since then, I have charted [over 400 songs](https://docs.google.com/spreadsheets/d/1WeCvwP6gfaCMreJkmoB1zXO-3RzdamK-E2U1AZ6qzK4/edit?gid=0#gid=0) (primarily for the My Little Pony fandom) and have gotten pretty efficient at it, with a reputation for high-quality and speedy charting.
 
 With that in mind, this guide is my tutorial on charting your own song in the UltraStar TXT format. My main goal in writing this is to gather the things I've learned over the past couple of years into one step-by-step guide, along with any tricks that I've learned to make things more efficient.
 
