@@ -36,6 +36,8 @@ For this tutorial, I'll be using **Not the Same** by **Green Hay** (a parody of 
 
 The audio for this song is available [here](https://princewhateverer.bandcamp.com/track/not-the-same).
 
+Once you have your audio, you should place it in a folder in your songs directory: for example, `C:\Games\UltraStar Deluxe\songs`. The traditional naming scheme for a folder is `Artist - Song Title`, so in this case I would put the audio file in `C:\Games\UltraStar Deluxe\songs\Green Hay - Not the Same`.
+
 ??? tip "Ripping audio from YouTube"
 
     If you're grabbing audio from YouTube (e.g. with [yt-dlp](https://github.com/yt-dlp/yt-dlp)), you can use `yt-dlp -f bestaudio -x` to extract the best possible audio, or `yt-dlp -f bestaudio -x --audio-format <format>` to download and automatically convert the audio to the format of your choice (e.g. `vorbis` for Ogg Vorbis, `mp3` for MP3). **yt-dlp requires [Deno](https://deno.com/) for ripping content from YouTube, and [ffmpeg](https://www.ffmpeg.org/) for format manipulation.
