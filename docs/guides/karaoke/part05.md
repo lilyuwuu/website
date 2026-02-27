@@ -261,7 +261,7 @@ Here are the things I would point out about this part:
 
 This obviously won't be the case with *all* notes in *all* charts. This example song is 'easy' because the rhythms are very clearly defined, its notes go in relatively obvious places, there aren't any stupidly long notes, and most importantly, **all of the notes (thus far) align with the strong gray line**. When timing something more difficult, you will have to do things a bit more manually.
 
-## Positoning notes manually
+## Positioning notes manually
 
 For this example, I will be using an excerpt from a slightly more complex song. In this case, I'm using the first three lines of 4everfreebrony's *Little Librarian* (a parody of Don McLean's *American Pie*).
 
