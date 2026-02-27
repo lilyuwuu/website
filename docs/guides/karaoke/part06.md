@@ -26,7 +26,7 @@ If you do still want to figure out how to pitch things on your own, I'll try my 
 
 You can click [here](/resources/karaoke/not-the-same-unpitched.txt) to get a copy of our example song's TXT with all notes positioned, but unpitched, if you would like to use this song to practice pitching.
 
-For a more helpful step-by-step tutorial, I defer to the tutorial created by the folks who make the [Karedi editor](https://karedi.gitbook.io/karedi/creating-songs-for-beginners/mapping-the-vocal-track/setting-pitches).
+For a more helpful step-by-step tutorial, I defer to the tutorial created by the folks who make the [Karedi editor](https://karedi.gitbook.io/karedi/creating-songs-for-beginners/mapping-the-vocal-track/setting-pitches). There, you will find similar advice to the stuff given here, but possibly explained in a more approachable manner. Even though we've been using Yass for song editing, the principles of pitching are the same no matter what editor you're using.
 
 ### Method 1: Brute force
 
@@ -36,7 +36,7 @@ This is the method that's described on [Karedi's tutorial](https://karedi.gitboo
 
 While Yass includes a digital piano, you can also use a physical piano (or MIDI keyboard, or synthesizer, or whatever) if you think it might be more helpful. If you understand music theory, you may also be able to use your understanding of note relations to help you pitch. For example, if you know through trial and error that the first note is an F#, and then the next note you hear has a 'minor third' relationship with F#, then you know that the second note is an A.
 
-If you have a good pitch memory -- for example, you know *for a fact* and can *mentally hear* that the first note in Toto's *Africa* is a C# -- then you can use that reference note to figure out the pitch of all notes. For instance, the first note in our song has an *perfect fourth* relationship with C#, therefore it is an F#[^3]
+If you have a good pitch memory -- for example, you know *for a fact* and can *mentally hear* that the first note in Toto's *Africa* is a C# -- then you can use that reference note to figure out the pitch of all notes. For instance, the first note in our song has an *perfect fourth* relationship with C#, therefore it is an F#[^2].
 
 Yass also has a feature to set the key of the song. For most traditional songs, you can perform a web search to figure out what key they're in. In this instance, most search results are telling me that the key of the original song (Whatsername) is D major, so that is probably also the case for our parody example song.
 
@@ -44,10 +44,10 @@ If you use Yass to set the key to D major, then any key outside of D major (that
 
 ### Method 3: The magic of computers
 
-These days, there are AI[^2] tools that can algorithmically determine pitches. Yass has one built in, called Aubio. It requires the following:
+These days, there are AI[^3] tools that can algorithmically determine pitches. Yass has one built in, called Aubio. It requires the following:
 
 - [Aubio](https://aubio.org/download) itself, downloaded and its location defined under `Extras > Preferences > Library > Locations`
-- A **vocal-only track** (a cappella) of your audio, which you can acquire from the artist or use AI[^2] to generate with something like [Spleeter](https://github.com/deezer/spleeter)
+- A **vocal-only track** (a cappella) of your audio, which you can acquire from the artist or use AI[^3] to generate with something like [Spleeter](https://github.com/deezer/spleeter)
 - The vocal track to be defined as #VOCALS, and for the UltraStar TXT to use format **version 1.1.0**
     - You can change UltraStar TXT version in Yass from `Extras > Preferences > Error Checking > Tags > Compatibility`
 
@@ -83,8 +83,6 @@ For posterity, you can see below for a video of me pitching this song. The first
 
 Once you're done pitching, the penultimate step is to set golden notes. Or you can just not set them at all; personally, I don't set golden notes in songs anymore outside of special occasions. On the other hand, they *are* fun, so they enhance the gameplay experience in some way. Ultimately, it's up to you.
 
-
-
 ---
 
 [<< Back to Part 5: Finetuning](../part05){ .md-button}
@@ -100,6 +98,6 @@ Quick navigation: [Index](..) / [Preface A](../prefaceA) / [Preface B](../prefac
 
 [^1]: Specifically, I have [absolute pitch](https://en.wikipedia.org/wiki/Absolute_pitch), which means I think of pitches in terms of their note names (that is to say: I hear a pitch and can immediately name what note it is). This is obviously very useful for pitching, but it doesn't really work as advice to give to other people. Unless you try to learn [relative pitch](https://en.wikipedia.org/wiki/Relative_pitch)? I think Method 2 is sort of going down that route.
 
-[^2]: In the machine learning sense, not in the large language model sense.
+[^2]: Technically it's not sung with a very clear pitch, so I would possibly mark it as rap, but if I were to give it a pitch I would infer it would be a F# because that is melodically what makes sense if we look at it in context with the rest of the song.
 
-[^3]: Technically it's not sung with a very clear pitch, so I would possibly mark it as rap, but if I were to give it a pitch I would infer it would be a F# because that is melodically what makes sense.
+[^3]: In the machine learning sense, not in the large language model sense.
