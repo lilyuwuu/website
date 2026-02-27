@@ -294,6 +294,34 @@ See the video for more details:
     - Throughout the song, I'm using the peaks of waveforms to guesstimate where a new note starts. This is particularly easy for this excerpt, since the instrumental is not very loud.
     - Finally, at 2:25, I run through all three lines at a time to make sure all notes sound like they start at the right place. While it may not be *perfect*, it is decent enough that people shouldn't have a problem if they were to play through it (and if it were pitched, of course).
 
+## Deciding on note types
+
+As covered earlier, there are five main normal types: normal, freestyle, rap, golden, and golden-rap.
+
+For now, we will ignore golden notes, as you should only start working on them after you have finished finetuning AND pitching. This means you only really have to focus on the difference between normal, freestyle, and rap. You can do this during finetuning or pitching -- it doesn't particularly matter -- but you should still be aware of them early on.
+
+### Normal notes
+
+This is most notes. If the note has a discernable pitch, it should be a normal note. These points are scored based on whether the player is singing that pitch at the time that the note is playing, and for the entire length of the note (so if a player starts singing the pitch and then stops halfway, they won't get any points for the part where they did not sing).
+
+Notes will be normal notes by default, and will only end up as any other type (rap, freestyle, golden) if you declare it as such.
+
+### Rap notes
+
+As the name suggests, rap notes are traditionally used for rap. Since rap is generally better described as a form of 'syncopated speaking', the pitch of rap is difficult or even impossible to discern. As such, scoring is based purely on whether the player is making a sound -- literally any sound, it doesn't even have to be words -- at the time that the note is playing. The same thing about length applies: if the rap note lasts for a long time (for example, it's being used to indicate someone SCREAMING in the middle of the song) and the player stops making any noise, then they won't get any points for the parts where they did not make any noise.
+
+However, I'd like to highlight another use of rap notes that is not as common in karaoke charts, but that I think should be popularized: **using rap to indicate unclear pitches**. In many songs, singers don't sing *every* pitch with absolute clarity. If you hear a sort of gravelly sound or vocal fry, it can't really be *pitched*, but it isn't like that shouldn't be *sung*, either. It's still a sound. So, I recommend setting those portions as rap notes. You will see me doing some of that in the examples, particularly in the pitching section of this guide.
+
+I also sometimes use rap notes in cases where a player might expect to sing a certain pitch melodically, but the singer ends up singing a different pitch. Singers aren't always perfect, but players shouldn't necessarily be penalized because the singer didn't quite hit the note.
+
+So: Use rap notes for actual rap, or for dialogue that you want a player to say out loud, or for words that should be sung but do not have a well-defined pitch. Treat rap as a 'you can sing whatever pitch you'd like, I don't care, just please make a sound here' type of note.
+
+### Freestyle notes
+
+Freestyle notes are not scored. Players will not get any score for them. They can say them if they want, but the game will not read it or give bonus points or anything like that.
+
+I recommend using freestyle notes if the pitch is *inaudible* (e.g. a word is *implied* by the lyrics, but said so quietly that no one could possibly discern it), or for dialogue that you want to *show* but that you do not want the player to *speak out loud*.
+
 ## Line breaks
 
 !!! warning "Yass and 'unsafe corrections'"

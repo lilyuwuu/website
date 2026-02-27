@@ -124,7 +124,7 @@ When splitting lyrics, you might need to ask yourself: "if I were to say it out 
 
     Some songs have numbers in them -- for example, Bowling for Soup's *1985*. In most cases, any numbers will need to be **written out** in their spoken form. There are two main reasons for this:
 
-    - Numbers can be spoken differently. In the case of 1985, you could read it as one-thousand nine-hundred and eighty-five or nineteen eighty-five or probably other ways too. A singer will have no way of reading 
+    - Numbers can be spoken differently. In the case of 1985, you could read it as one-thousand nine-hundred and eighty-five or nineteen eighty-five or probably other ways too. A singer will have no way of knowing how the number should be read unless it is spelled out in full.
     - Numbers can span for more syllables than there are characters. "1985" is read as five syllables (nine+teen eigh+ty five), which is more than can be displayed in four characters without adding something like a tilde.
 
 If you want to practice splitting lyrics with this song, then try it and then compare it with the lyrics below once you're finished:
