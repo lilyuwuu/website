@@ -8,6 +8,8 @@
 
     You can freely pause/continue with the P button, or undo the last tapped note(s) with the X button (one undo per press). You can also slow down the song if it is too fast or you are unfamiliar with it.
 
+    If you realise while tapping that you made a mistake in your lyric transcription (for example, you forgot a word or you forgot to split a word), hit X to undo until you get to the point where the mistake happened, then hold the *previous* note through the current word *and* what would have been the next syllable had it been tapped correctly.
+
     Once you have completed initial tapping, you will have a baseline that you can finetune in the next part.
 
 ## Overview
@@ -47,14 +49,30 @@ When you **let go** of the space bar on the **last syllable**, UltraStar-Creator
 
     While it is not *impossible* to fix this later on, it *is* a pain in the butt to fix. So, avoid causing it in the first place by not pressing X too quickly. If you need to undo a whole line, try to limit pressing X to three or so times a second so that the undo/redo buffer thing has a chance to catch up.
 
+### If you made a transcription mistake
+
+In your lyrics, it is inevitable that you will end up with a transcription 'mistake' somewhere. Maybe you forgot a word, maybe you forgot to split a word (short words like `any` and `into` can be common culprits). When this happens, you probably won't notice until you've already tapped it, because every note thereafter will be off-by-one.
+
+Let's use this example from Vylet Pony's *[A Digital Flower Field](https://vyletpony.bandcamp.com/track/a-digital-flower-field) to illustrate this:
+
+    Can't change those+~ marks, but you can change your+~ sight
+    With hearts as strong as horses, we'll walk on through the night
+
+    And it might not get much ea+si+er
+
+If you want to listen to it for yourself, this excerpt starts at 2:47, but you might have already noticed the error: `horses` was not separated into its syllables `hor` and `ses`. If you were to tap this, you probably wouldn't notice until you get to the word `night` and realise that the word `And` is already tapped -- hence, an off-by-one error.
+
+If this happens, **you do not need to stop the song and re-tap it**. Instead, you can resolve this as soon as you catch it by undoing (pressing X) until you get back to the beginning of the line with the error. In this case, you would undo until the last word that was tapped was `sight`.
+
+Then, tap as normal, but once you get to the word `horses`, *hold* the space bar for the full length of the word `horses`. You can split it back into `hor` / `ses` during finetuning.
+
+## Results
 
 Here's a video of me tapping this song in real time:
 
 ??? example "UltraStar Song Creation Tutorial: Tapping example"
 
     <iframe width="560" height="315" src="https://www.youtube.com/embed/DMzdnMCFObU?si=x0okzUcG7H511QKI" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-
-## Results
 
 The song is tapped, meaning we now have our baseline TXT. All that is left is to fine-tune the positions of the notes, pitch them, add golden notes, and then our song is complete!
 
