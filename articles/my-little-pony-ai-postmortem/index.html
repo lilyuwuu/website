@@ -1,0 +1,3134 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="Various resources and guides for somewhat niche subjects.">
+      
+      
+      
+      
+        <link rel="prev" href="../..">
+      
+      
+        <link rel="next" href="../../guides/3ds2patch/">
+      
+      
+        
+      
+      
+      <link rel="icon" href="../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.3">
+    
+    
+      
+        <title>My Little Pony, Tell Your Tale, and AI: A Postmortem - uwuu.ca</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.484c7ddc.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.ab4e12ef.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="deep-purple" data-md-color-accent="indigo">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#my-little-pony-tell-your-tale-and-ai-a-postmortem" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../.." title="uwuu.ca" class="md-header__button md-logo" aria-label="uwuu.ca" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            uwuu.ca
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              My Little Pony, Tell Your Tale, and AI: A Postmortem
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: light)" data-md-color-scheme="default" data-md-color-primary="deep-purple" data-md-color-accent="indigo"  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M17 6H7c-3.31 0-6 2.69-6 6s2.69 6 6 6h10c3.31 0 6-2.69 6-6s-2.69-6-6-6m0 10H7c-2.21 0-4-1.79-4-4s1.79-4 4-4h10c2.21 0 4 1.79 4 4s-1.79 4-4 4M7 9c-1.66 0-3 1.34-3 3s1.34 3 3 3 3-1.34 3-3-1.34-3-3-3"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: dark)" data-md-color-scheme="slate" data-md-color-primary="pink" data-md-color-accent="indigo"  aria-label="Switch to light mode"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Switch to light mode" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M17 7H7a5 5 0 0 0-5 5 5 5 0 0 0 5 5h10a5 5 0 0 0 5-5 5 5 0 0 0-5-5m0 8a3 3 0 0 1-3-3 3 3 0 0 1 3-3 3 3 0 0 1 3 3 3 3 0 0 1-3 3"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+            
+<nav class="md-tabs" aria-label="Tabs" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../.." class="md-tabs__link">
+        
+  
+  
+    
+  
+  Homepage
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+    
+  
+  
+    
+    
+      <li class="md-tabs__item md-tabs__item--active">
+        <a href="./" class="md-tabs__link">
+          
+  
+  
+  Articles
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../guides/3ds2patch/" class="md-tabs__link">
+          
+  
+  
+  Guides
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../info/3ds3songID/" class="md-tabs__link">
+          
+  
+  
+  Info
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../kobo/" class="md-tabs__link">
+          
+  
+  
+  Kobo
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../projects/taikomlpmod/" class="md-tabs__link">
+          
+  
+  
+  Projects
+
+        </a>
+      </li>
+    
+  
+
+      
+    </ul>
+  </div>
+</nav>
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="uwuu.ca" class="md-nav__button md-logo" aria-label="uwuu.ca" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    uwuu.ca
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Homepage
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+      
+        
+        
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Articles
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Articles
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    My Little Pony, Tell Your Tale, and AI: A Postmortem
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    My Little Pony, Tell Your Tale, and AI: A Postmortem
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#introduction" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Introduction
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#murmurs-of-ai-tell-your-tale-season-2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Murmurs of AI: Tell Your Tale Season 2
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#touchepasmavf-and-belva" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        #TouchePasMaVF and BELVA
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#twin-sources-rtbf-and-the-belva-meeting" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Twin sources: RTBF and the BELVA Meeting
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#the-initial-reaction" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        The Initial Reaction
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#the-reaction-part-ii-equestria-daily" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        The Reaction, Part II: Equestria Daily
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#the-reaction-part-iii-twitter-and-environs" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        The Reaction, Part III: Twitter and environs
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#the-element-of-skepticism" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        The Element of Skepticism
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#troton-unmasked" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Troton Unmasked
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#hasbro-steps-in" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Hasbro Steps In
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#so-what-actually-happened" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        So... what actually happened?
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#why-did-this-happen" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Why did this happen?
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Why did this happen?">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#the-language-barrier" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        The Language Barrier
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#priming" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Priming
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#two-sources-but-not-really" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Two sources, but not really
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#intellectual-failure" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Intellectual failure
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#a-development-ignored" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        A Development Ignored
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#lingering-effects" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Lingering Effects
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#conclusion" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Conclusion
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#appendix-tell-your-timeline" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Appendix: Tell Your Timeline
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Guides
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Guides
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../guides/3ds2patch/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Taiko 3DS2 English Patch
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../guides/3ds3mod/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Taiko 3DS3 Custom Songs
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../guides/daigassobbp/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Daigasso BBP Custom Songs
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_3_4" id="__nav_3_4_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Karaoke
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_4">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Karaoke
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../guides/karaoke/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    UltraStar Karaoke Charting / Song Creation Tutorial
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../guides/karaoke/part01/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Part 1: Audio
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../guides/karaoke/part02/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Part 2: Lyrics
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../guides/karaoke/part03/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Part 3: BPM
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../guides/karaoke/part04/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Part 4: Tapping
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../guides/karaoke/part05/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Part 5: Finetuning
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../guides/karaoke/part06/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Part 6: Pitching
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../guides/karaoke/part07/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Part 7: Golden Notes
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../guides/karaoke/part08/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Part 8: Testing
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../guides/karaoke/part09/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Part 9: Submission
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../guides/karaoke/prefaceA/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Preface A: What is Competitive Karaoke?
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../guides/karaoke/prefaceB/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Preface B: The UltraStar Format and Editors
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Info
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Info
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../info/3ds3songID/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Taiko 3DS3 Song ID Order
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../info/3dsmusicgames/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    3DS Music Games
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" >
+        
+          
+          <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Kobo
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Kobo
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../kobo/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    uwuu.ca/kobo/
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../kobo/faq/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Frequently Asked Questions
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../kobo/get-started/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Get Started
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../kobo/troubleshooting/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Troubleshooting
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5_5" >
+        
+          
+          <label class="md-nav__link" for="__nav_5_5" id="__nav_5_5_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Guide
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_5_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5_5">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Guide
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../kobo/guide/custom-software/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Custom Kobo Software
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../kobo/guide/kobopatch/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Nickel Modifications with KoboPatch
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../kobo/guide/nickel-options/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Nickel's Hidden Features
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5_6" >
+        
+          
+          <label class="md-nav__link" for="__nav_5_6" id="__nav_5_6_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Info
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_5_6_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5_6">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Info
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../kobo/info/dark-mode/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Dark Mode on Kobo
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../kobo/info/developer/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Developer Stuff
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../kobo/info/epub-to-kepub/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Converting EPUBs to KEPUBs
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../kobo/info/expandable-memory/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Expanding Kobo Storage
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../kobo/info/kobo-unbrick/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Unbricking a Kobo
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5_6_6" >
+        
+          
+          <label class="md-nav__link" for="__nav_5_6_6" id="__nav_5_6_6_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Legacy
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_5_6_6_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5_6_6">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Legacy
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../kobo/info/legacy/kobo-start-menu/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Kobo Start Menu
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5_6_7" >
+        
+          
+          <label class="md-nav__link" for="__nav_5_6_7" id="__nav_5_6_7_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Readers
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_5_6_7_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5_6_7">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Readers
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../kobo/info/readers/inkbox/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    InkBox
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../kobo/info/readers/koreader/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    KOReader
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../kobo/info/readers/overview/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Overview
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../kobo/info/readers/plato/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Plato
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../kobo/info/readers/ultimate-manga-reader/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Ultimate Manga Reader
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../kobo/info/readers/vlasovsoft/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Vlasovsoft
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5_6_8" >
+        
+          
+          <label class="md-nav__link" for="__nav_5_6_8" id="__nav_5_6_8_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Software
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_5_6_8_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5_6_8">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Software
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../kobo/info/software/autoshelf/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    AutoShelf
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../kobo/info/software/kfmon/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Kute File Monitor
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../kobo/info/software/kobo-uncaged/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Kobo-UNCaGED
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../kobo/info/software/kobocloud/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    KoboCloud
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../kobo/info/software/nanoclock/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    NanoClock
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../kobo/info/software/nickelmenu/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    NickelMenu
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../kobo/info/software/nickelseries/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    NickelSeries
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../kobo/info/software/wallabako/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Wallabako
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6" >
+        
+          
+          <label class="md-nav__link" for="__nav_6" id="__nav_6_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Projects
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_6_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_6">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Projects
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../projects/taikomlpmod/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Taiko MLP Mod
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#introduction" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Introduction
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#murmurs-of-ai-tell-your-tale-season-2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Murmurs of AI: Tell Your Tale Season 2
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#touchepasmavf-and-belva" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        #TouchePasMaVF and BELVA
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#twin-sources-rtbf-and-the-belva-meeting" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Twin sources: RTBF and the BELVA Meeting
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#the-initial-reaction" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        The Initial Reaction
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#the-reaction-part-ii-equestria-daily" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        The Reaction, Part II: Equestria Daily
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#the-reaction-part-iii-twitter-and-environs" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        The Reaction, Part III: Twitter and environs
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#the-element-of-skepticism" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        The Element of Skepticism
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#troton-unmasked" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Troton Unmasked
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#hasbro-steps-in" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Hasbro Steps In
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#so-what-actually-happened" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        So... what actually happened?
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#why-did-this-happen" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Why did this happen?
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Why did this happen?">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#the-language-barrier" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        The Language Barrier
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#priming" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Priming
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#two-sources-but-not-really" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Two sources, but not really
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#intellectual-failure" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Intellectual failure
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#a-development-ignored" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        A Development Ignored
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#lingering-effects" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Lingering Effects
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#conclusion" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Conclusion
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#appendix-tell-your-timeline" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Appendix: Tell Your Timeline
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+<h1 id="my-little-pony-tell-your-tale-and-ai-a-postmortem">My Little Pony, Tell Your Tale, and AI: A Postmortem</h1>
+<p><em>June 1st, 2024</em></p>
+<div class="admonition warning">
+<p class="admonition-title">Be nice</p>
+<p>It should go without saying, but do not harass anyone mentioned in this article.</p>
+</div>
+<h2 id="introduction">Introduction</h2>
+<p>The last few days in the My Little Pony fandom have certainly been... interesting. In the span of a little less than 72 hours, news has <a href="https://www.equestriadaily.com/2024/05/french-voice-actor-for-hitch-claims.html">come out</a>, and subsequently been <a href="https://www.equestriadaily.com/2024/05/the-ai-voiceover-drama-continues-french.html">disproven</a>, about the usage of AI voices for international releases of the second season of the My Little Pony G5 series <em>Tell Your Tale</em>.</p>
+<p>What exactly happened here? Who is to blame? Was the fandom just overly gullible? As someone who has been reasonably connected to the situation (having been one of the initial translators/transcribers of the video and radio broadcast that would later send the fandom into a frenzy), I've been trying to figure out what happened. In this article, I'll try my best to summarize the sequence of events, the shortcomings, and takeaways from our little bout of drama.</p>
+<p><strong>Note</strong>: My French is by no means perfect or even great, but it should have been sufficient to transcribe and give context to things that had happened. That being said, if you notice any glaring or factual issues (with my use of French or otherwise), feel free to contact me on Discord: @lilyshy</p>
+<h2 id="murmurs-of-ai-tell-your-tale-season-2">Murmurs of AI: Tell Your Tale Season 2</h2>
+<p>The story begins with the release of the second season of Tell Your Tale, which premiered in January 2024. While the English dub appears to have been untouched, some foreign-language dub viewers reported that the voice actors for those dubs had changed.</p>
+<ul>
+<li>On January 11th, the day of Tell Your Tale Season 2's release, Equestria Daily <a href="https://www.equestriadaily.com/2024/01/did-hasbro-replace-voice-actors-with-ai.html">brings this information to light</a>, citing posts from the former VAs for the Latin American Spanish dub. Note that the original title of the article is still in the URL: <em>Did Hasbro replace voice actors with AI</em>.<ul>
+<li>Within the comments of this EqD post, many commenters seem to <em>already</em> think that AI was involved, potentially primed by the old title of the post -- hence the title change.</li>
+<li>Changes are reported specifically by viewers of the Polish, German, LATAM Spanish, and Brazilian Portuguese.</li>
+</ul>
+</li>
+<li>On January 13th, this information is <a href="https://www.tumblr.com/g5mlp/739374825061089280/some-unfortunate-news-about-the-dubbed-versions-of">parroted</a> by G5MLP on Tumblr, attaching full translations of each Twitter post.</li>
+<li>On January 14th, French pony blog Le Poney Blanc posts <a href="https://leponeyblanc.fr/news/2715/discussion-dbat-74-le-doublage-franais-du-dbut-de-la-saison-2/">an article</a> about the new dubbing used for TYT Season 2, with those in the comments generally saying that the dub is awful. The post briefly touches on the use of AI (citing it as a 'theory posted on Twitter') but also allows for the possibility of the voice actors just being not very good. The comments do not even touch on the use of AI, with one theorizing that the dubbing studio had changed for cost reasons.</li>
+<li>On January 18th, G5MLP <a href="https://www.tumblr.com/g5mlp/739887005662658560/by-any-chance-would-you-be-able-to-link-me-the?a">answers a question</a> about the suspected AI use, linking all available dubs and stating that it has purely been speculation, leaning towards real voice actors being used due to social media posts from some new voice actors (such as for the Thai dub).</li>
+<li>On January 20th, Le Poney Blanc posts a <a href="https://leponeyblanc.fr/news/2721/discussion-24-parlons-un-peu-de/">follow-up article</a>, with a few more mentions of the potential use of AI. The article, however, mainly focuses on how changing voice actors <em>at all</em> -- AI or not -- is still ultimately disrespectful to the long-term voice actors <em>in general</em>, with the dip in quality showing that Hasbro does not care about foreign-language dubs.</li>
+</ul>
+<p>Overall takeaways? By January, the use of AI in foreign MLP dubs was entertained, but not stated by anyone to be 'confirmed'. The only thing absolutely without-a-doubt confirmed was that the voice actors for some foreign dubs of Tell Your Tale Season 2 had been replaced by some new dub, with online rumours stating that it may be AI. Such sentiment is found most on Equestria Daily and to a lesser extent on Le Poney Blanc, the former potentially primed by the former post title outright mentioning AI.</p>
+<p>Notably, the previous dubbing studio for many languages (<a href="https://bw.artemislena.eu/dubdb/wiki/My_Little_Pony:_Fort%C3%A6l_din_historie">Danish</a>, <a href="https://bw.artemislena.eu/dubdb/wiki/My_Little_Pony:_Vertel_je_verhaal">Dutch</a>, <a href="https://bw.artemislena.eu/dubdb/wiki/My_Little_Pony:_Kerro_tarinasi">Finnish</a>, <a href="https://bw.artemislena.eu/dubdb/wiki/My_Little_Pony_:_Raconte_ton_histoire">French</a>, <a href="https://bw.artemislena.eu/dubdb/wiki/My_Little_Pony_%E2%80%93_Erz%C3%A4hle_deine_Geschichte">German</a>, <a href="https://bw.artemislena.eu/dubdb/wiki/My_Little_Pony:_Racconta_la_tua_storia">Italian</a>, <a href="https://bw.artemislena.eu/dubdb/wiki/%EB%A7%88%EC%9D%B4_%EB%A6%AC%ED%8B%80_%ED%8F%AC%EB%8B%88:_%EB%84%88%EC%9D%98_%EC%9D%B4%EC%95%BC%EA%B8%B0%EB%A5%BC_%ED%8E%BC%EC%B3%90%EB%B4%90">Korean</a>, <a href="https://bw.artemislena.eu/dubdb/wiki/My_Little_Pony:_Kisah_Perkongsian">Malay</a>, <a href="https://bw.artemislena.eu/dubdb/wiki/%E5%B0%8F%E9%A9%AC%E5%AE%9D%E8%8E%89%EF%BC%9A%E5%B0%8F%E9%A9%AC%E5%9B%BD%E5%A4%A7%E5%B0%8F%E4%BA%8B0">Mandarin Chinese (Mainland China)</a>, <a href="https://bw.artemislena.eu/dubdb/wiki/%E5%BD%A9%E8%99%B9%E5%B0%8F%E9%A6%AC:_%E5%B0%8F%E9%A6%AC%E5%9C%8B%E5%A4%A7%E5%B0%8F%E4%BA%8B">Mandarin Chinese (Taiwan)</a>, <a href="https://bw.artemislena.eu/dubdb/wiki/My_Little_Pony:_Fortell_din_historie">Norwegian</a>, <a href="https://bw.artemislena.eu/dubdb/wiki/My_Little_Pony:_Opowiedz_swoj%C4%85_histori%C4%99">Polish</a>, <a href="https://bw.artemislena.eu/dubdb/wiki/My_Little_Pony:_Conta_a_Tua_Hist%C3%B3ria">Portuguese (Portugal)</a>, <a href="https://bw.artemislena.eu/dubdb/wiki/My_Little_Pony:_Cuenta_tu_historia_(Latin_American_Spanish)">Spanish (Latin America)</a>, <a href="https://bw.artemislena.eu/dubdb/wiki/My_Little_Pony:_Cuenta_tu_historia_(European_Spanish)">Spanish (Europe)</a>, <a href="https://bw.artemislena.eu/dubdb/wiki/My_Little_Pony:_Ber%C3%A4tta_din_historia">Swedish</a>, <a href="https://bw.artemislena.eu/dubdb/wiki/%E0%B8%A1%E0%B8%B2%E0%B8%A2%E0%B8%A5%E0%B8%B4%E0%B8%95%E0%B9%80%E0%B8%95%E0%B8%B4%E0%B9%89%E0%B8%A5%E0%B9%82%E0%B8%9E%E0%B8%99%E0%B8%B5%E0%B9%88:_%E0%B8%9A%E0%B8%AD%E0%B8%81%E0%B9%80%E0%B8%A5%E0%B9%88%E0%B8%B2%E0%B9%80%E0%B8%A3%E0%B8%B7%E0%B9%88%E0%B8%AD%E0%B8%87%E0%B8%A3%E0%B8%B2%E0%B8%A7%E0%B8%82%E0%B8%AD%E0%B8%87%E0%B8%84%E0%B8%B8%E0%B8%93">Thai</a>, <a href="https://bw.artemislena.eu/dubdb/wiki/Pony_b%C3%A9_nh%E1%BB%8F:_H%C3%A3y_k%E1%BB%83_c%C3%A2u_chuy%E1%BB%87n_c%E1%BB%A7a_b%E1%BA%A1n">Vietnamese</a>) was Iyuno (best known as SDI Media). This group had also been the dubbing group during <a href="https://bw.artemislena.eu/dubdb/wiki/My_Little_Pony:_Friendship_Is_Magic#International_versions">Friendship is Magic</a>, as well as <a href="https://bw.artemislena.eu/dubdb/wiki/My_Little_Pony:_Equestria_Girls_%E2%80%93_Legend_of_Everfree">Equestria Girls</a>, <a href="https://bw.artemislena.eu/dubdb/wiki/My_Little_Pony:_A_New_Generation">A New Generation</a>, and of course, <a href="https://bw.artemislena.eu/dubdb/wiki/My_Little_Pony:_Make_Your_Mark">Make Your Mark</a>. So, the change in studios everywhere could be for contractual reasons or something similar. But again, pure speculation.</p>
+<h2 id="touchepasmavf-and-belva">#TouchePasMaVF and BELVA</h2>
+<p>The second important component of the story is two events from around this time: the #TouchePasMaVF campaign (literally "don't touch my 'version française' ", or "don't mess with my French dub"), and the creation of BELVA, or the "Belgian Voice Artists" union. </p>
+<p>The #TouchePasMaVF campaign seems to have initially begun on January 10th, with the creation of the <a href="https://www.change.org/p/pour-un-doublage-cr%C3%A9%C3%A9-par-des-humains-pour-des-humains-touchepasmavf-beab56eb-a759-4117-b77c-7d03bcaa35f8">change.org petition</a>. It gained steam on May 21st with the publication of a new <a href="https://twitter.com/LecordierB/status/1792973986130772337">campaign video</a> featuring prominent French dub voice actors from across many series (not including My Little Pony). While it's unclear how many signatures the petition had received before May 21st, it breached 100,000 signatures  shortly after and now stands at roughly 130,000 at time of writing.</p>
+<p><a href="https://www.belva.tv/">BELVA</a>, in contrast, was founded in most <em>likely</em> between May and <a href="https://www.brusselstimes.com/608388/belgian-voice-actors-join-international-efforts-to-protect-sector-from-ai">July 2023</a> as one of the branches of <a href="https://unitedvoiceartists.com/">United Voice Artists (UVA)</a>. Given the timeline, it's possible that this was influenced by the Writer's Guild of America strike (of which AI was one <a href="https://www.wga.org/uploadedfiles/news_and_events/public_policy/WGA_Comment_on_USCO_Artificial_Intelligence_and_Copyright.pdf">key disagreement</a>), but this is pure conjecture. As the union's context suggests, the goal of BELVA is to advocate for voiceover artists and to ensure that their voices are not replaced by AI, effectively trying to reach a similar agreement to the WGA and SAG-AFTRA before it.</p>
+<p>It is at BELVA's first meeting where the news about the potential use of AI in the creation of Tell Your Tale was first publicized, on May 27th.</p>
+<h2 id="twin-sources-rtbf-and-the-belva-meeting">Twin sources: RTBF and the BELVA Meeting</h2>
+<p>The first source publicized was an <a href="https://auvio.rtbf.be/media/les-sequences-de-matin-premiere-l-invite-dans-l-actu-3198709">interview with Nathalie Stas on RTBF</a>, Belgium's public broadcasting service, which took place on <a href="/images/rtbf.jpg">the morning of May 27th</a>. Nathalie Stas, for context, was <a href="http://www.planete-jeunesse.com/staff-10671-nathalie-stas.html">a voice actress during G4 of My Little Pony</a>, as well as the <a href="/images/mym_c6_va.jpg">voice director during G5</a> [screenshot taken from Make Your Mark, Chapter 6], presumably under SDI Media / Iyuno Belgium. It can thus be inferred that she was also likely the voice director during Season 1 of Tell your Tale. </p>
+<p>On the radio interview, Stas, representing BELVA, aimed to discuss of course how the replacement of voice actors of AI could be problematic, citing My Little Pony as an early example of such a replacement already occurring (around 1:23 on the original source):</p>
+<div class="tabbed-set tabbed-alternate" data-tabs="1:2"><input checked="checked" id="__tabbed_1_1" name="__tabbed_1" type="radio" /><input id="__tabbed_1_2" name="__tabbed_1" type="radio" /><div class="tabbed-labels"><label for="__tabbed_1_1">English translation</label><label for="__tabbed_1_2">Transcription française</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<p><strong>Radio host:</strong> So there already exist dubbings of films or cartoons done by artificial intelligence?<p>
+<strong>Nathalie Stas:</strong> Yes, it already exists -- well, there are very few for the moment, fortunately, but for example there's a series called [My Little Pony] which has a spinoff that's on the internet, the first season was done by humans and the second was done by morphing by an artificial intelligence that has -- and we're really seeing the quality drop drastically.</p>
+</div>
+<div class="tabbed-block">
+<p><strong>Animatrice:</strong> Ça existe déjà, donc, au jour aujourd'hui, des doublages de films ou de dessins animés faits par l'intelligence artificielle ?<p>
+<strong>Nathalie Stas:</strong> Oui, ça existe déjà -- bon, il s'est très peu pour l'instant heureusement, mais par exemple il y a une série qui s'appelle Les Petits Poneys qui a une spinoff qui est sur internet, la première saison a été fait par les humains et la deuxième fait par morphing par une intelligence artificielle qui a -- et on voit vraiment la qualité diminuer d'une façon drastique.</p>
+</div>
+</div>
+</div>
+<hr />
+<p>The second, and more initially damning source, was presented at BELVA's <a href="https://www.youtube.com/watch?v=kshGSq-5mY8">"kick-off general meeting"</a>, which took place on the evening of May 27th (Central European Summer Time / CEST). At this meeting, Matthieu Meunier, the French voice actor for Hitch Trailblazer throughout all previous G5 media (A New Generation, Make Your Mark, and Tell Your Tale Season 1), read out an e-mail exchange that he had had with a supposed Hasbro staffer by the name of Guillaume:</p>
+<div class="tabbed-set tabbed-alternate" data-tabs="2:2"><input checked="checked" id="__tabbed_2_1" name="__tabbed_2" type="radio" /><input id="__tabbed_2_2" name="__tabbed_2" type="radio" /><div class="tabbed-labels"><label for="__tabbed_2_1">English translation</label><label for="__tabbed_2_2">Transcription française</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<p><strong>The entirety of this text is a transcription of an e-mail being read out by Matthieu Meunier.</strong><p>
+<u>From: Matthieu Mernier</u><p>
+Hi Guillaume, I'm surprised to see your profile, I see that you have a link with Hasbro and My Little Pony, we were wondering with the cast what's going on at Hasbro, why we no longer make the series, I confess I find it strange that you follow me on Instagram, if you could come back to me if you have info at that level, so that I [can understand] more clearly, thank you.<p>
+<u>From: Guillaume</u><p>
+Hi Matthieu,<p>
+I'm surprised and saddened to hear that Hasbro Studios didn't let you know. Hasbro is in dire financial straits, having been forced to sell its eOne film business to Lionsgate. In 2 waves, 1,000 employees were laid off, and despite this, the 4th quarter of 2023 was catastrophic.<p>
+What happens next won't please you. To boost profits and sales, Hasbro is concentrating on the Wizards film for Dungeons and Dragons, and in particular on a reconversion of its business, artificial intelligence.<p>
+And we're feeling it; when I say we, I mean all the countries in the world that aren't part of the USA, especially in the audiovisual sector. No more voice-over by actors and actresses; everything for children is AI-generated. You can feel it with the Tell Your Tale season 2 series, where everything is flat, and there's no emotion in the words. Hasbro is proud of this, as it enables it to reduce international production costs; only the VO [“Version originale”, English dub] is not impacted, thanks to SAG-AFTRA, which fought long before us to protect film and audiovisual artists.<p>
+A little detail about the series Make Your Mark: a season 2 was planned for May 2024, but Cort Lane [one of the executive producers for MYM] is against the use of AI and has decided to stop the show.<p>
+[Matthieu interjects: "Uh, Cort Lane, I don't know who that is, maybe he's one of the creators of My Little Pony, who may have refused [the continuation of MYM as a result of the use of AI]"].<p>
+[Guillaume's email continues] Although it's not reassuring, I hope you'll find these answers useful, and I wish you all the best for the future.</p>
+</div>
+<div class="tabbed-block">
+<p><strong>L'intégralité du texte est une transcription d'un email lu par Matthieu Meunier.</strong><p>
+<u>De : Matthieu Mernier</u><p>
+Salut Guillaume, je suis étonné de voir ton profil, je vois que t'as un lien avec Hasbro et My Little Pony, on se demandait avec le cast ce qui se passe chez Hasbro, pourquoi on fait plus la série, je t'avoue que je trouve ça bizarre que tu me suives sur Instagram, si tu pourrais revenir vers moi si t'as des infos a ce niveau-là, afin que j'y vois plus clair, merci.<p>
+<u>De : Guillaume</u><p>
+Salut Mathieu,<p>
+Je suis surpris et à la fois triste d'apprendre qu'Hasbro Studios ne vous ait pas prévenu. Hasbro va très mal financièrement, la franchise s'est vue dans l'obligation de revendre ses activités de films réalisés par eOne à Lionsgate. Des licenciements ont eu lieu en 2 vagues de 1000 employés et malgré cela le 4e trimèstre 2023 était catastrophique.<p>
+La suite ne va pas te faire plaisir. Pour rehausser les bénéfices et regonfler à bloc les ventes, Hasbro se concentre sur le film Wizards pour Donjons et Dragon, et notamment sur une reconversion de son fonctionnement, l'intelligence artificielle.<p>
+Et nous le ressentons fortement; quand je dis nous, je veux dire tous les pays du monde qui ne font pas partie des USA, en particulier dans l'audiovisuel. Fini les acteurs et actrices voix off, tout est généré par l'IA pour les enfants. On le ressent avec la séries Tell Your Tale saison 2, où tout est plat, il n'y a plus d'émotions dans les paroles. Hasbro en est fier car cela lui permet de réduire les coûts de production internationale; seule la VO n'est pas impacté grâce a SAG-AFTRA qui s'est battu bien avant nous pour protéger les artistes du cinéma et de l'audiovisuel.<p>
+Petit détail concernant la série Make Your Mark : une saison 2 était bien prévue pour mai 2024, mais Cort Lane est contre l'emploi de l'IA et a donc préféré tout arrêter.<p>
+[Matthieu: "Euh, Cort Lane, je sais pas qui c'est, c'est un des créateurs de My Little Pony peut-être, qui a peut-être refusé"]<p>
+[Continuation de la lecture] Bien qu'elle ne soit pas rassurante, j'espère que ces réponses te seront utiles en te souhaitant une bonne continuation.</p>
+</div>
+</div>
+</div>
+<hr />
+<p>So, in summary, the things stated in these interviews (which, to avoid being put out of context, were <strong>not true</strong>) are:</p>
+<ul>
+<li>Nathalie Stas, former voice director under Iyuno/SDI Media Belgium, cites Tell Your Tale Season 2 as an example of AI being used in media</li>
+<li>Mathieu Meunier, former voice for Hitch Trailblazer, reads out an e-mail from "Guillaume" which says:<ul>
+<li>Hasbro is in dire financial straits</li>
+<li>Hasbro is turning to AI as a cost-saving measure</li>
+<li>Tell Your Tale Season 2 has replaced its voiceover artists with AI</li>
+<li>A season 2 for Make Your Mark was planned, but halted after Cort Lane, an executive producer for Make Your Mark, spoke out against the use of AI</li>
+</ul>
+</li>
+</ul>
+<h2 id="the-initial-reaction">The Initial Reaction</h2>
+<p>The first rumblings of information came on May 27th at 6pm CEST, from the earlier-cited French pony news site, <a href="https://leponeyblanc.fr/news/2905/news-la-saison-2-de-tell-your-tale-est-bien-double-par-ia/">Le Poney Blanc</a>. Since the BELVA live event had not <em>happened</em> yet, the only source cited was the RTBF interview with Nathalie Stas.</p>
+<p>Earlier in the day, at around 1pm CEST, another French pony site, MLP France, posted on <a href="https://x.com/MLPfrance/status/1795052044354544010">Twitter</a> of a 'rumour' circulating over the use of AI in Tell Your Tale season 3[sic]. Just before midnight, <a href="https://x.com/Kuro0994568731/status/1795210683186864461">Kuro0994568731</a> posts a clip of the BELVA live broadcast, which at this point had concluded roughly three hours prior.</p>
+<p>With the content being entirely in French, English speakers being busy at the time of the revelations (9am-12pm in North America), and French speakers going to bed before it can be translated (or finding no reason to translate it), this information remains relatively ignored for about twenty-four hours, apart from the French community being rightfully angry over the revelation.</p>
+<h2 id="the-reaction-part-ii-equestria-daily">The Reaction, Part II: Equestria Daily</h2>
+<p>As with most information on the fandom, Equestria Daily greatly propagates the information, <a href="https://www.equestriadaily.com/2024/05/french-voice-actor-for-hitch-claims.html">reporting on</a> the French news the next day, on May 28th at about 8pm CEST. The exact time and place where the French information was initially <em>found</em> by EqD is not known for sure, though there are murmurings on the G5 MLP Discord server and some other places at around <a href="/images/g5mlp_1.jpg">7pm CEST on the 28th</a> (an hour earlier), meaning it was likely scouted from there. </p>
+<p>The initial reactions are what one would expect: As one user put it, "Disappointed, but not surprised". Others, particularly speakers of other foreign languages (who thus have experience with other foreign language dubs), are more skeptical. As the information is purely in French (and, due to being on a Twitter video and an account-locked radio interview, difficult for a non-French speaker to transcribe), the information goes untranslated for some time.</p>
+<p>About 3 hours pass (~11pm CEST) and the discussion has made its way to Manechat, one of the My Little Pony Discord servers I lurk around in. Given that I know French to <em>some</em> degree, I decide to transcribe/translate both the e-mail being read aloud and what appears to be My Little Pony-relevant part of the RTBF interview, and post it to the Equestria Daily comments section about half an hour later. Another French speaker, Jyc, posts a similar translation about two hours later (~1:30am CEST).</p>
+<h2 id="the-reaction-part-iii-twitter-and-environs">The Reaction, Part III: Twitter and environs</h2>
+<p>Two more hours pass (~3:30am CEST) and both translations are posted to <a href="https://x.com/TobbyMLP/status/1795626982245601542">Twitter</a> by TobbyMLP, with the key headline: <strong>A season 2 of Make Your Mark was cancelled because of Hasbro being dead set on using AI voices for it</strong>. Equestria Daily, having gone to bed for the day at 4am CEST, doesn't report on the 'development' quite yet, though murmurs begin in the <a href="https://www.equestriadaily.com/2024/05/nightly-discussion-3592.html">nightly discussion</a>. Meanwhile, Tobby's post continues to spread on Twitter, culminating at around 1,500 retweets (many of them QRTs) by the morning of May 29th, CEST (evening of May 28th in North America).</p>
+<p>While the information goes around Twitter, it also makes it way to other platforms, such as <a href="https://www.reddit.com/r/mylittlepony/comments/1d35jl1/adding_to_the_g5_ai_fiasco_make_your_mark_was/">Reddit</a>, <a href="https://archive.is/ZDIlt">4chan</a>, <a href="https://www.facebook.com/photo.php?fbid=860613902777616&amp;set=pb.100064870410740.-2207520000&amp;type=3">Facebook</a>, <a href="https://www.tumblr.com/g5mlp/751789996858605569/theres-been-quite-a-bit-of-new-information?source=share">Tumblr</a>, and Discord.</p>
+<h2 id="the-element-of-skepticism">The Element of Skepticism</h2>
+<p>By May 29th at 4pm CEST, the information had certainly made its way around the fandom, arriving at likely around ~2,000 retweets on Tobby's post, though with no post on Equestria Daily quite yet. Raven (Purple Smart) pings me on YayPonies, realizing that I was one of the people in the comments section on EqD. However, he raises an important question: <em>Who</em> exactly is Guillaume?</p>
+<p>With only the name "Guillaume", and with the assumption that said Guillaume is a Hasbro employee, a cursory Google search for "Guillaume" and "Hasbro" brings up two LinkedIn profiles: a Guillaume Bagnier (a 'director for market distribution planning' for Hasbro in Europe), and a Guillaume Bauer, a 'collection manager' for Europe and the Middle East. </p>
+<p>At around 5:30pm, Mdash has the idea to look up people named Guillaume following Matthieu on Instagram, given that the e-mail being read out said "I confess I find it strange that you follow me on Instagram" (<em>je t'avoue que je trouve ça bizarre que tu me suives sur Instagram</em>) and landed on the profile of <a href="https://instagram.com/guillaume_troton">Guillaume Troton</a>... and it is at this point that things get <em>weird</em>.</p>
+<p><img alt="Image: Troton's page on Instagram" src="/images/troton.jpg" />
+Myself and Raven have the same thought: That profile, while hosting content that <em>could</em> pass as some sort of Hasbro marketer, looks <em>way</em> more like a fan's profile. The text "<a href="https://www.deviantart.com/guillaumetroton/art/MLP-40th-FIM-logo-A-vL-984187304">Picture not authorized for inclusion in third-party AI datasets</a>" also appears in some DeviantArt posts (linked from the profile), indicating that Troton likely <em>isn't</em> exactly a fan of AI-generated content in the arts industry.</p>
+<p>A half hour later, the preliminary theory changes:</p>
+<ul>
+<li>Guillaume, seeing the Poney Blanc post in January, begins to believe that TYT was voiced by AI</li>
+<li>Matthieu notices that Guillaume follows him on Instagram and reaches out, assuming Giillaume is an authority / Hasbro employee of some sort</li>
+<li>Guillaume bluffs and makes all of the information in the e-mail up</li>
+<li>Matthieu talks about this in the live BELVA meeting, and had also relayed it to Nathalie at some point, who would talk about it in the radio interview that took place beforehand</li>
+<li>In reality, Hasbro had just changed voice studios</li>
+</ul>
+<p>It's also theorized that Troton may be some sort of animator (who may thus know about Make Your Mark Season 2, having worked on it), but this is quickly shot down when it's realized that Guillaume is Metropolitan French, which would not align with Atomic Cartoons being based in anglophone Canada.</p>
+<p>Despite the suspicion, nothing is concrete. With the suspicion not making it far out of YayPonies, by 6:45pm, Equestria Daily posts its <a href="https://www.equestriadaily.com/2024/05/full-translations-reveal-make-your-mark.html">second article</a>.</p>
+<h2 id="troton-unmasked">Troton Unmasked</h2>
+<p>Given the skepticism from YayPonies, Raven posts in the EqD comments section of the new article at around 8pm, revealing the Guillaume to most likely be Guillaume Troton. People on both sides remain skeptical -- some are skeptical that the whole situation was real in the first place, while others are skeptical that Troton is the Guillaume in question (with both recognizing that Troton is, to put it charitably, sketchy). With the name making its way to the MLP G5 Discord server, people start to dig through Guillaume's Instagram profile and remark several oddities. Content is posted purported to be "authorized by Hasbro", even when it shouldn't be (such as leaks). Some fan theories are found on the account. In one case, Guillaume uploaded work <a href="https://x.com/_Maka_11/status/1795906055593185359">that wasn't his</a> and called it "behind the scenes".</p>
+<p>A few minutes later, the comment is <a href="/images/g5mlp_2.jpg">posted</a> to the G5 MLP Discord server, where people begin to dig deep into who Guillaume Troton actually <em>is</em>. Equestria Daily, noticing the growing suspicion around the community, tweets at around 8:30pm CEST that <a href="https://x.com/EquestriaDaily/status/1795887347067764859">they're looking into it</a>. By 9pm, sentiment has generally <a href="https://x.com/_Maka_11/status/1795897439741948377">solidified</a> that Guillaume is just a random fan and not affiliated with Hasbro in any way. By 10pm, Equestria Daily posts a <a href="https://www.equestriadaily.com/2024/05/the-ai-voiceover-drama-continues-french.html">third time</a> about the situation, recognizing that Troton may not be a reliable source. G5MLP on Tumblr intervenes a little earlier, posting its recognition <a href="https://www.tumblr.com/g5mlp/751841151604097024/important-information-about-tyt-ai-news?source=share">about twenty minutes earlier</a>.</p>
+<p>At about 1:30am (May 30), Troton posts a strange Instagram theory seemingly claiming credit for 'blowing the whistle' on Hasbro's misdeeds:</p>
+<p><img alt="Image" src="/images/instagram.jpg" /></p>
+<details class="abstract">
+<summary>Transcription (click to expand)</summary>
+<ul>
+<li>IMPORTANT MESSAGE FOR MY FOLLOWERS / Following the leak of certain revelations on the application of AI which is already well advanced in the audiovisual field, and that this angers certain large American producers, know that I do not plan to stop everything. Although some projects end up completely blocked, I would go all the way for the comic strip. This is the perfect opportunity to demonstrate that all artists are valuable. That it is thanks to them that we obtain an immersive quality of adventrue. SAGAFTRA protects American artists, but who protects European artists? / Well it's you! It is you, the fans, who have the power to protect your favorite artists! Don't hesitate to sign petitions against AI. / #TouchePasMaVF</li>
+<li>As the fight against AI is launched, we might as well follow through with the revelations. / Last year I announced that if we did not react, everyone would end up losing their jobs and that the first to be impacted would be people who work in cinema and audiovisual. / Some had difficulty believing me, others were more rude. / Then I shared videos on the rapid evolution of AI. I was then told: "given the quality, we have nothing to worry about". (I would like to point out that it was a first video made with animated images of the same person generated by AI but I was still not taken seriously)</li>
+<li>Then I tried to warn the musicians about the angerousness of AI. I shared more videos, including one in particular with a robot that replaces a DJ. / But as always, above all, I made a lot of artists laugh. Except now... these people realized that I was serious. (at the same time, it's always like this when taking it seriously comes too late) / By reading hurtful messages, I let things happen. I focused on our future generation of European artists who are in the middle of their studies knowing that the elders absolutely did not react to the beginnings of AI technology which shattered their dream. I encourage them, I motivate them, I share advice with them, and I even call on them for payment on projects.</li>
+<li>The rest of the time I encourage creative people, I share their works with you in order to make you forget this AI, that these people have worked hard to offer you a quality work. / And there, big surprise, today, thanks to a leak on one of my revelations, things are finally starting to move in the fight against AI. / As now I am sure that people will take me seriously, I will reveal to you the next sector which is being studied very seriously for AI / The horse riding world. (if you don't believe me, it doesn't matter. I'm already taking action for my future.) / Of course I am sharing with you the video of the first AI horse that reacts to sound and vision.</li>
+<li>(Still frame of AI horse -- similar video <a href="https://www.youtube.com/watch?v=IZj80TpOYVw">here</a>)</li>
+</ul>
+</details>
+<p>By this point, it was too late for Troton: He had already been denounced as a fraud and became a meme within the G5 community.</p>
+<h2 id="hasbro-steps-in">Hasbro Steps In</h2>
+<p>A day later (May 31), with Troton memes abound, Hasbro <a href="https://x.com/Hasbro/status/1796597346429747272">clarifies</a> at about 7:30pm CEST that it didn't use AI during its productions. Initially "hitting Reply too soon" (or maybe just confusing Make Your Mark and Tell Your Tale...), Hasbro only said this was the case for Make Your Mark, leading to speculation across the next two hours (with some fearing a "lie of omission"). Ultimately, Hasbro corrected itself <a href="https://x.com/Hasbro/status/1796628592635613557">two hours later</a>, clarifying that it meant that AI was not used for Make Your Mark, nor Tell Your Tale.</p>
+<p>With that, the tale was told: AI was not used in the development of Tell Your Tale, and Troton was a fraud.</p>
+<h2 id="so-what-actually-happened">So... what actually happened?</h2>
+<p>The initial theory actually ended up being largely correct. That is:</p>
+<ul>
+<li>Guillaume believed that TYT Season 2 was made by AI, most likely due to the January Le Poney Blanc posts, January Equestria Daily post, or both</li>
+<li>Matthieu notices Guillaume following him on Instagram and sends a message, believing him to be an employee of Hasbro</li>
+<li>Guillaume presents himself as an employee of Hasbro and feeds false information to Matthieu</li>
+<li>Matthieu spreads this information to Nathalie, who talks about it on the RTBF broadcast regarding BELVA, and presents it himself during BELVA's meeting</li>
+</ul>
+<p>Once the seeds were planted:</p>
+<ul>
+<li>French fans took the two sources, likely assuming the information was separately acquired, and considered this to be confirmation that Tell Your Tale switched to AI voicing</li>
+<li>Equestria Daily eventually reports on the French news, spreading the news throughout the fandom</li>
+<li>English/French speakers, learning of the situation via EqD and noticing what was said in the French video and audio, translate the texts for the English audience</li>
+<li>The supposed news about Make Your Mark Season 2 being cancelled due to AI is specifically highlighted, particularly on Twitter, and propagates throughout the fandom via numerous social medias</li>
+<li>While the news is spreading, people begin to look into who "Guillaume" is, eventually figuring out that it is Guillaume Troton</li>
+<li>Troton's credibility is gradually undermined, but not before a post about the purported cancellation is posted on EqD</li>
+<li>Within hours, the post is unconfirmed and the information labelled unreliable throughout the fandom</li>
+</ul>
+<h2 id="why-did-this-happen">Why did this happen?</h2>
+<p>Many things went wrong with this propagation of information. Obviously, it would have been ideal if the news had been scrutinized, Troton's identity found out, and the information being marked reliable <em>before</em> it had a chance to spread. So, why did it spread, and why wasn't it scrutinized earlier? Here are some of the potential (but certainly not an exhaustive list of) reasons.</p>
+<h3 id="the-language-barrier">The Language Barrier</h3>
+<p>The biggest obstacle is, of course, the English/French language barrier. In order for French news to make its way to the English community, someone who understands both French and English must translate and contextualize the information. While manual translation is largely unnecessary these days for <em>texts</em> due to the advent of tools like Google Translate and DeepL, technology is still such that translation of <em>audio</em> and <em>video</em> are not instantaneous (save for some platforms like YouTube, where automatic captions can be translated to another language). The two platforms where the information was initially communicated -- Twitter and RTBF -- do not currently include automatic captioning, nor audio translation. While live caption tools now <a href="https://support.microsoft.com/en-us/windows/use-live-captions-to-better-understand-audio-b52da59c-14b8-4031-aeeb-f6a47e6055df">exist</a>, they are not perfect and require some knowledge of the language to correct errors and mishaps, and often do not offer automatic translation either.</p>
+<p>With these factors in mind, the information presented required translation that itself required a reasonable amount of effort (to transcribe the content <em>and</em> then to translate it), making it inaccessible to most non-French language speakers -- not to mention that RTBF required creating an account to get access to the audio contained within. This means that available English information spread much slower, relying on translators who had the time to translate what was being said.</p>
+<h3 id="priming">Priming</h3>
+<p>There's a psychological concept called <a href="https://en.wikipedia.org/wiki/Priming_(psychology)">priming</a> where hearing about something effectively 'prepares' you for that thing, influencing how you respond. In effect, foreign language speakers had been 'primed' into believing that AI voices were used for Tell Your Tale all the way back in <em>January</em>, given the rumours that propagated at the time. While no confirmation had existed at that point, the suspicion made it much, much easier for users to 'buy' the idea that AI was used in Tell Your Tale. Once the seed is planted, <a href="https://en.wikipedia.org/wiki/Confirmation_bias">confirmation bias</a> allows you to point out things that sound like AI and then ignore the parts that cannot conceivably be AI.</p>
+<h3 id="two-sources-but-not-really">Two sources, but not really</h3>
+<p>At first glance, there were two "reliable sources": Nathalie Stif, citing MLP as an example of AI use on RTBF, and Matthieu Meunier, reading out his e-mail to Guillaume Troton. While these do initially seem like two different sources -- Stif being a voice director, and Meunier being a voice actor -- the fact that both are doubly affiliated with each other (both being employees under Iyuno / SDI Media Belgium, and both being members of BELVA) means that it is likely that they were working with the same information. Therefore, while the two pieces of information were presented on different mediums and contexts, it is likely that both were ultimately pieces of information from Troton (with Matthieu having shared the e-mail with Nathalie at some earlier point in time prior to BELVA's meeting).</p>
+<h3 id="intellectual-failure">Intellectual failure</h3>
+<p>Finally, there was a failure on the parts of many -- translators, journalists, and content consumers alike -- to, to put it bluntly, ensure that the information presented truly passed the 'smell test'. Reasonable questions could have been asked much earlier, such as:</p>
+<ul>
+<li>Who is Guillaume?</li>
+<li>What is Guillaume's position within Hasbro? Why is Guillaume in a position to know supposed information about MYM's cancellation and the use of AI voices?</li>
+<li>What is the full context / full version of the <a href="https://x.com/Kuro0994568731/status/1795210683186864461">BELVA clip posted to Twitter</a> (after all, it was pulled from <em>somewhere</em>)?</li>
+<li>If Matthieu and Nathalie are both from BELVA or Iyuno/SDI Media Belgium, then is it not conceivable that they are actually parroting the same source of information?</li>
+<li>Why would Cort Lane have enough power to can Make Your Mark? If Hasbro wanted AI Make Your Mark Season 2, wouldn't they just make it, with or without Cort Lane?</li>
+</ul>
+<p>Any of these questions should have invited skepticism from the information presented. And indeed, many people were rightfully skeptical. Others -- myself included -- got caught up in the drama and didn't necessarily critically think through the entirety of the logic of events before it spread. As a translator, I can play the card of "I'm just presenting the information to make it accessible", but that does not mean that the message should have gone through absolutely zero intellectual scrutiny. While the identity of Guillaume was figured out <em>relatively</em> quickly, asking <em>any</em> of these questions before publication could have stopped the <a href="https://www.youtube.com/watch?v=ceKMnyMYIMo">toxic gossip train</a> before it reached manipulation station. Indeed, when the <a href="https://www.youtube.com/watch?v=kshGSq-5mY8">full BELVA clip is analyzed</a>, the identity of Guillaume is made immediately clear (around 1:24:20):</p>
+<div class="tabbed-set tabbed-alternate" data-tabs="3:2"><input checked="checked" id="__tabbed_3_1" name="__tabbed_3" type="radio" /><input id="__tabbed_3_2" name="__tabbed_3" type="radio" /><div class="tabbed-labels"><label for="__tabbed_3_1">English translation</label><label for="__tabbed_3_2">Transcription française</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<p><strong>Female speaker:</strong> So, back to the My Little Pony case study - do you have any information? Mathieu, I'm speaking to you [calling you to the stand] because <strong>a few months ago</strong> you shared some information that really caught my attention. <strong>A gentleman from Hasbro</strong> got in touch with you via a [social] network -- I can't remember which one it is, if it's TikTok or Insta -- and he provided you with some extremely interesting information.<p>
+<strong>Matthieu:</strong> Yeah, it was on Instagram.<p>
+<strong>Female speaker:</strong> I'd like to know if you [had any more details about this?]<p>
+<strong>Matthieu:</strong> Yeah, well, if you want; I can even read you his answer, so [that] I won't say anything stupid. Actually, he didn't contact me, <em>I</em> contacted <em>him</em> because I was [reading/browsing] my Instagram feed and <strong>I saw this guy posting My Little Pony stuff and I was wondering who he was</strong>.<p>
+<strong>Female speaker:</strong> Yep [go on...]<p>
+<strong>Matthieu:</strong> So I stupidly asked him, “Who are you?” and he explained that <strong>he worked for Hasbro</strong>, but I don't know what... ah, <strong>it's Guillaume Troton</strong>. So, er...<p>
+[Matthieu begins reading e-mail] Hi Guillaume, [etc.]</p>
+</div>
+<div class="tabbed-block">
+<p><strong>Personne non-identifiée:</strong> Je reprends le cas d'école de My Little Pony -- est-ce que vous avez des informations ? Matthieu, je m'adresse à toi parce qu'<strong>il y a quelques mois</strong> tu as partagé une information qui a quand même vraiment attiré mon attention. <strong>Un monsieur de chez Hasbro</strong> a pris contact avec toi via un réseau -- je sais plus lequel c'est, si c'est TikTok ou Insta -- et il t'a fourni quand même quelques informations qui sont extrêmmement intéressantes.<p>
+<strong>Matthieu:</strong> Ouais, c'était sur Instagram.<p>
+<strong>Personne non-identifiée:</strong> J'aimerais savoir si tu en sais plus ?<p>
+<strong>Matthieu:</strong> Oui, bah, si tu veux; je peux même vous lire sa réponse, comme çca je dirais pas de bêtises. En fait, c'est il m'a pas contacté, c'est <em>moi</em> qui l'ai contacté parce que j'´etais dans mon feed d'Instagram et <strong>je voyais que ce gars postait des trucs de Mon Petit Poney et je me demandais qui c'était.</strong><p>
+<strong>Personne non-identifiée:</strong> Ouais.<p>
+<strong>Matthieu:</strong> Du coup je lui ai bêtement demandé, mais enfin, en gros, "tu es qui ?", et du coup il m'a expliqué qu'<strong>il travaillait pour Hasbro</strong>, mais je sais plus quel... voilà, <strong>c'est Guillaume Troton</strong>. Alors...<p>
+[Matthieu lit le mail] Salut Guillaume, [etc] </p>
+</div>
+</div>
+</div>
+<hr />
+<p>It is this piece of information that shows that some basic journalistic research -- whether on the part of translators, journalists, or <em>anyone</em> spreading information -- can go a long way in stopping the spread of misinformation. True, things were <em>eventually</em> figured out, even before Hasbro needed to step in, but the damage has already been done. Many people have not seen the updated information and thus believe the initial, incorrect information to be true. Other communities or movements -- such as #TouchePasMaVF, or some parts of the Francoponies communities, continue to believe what were ultimately Troton's words. Some within the overall fandom have been hurt emotionally over the information presented by the "revelation". One could argue that such cases are due to "weak skin" or whatever, but either way, it shows that journalistic failings can have real consequences.</p>
+<p>Troton should certainly feel some shame for creating the conspiracy in the first place, but uncritically spreading the information -- something most people contributed to -- is what allowed it to propagate.</p>
+<h2 id="a-development-ignored">A Development Ignored</h2>
+<p>The AI discussion also obscured an important development that <em>did</em> actually happen: the replacement, or even potential outsourcing, of voice studios. Hasbro had stuck with Iyuno / SDI Media for the majority of its dubs for a long period of time, with Iyuno / SDI Media handling dubs for its 15+ languages throughout all of Friendship is Magic, Equestria Girls, and the first half of G5 with A New Generation, Make Your Mark, and Tell Your Tale Season 1. The sudden switching of voice studios to ones that are, as echoed by several foreign language speakers of the fandom, generally lower quality to the point that they can be construed as AI, is a crucial event that represents a pivot in the way that Hasbro is handling its foreign-language dubs.</p>
+<p>We don't know the specifics. Maybe Hasbro and Iyuno / SDI Media had a contract that happened to run out. Maybe it didn't make sense to keep using SDI Media for the translation sof one five-minute YouTube series aimed entirely at kids. Whatever happened, many long-standing voice actors - who probably don't make much money to begin with -- lost a client, and potentially stable source of income, and must find other work. And while yes, this means that it allows for new voice actors to get their foot in the door, the general 'lower quality' indicates that it is more likely is a cost-cutting measure of some sort that means that the new voice actors are not being financially supported very much either.</p>
+<h2 id="lingering-effects">Lingering Effects</h2>
+<p>The effects from our little dance with misinformation has crossed the bounds of the My Little Pony community -- some within our grasp, and some not. Whatever the case, it's likely that whatever information was spread during this time will later be cited by future people who lack the full history or context of what happened.</p>
+<ul>
+<li>The Transformers forum <a href="https://www.tfw2005.com/boards/threads/hasbro-replacing-voice-actors-with-ai.1263457/">Transformers World 2005</a> started a discussion thread about this topic, going on for roughly five pages before news of the debunking spread.</li>
+<li>Le Poney Blanc, one of the French pony sites, has yet to post about this development.</li>
+<li>MLP France, similarly, still posts an "AI warning" on its site, citing the two discredited pieces of information.</li>
+<li><a href="https://www.allocine.fr/article/fichearticle_gen_carticle=1000083727.html">AlloCiné</a>, a French equivalent to IMDb, has posted the claims, citing Le Poney Blanc, Nathalie Stif, and Matthieu Meunier.</li>
+<li>A viral post within the #TouchePasMaVF campaign <a href="https://x.com/LilianAzemonPro/status/1795490231497683213">continues to cite</a> Tell Your Tale as an example of AI being used. <a href="/images/birdwatch.jpg">Duelling community notes</a> aim to correct the record in opposing directions.</li>
+</ul>
+<p>As should be obvious, the spread of this information to the edges of mainstream media show just how quickly misinformation can spread, even from just one person.</p>
+<h2 id="conclusion">Conclusion</h2>
+<p>Misinformation can spread quickly. What has happened over the past few days is a prime example of this. A poor combination of poor dubbing, priming, and intellectual failure led to the propagation of what was ultimately hearsay told to two different sources. A language barrier impeded the flow of information, with reliance on translators to get information flowing.</p>
+<p>Despite these failings, it's not necessarily the fault of the fandom. We (who spread the information at least) were all responsible for unknowingly spreading misinformation, but it was still <em>logical</em> for people to <em>not</em> be skeptical. Enough pieces fit such that reasonable people, even in doing a <em>little</em> research, could be reasonably confident of the information that they had received.</p>
+<p>No one is better or superior, worse or dumber for falling or not falling for misinformation. Such an attitude of superiority or disparagement only aims to divide and is not conducive to a healthy environment. The first instinct when something happens is to share it, as people are social creatures. What matters is the lessons that can be learned, which can be summarized quite succinctly: Take a break, and think things through. A little reflection can go a long way.</p>
+<h2 id="appendix-tell-your-timeline">Appendix: Tell Your Timeline</h2>
+<p>Below is a timeline in chronlogical order of the events that occurred, to the best of my knowledge. All hours (particularly in May) are based on <strong>Central European Summer Time</strong> (GMT+2).</p>
+<ul>
+<li>Between May and July 2023: BELVA, as part of United Voice Artists, is founded as a union representing Belgian voice actors, with the stated goal of protecting them from being replaed by AI.</li>
+<li>"A few months ago" before May 27: Matthieu Meunier notices Guillaume Troton on his Instagram feed and <a href="https://www.youtube.com/watch?v=kshGSq-5mY8">reaches out</a>. The two exchange e-mails, where Troton makes wild speculations about the use of AI and the cancellation of Make Your Mark under the guise of a Hasbro employee.</li>
+<li>January 10: The #TouchePasMaVF campaign <a href="https://www.change.org/p/pour-un-doublage-cr%C3%A9%C3%A9-par-des-humains-pour-des-humains-touchepasmavf-beab56eb-a759-4117-b77c-7d03bcaa35f8">begins</a>, with similar stated goals to BELVA. While the beginning of the campaign almost coincides with the release of Season 2 of Tell Your Tale, it's probably just a coincidence.</li>
+<li>January 11: Tell Your Tale Season 2 release date. Equestria Daily reports the <a href="https://www.equestriadaily.com/2024/01/did-hasbro-replace-voice-actors-with-ai.html">change in voice actors</a>, questioning whether they had been replaced with AI. The title is changed to a less clickbaity one, but the priming is already done.</li>
+<li>January 13: G5MLP on Tumblr <a href="https://www.tumblr.com/g5mlp/739374825061089280/some-unfortunate-news-about-the-dubbed-versions-of">posts</a> roughly the same information as Equestria Daily, translating the individual messages posted by each LATAM Spanish voice actor.</li>
+<li>January 14: Le Poney Blanc <a href="https://leponeyblanc.fr/news/2715/discussion-dbat-74-le-doublage-franais-du-dbut-de-la-saison-2/">posts</a> an article about the new French dub. Verdict: It sucks. Everyone agrees. AI is just a theory.</li>
+<li>January 18: G5MLP <a href="https://www.tumblr.com/g5mlp/739887005662658560/by-any-chance-would-you-be-able-to-link-me-the?a">answers</a> a question about AI use in Tell Your Tale, saying it's probably not happening. Links all MLP YouTube channels and Tell Your Tale dubs for posterity.</li>
+<li>January 20: Le Poney Blanc <a href="https://leponeyblanc.fr/news/2721/discussion-24-parlons-un-peu-de/">posts</a> a follow-up article, mainly criticizing the switching of voice actors <em>at all</em>, irrespective of AI use or not. AI use is entertained, but not talked about concretely.</li>
+<li>May 21: The #TouchePasMaVF campaign <a href="https://twitter.com/LecordierB/status/1792973986130772337">releases</a> a new video featuring many prominent French dub artists, not including anything from My Little Pony. As a result, the #TouchePasMaVF <a href="https://www.change.org/p/pour-un-doublage-cr%C3%A9%C3%A9-par-des-humains-pour-des-humains-touchepasmavf-beab56eb-a759-4117-b77c-7d03bcaa35f8">petition</a> gains a remarkable amount of signatures.</li>
+<li>May 27, 6am: Nathalie Stas's <a href="https://auvio.rtbf.be/media/les-sequences-de-matin-premiere-l-invite-dans-l-actu-3198709">interview</a> is posted on RTBF, Belgium's public radio broadcaster. It is the first source of "reliable" information claiming that Tell Your Tale Season 2 is voiced by AI.</li>
+<li>May 27, 1pm: MLP France <a href="https://x.com/MLPfrance/status/1795052044354544010">tweets</a> that 'rumours' exist regarding the use of AI, likely based on the information from Nathalie Stas.</li>
+<li>May 27, 6pm: Le Poney Blanc <a href="https://leponeyblanc.fr/news/2905/news-la-saison-2-de-tell-your-tale-est-bien-double-par-ia/">posts</a> an article 'confirming' the use of AI in the French dub of Tell Your Tale Season 2, citing Nathalie Stas.</li>
+<li>May 27, 7pm: BELVA's "kick-off" meeting begins and is <a href="https://www.youtube.com/watch?v=kshGSq-5mY8">live-streamed</a> on YouTube.</li>
+<li>May 27, 9pm: BELVA's meeting ends.</li>
+<li>May 27, 11:45pm: Kuro0994568731 <a href="https://x.com/Kuro0994568731/status/1795210683186864461">replies</a> to MLP France's earlier tweet with a clip of Matthieu Meunier reading out his exchange with Guillaume Troton during the BELVA meeting.</li>
+<li>May 28, 6pm: A separate <a href="https://x.com/LilianAzemonPro/status/1795490231497683213">tweet</a> under the #TouchePasMaVF campaign makes the AI claims, slowly gaining traction.</li>
+<li>May 28, 8pm: Equestria Daily <a href="https://www.equestriadaily.com/2024/05/french-voice-actor-for-hitch-claims.html">reports on</a> the French news, citing Nathalie Stas's radio interview and Matthieu Meunier's e-mail. While the wording on EqD is a bit more moderated, the wording on Twitter is a bit more <a href="/images/twitter_eqd.jpg">validating</a> of the rumour.</li>
+<li>May 28, 11pm: The news from Equestria Daily makes its way to Manechat, where I (lily) learn about it.</li>
+<li>May 28, 11:30pm: I transcribe Matthieu Meunier's e-mail reading and part of the Nathalie Stas radio interview, and post it as a comment on the aforementioned EqD post.</li>
+<li>May 29, 1:30am: Another French speaker, Jyc, posts a similar translation of the e-mail reading.</li>
+<li>May 29, 3:30am: TobbyMLP <a href="https://x.com/TobbyMLP/status/1795626982245601542">tweets</a> the two translations of Matthieu Meunier's e-mail, highlighting the supposed cancellation of Make Your Mark Season 2. Overnight, it goes viral, spreading within and even outside of the MLP fandom throughout the early morning and afternoon.</li>
+<li>May 29, 4pm: Raven (Purple Smart) pings me on YayPonies, realizing I was the commenter on EqD. He raises the question of who Guillaume is.</li>
+<li>May 29, 5:30pm: Mdash looks up people named Guillaume following Matthieu Meunier and finds Guillaume Troton. Raven and I are immediately somewhat suspicious, given how the account appears to be a fan account.</li>
+<li>May 29, 6pm: The first preliminary theory goes out of Troton spreading the information to both Matthieu <em>and</em> Nathalie, given both are affiliated with BELVA. It doesn't make its way out of YayPonies until after the Equestria Daily post about the cancellation rumour is made.</li>
+<li>May 29, 6:45pm: Equestria Daily <a href="https://www.equestriadaily.com/2024/05/full-translations-reveal-make-your-mark.html">posts</a> about the translations, highlighting the Make Your Mark cancellation rumour.</li>
+<li>May 29, 8pm: Raven comments on the above post that the mystery Guillaume is most likely Guillaume Troton. All agree that the Instagram account just looks like a random fan account, while others are skeptical that this is the correct Guillaume, since if it is then that questions the credibility of the information in general.</li>
+<li>May 29, 8:10pm: Someone on the G5 Discord server <a href="/images/g5mlp_2.jpg">brings up</a> Raven's EqD comment, sparking speculation and sleuthing on the server on Guillaume Troton's ties (or lack thereof) to Hasbro.</li>
+<li>May 29, 8:30pm: Equestria Daily <a href="https://x.com/EquestriaDaily/status/1795887347067764859">tweets</a> that they're aware of the suspicion and are looking for more information.</li>
+<li>May 29, 9pm: Some users on Twitter begin to <a href="https://x.com/_Maka_11/status/1795897439741948377">solidify</a> their suspicion.</li>
+<li>May 29, 9:40pm: G5MLP <a href="https://www.tumblr.com/g5mlp/751841151604097024/important-information-about-tyt-ai-news">posts</a> on Tumblr that the misinformation is likely debunked.</li>
+<li>May 29, 9:50pm: Makaryo <a href="https://x.com/_Maka_11/status/1795906055593185359">tweets</a> that one of their works was reposted by Guillaume Troton as a nonsensical "behind the scenes", providing further damning evidence for Troton's lies.</li>
+<li>May 29, 10pm: Equestria Daily <a href="https://www.equestriadaily.com/2024/05/the-ai-voiceover-drama-continues-french.html">posts</a> its own likely confirmation of the debunking.</li>
+<li>May 30, 1:30am: Troton <a href="/images/instagram.jpg">posts</a> a strange Instagram theory seemingly claiming credit as a whistleblower and then... something about AI robotic horses.</li>
+<li>May 31, 7:30pm: Hasbro <a href="https://x.com/Hasbro/status/1796597346429747272">clarifies</a> on Twitter that Make Your Mark was not made with any AI tools.</li>
+<li>May 31, 8:15pm: Equestria Daily <a href="https://www.equestriadaily.com/2024/05/hasbro-confirms-stance-on-not-using-ai.html">reports</a> on the above tweet.</li>
+<li>May 31, 9:30pm: Hasbro <a href="https://x.com/Hasbro/status/1796628592635613557">re-clarifies</a> on Twitter that Make Your Mark AND Tell Your Tale were not made with any AI tools.</li>
+<li>May 31, 9:50pm: Equestria Daily <a href="https://www.equestriadaily.com/2024/05/no-ai-for-tell-your-tale-or-make-your.html">reports</a> on the above tweet.</li>
+</ul>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  Back to top
+</button>
+        
+      </main>
+      
+        
+<footer class="md-footer">
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-footer-copyright">
+        
+        Made with
+        <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+          Material for MkDocs
+        </a>
+        
+      </div>
+      
+<div class="md-social">
+  
+</div>
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "../..", "features": ["navigation.top", "navigation.tabs", "content.footnote.tooltips"], "search": "../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.79ae519e.min.js"></script>
+      
+    
+  </body>
+</html>

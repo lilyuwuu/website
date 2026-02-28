@@ -1,0 +1,3280 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="Various resources and guides for somewhat niche subjects.">
+      
+      
+      
+      
+        <link rel="prev" href="../part04/">
+      
+      
+        <link rel="next" href="../part06/">
+      
+      
+        
+      
+      
+      <link rel="icon" href="../../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.3">
+    
+    
+      
+        <title>Part 5: Finetuning - uwuu.ca</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../../assets/stylesheets/main.484c7ddc.min.css">
+      
+        
+        <link rel="stylesheet" href="../../../assets/stylesheets/palette.ab4e12ef.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("../../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="deep-purple" data-md-color-accent="indigo">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#part-5-finetuning" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../../.." title="uwuu.ca" class="md-header__button md-logo" aria-label="uwuu.ca" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            uwuu.ca
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Part 5: Finetuning
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: light)" data-md-color-scheme="default" data-md-color-primary="deep-purple" data-md-color-accent="indigo"  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M17 6H7c-3.31 0-6 2.69-6 6s2.69 6 6 6h10c3.31 0 6-2.69 6-6s-2.69-6-6-6m0 10H7c-2.21 0-4-1.79-4-4s1.79-4 4-4h10c2.21 0 4 1.79 4 4s-1.79 4-4 4M7 9c-1.66 0-3 1.34-3 3s1.34 3 3 3 3-1.34 3-3-1.34-3-3-3"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: dark)" data-md-color-scheme="slate" data-md-color-primary="pink" data-md-color-accent="indigo"  aria-label="Switch to light mode"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Switch to light mode" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M17 7H7a5 5 0 0 0-5 5 5 5 0 0 0 5 5h10a5 5 0 0 0 5-5 5 5 0 0 0-5-5m0 8a3 3 0 0 1-3-3 3 3 0 0 1 3-3 3 3 0 0 1 3 3 3 3 0 0 1-3 3"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+            
+<nav class="md-tabs" aria-label="Tabs" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../.." class="md-tabs__link">
+        
+  
+  
+    
+  
+  Homepage
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../../articles/my-little-pony-ai-postmortem/" class="md-tabs__link">
+          
+  
+  
+  Articles
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+    
+  
+  
+    
+    
+      <li class="md-tabs__item md-tabs__item--active">
+        <a href="../../3ds2patch/" class="md-tabs__link">
+          
+  
+  
+  Guides
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../../info/3ds3songID/" class="md-tabs__link">
+          
+  
+  
+  Info
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../../kobo/" class="md-tabs__link">
+          
+  
+  
+  Kobo
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../../projects/taikomlpmod/" class="md-tabs__link">
+          
+  
+  
+  Projects
+
+        </a>
+      </li>
+    
+  
+
+      
+    </ul>
+  </div>
+</nav>
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../../.." title="uwuu.ca" class="md-nav__button md-logo" aria-label="uwuu.ca" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    uwuu.ca
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../.." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Homepage
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Articles
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Articles
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../articles/my-little-pony-ai-postmortem/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    My Little Pony, Tell Your Tale, and AI: A Postmortem
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+      
+        
+        
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Guides
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Guides
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../3ds2patch/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Taiko 3DS2 English Patch
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../3ds3mod/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Taiko 3DS3 Custom Songs
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../daigassobbp/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Daigasso BBP Custom Songs
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_4" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_3_4" id="__nav_3_4_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Karaoke
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_4_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_3_4">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Karaoke
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    UltraStar Karaoke Charting / Song Creation Tutorial
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../part01/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Part 1: Audio
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../part02/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Part 2: Lyrics
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../part03/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Part 3: BPM
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../part04/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Part 4: Tapping
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Part 5: Finetuning
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Part 5: Finetuning
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#overview" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Overview
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#configuring-yass" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Configuring Yass
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Configuring Yass">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#preferences" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Preferences
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#main-controls" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Main Controls
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Main Controls">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#moving-note-positions" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Moving note positions
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#pitching-notes" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Pitching notes
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#selecting-multiple-notes" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Selecting multiple notes
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#splitting-notes" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Splitting notes
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#deleting-notes" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Deleting notes
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#note-attributes" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Note attributes
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#adjusting-gap" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Adjusting GAP
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#playing-the-current-note" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Playing the current note
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#other-useful-shortcuts" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Other useful shortcuts
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#refining-the-gap" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Refining the GAP
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#fine-tuning-note-lengths" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Fine-tuning note lengths
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#refining-note-positions" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Refining note positions
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#positioning-notes-manually" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Positioning notes manually
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#deciding-on-note-types" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Deciding on note types
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Deciding on note types">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#normal-notes" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Normal notes
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#rap-notes" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Rap notes
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#freestyle-notes" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Freestyle notes
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#line-breaks" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Line breaks
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#takeaways-next-steps" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Takeaways / Next steps
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../part06/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Part 6: Pitching
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../part07/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Part 7: Golden Notes
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../part08/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Part 8: Testing
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../part09/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Part 9: Submission
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../prefaceA/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Preface A: What is Competitive Karaoke?
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../prefaceB/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Preface B: The UltraStar Format and Editors
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Info
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Info
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../info/3ds3songID/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Taiko 3DS3 Song ID Order
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../info/3dsmusicgames/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    3DS Music Games
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" >
+        
+          
+          <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Kobo
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Kobo
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../kobo/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    uwuu.ca/kobo/
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../kobo/faq/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Frequently Asked Questions
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../kobo/get-started/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Get Started
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../kobo/troubleshooting/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Troubleshooting
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5_5" >
+        
+          
+          <label class="md-nav__link" for="__nav_5_5" id="__nav_5_5_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Guide
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_5_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5_5">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Guide
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../kobo/guide/custom-software/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Custom Kobo Software
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../kobo/guide/kobopatch/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Nickel Modifications with KoboPatch
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../kobo/guide/nickel-options/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Nickel's Hidden Features
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5_6" >
+        
+          
+          <label class="md-nav__link" for="__nav_5_6" id="__nav_5_6_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Info
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_5_6_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5_6">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Info
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../kobo/info/dark-mode/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Dark Mode on Kobo
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../kobo/info/developer/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Developer Stuff
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../kobo/info/epub-to-kepub/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Converting EPUBs to KEPUBs
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../kobo/info/expandable-memory/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Expanding Kobo Storage
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../kobo/info/kobo-unbrick/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Unbricking a Kobo
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5_6_6" >
+        
+          
+          <label class="md-nav__link" for="__nav_5_6_6" id="__nav_5_6_6_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Legacy
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_5_6_6_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5_6_6">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Legacy
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../kobo/info/legacy/kobo-start-menu/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Kobo Start Menu
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5_6_7" >
+        
+          
+          <label class="md-nav__link" for="__nav_5_6_7" id="__nav_5_6_7_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Readers
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_5_6_7_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5_6_7">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Readers
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../kobo/info/readers/inkbox/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    InkBox
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../kobo/info/readers/koreader/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    KOReader
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../kobo/info/readers/overview/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Overview
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../kobo/info/readers/plato/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Plato
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../kobo/info/readers/ultimate-manga-reader/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Ultimate Manga Reader
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../kobo/info/readers/vlasovsoft/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Vlasovsoft
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5_6_8" >
+        
+          
+          <label class="md-nav__link" for="__nav_5_6_8" id="__nav_5_6_8_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Software
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_5_6_8_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5_6_8">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Software
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../kobo/info/software/autoshelf/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    AutoShelf
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../kobo/info/software/kfmon/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Kute File Monitor
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../kobo/info/software/kobo-uncaged/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Kobo-UNCaGED
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../kobo/info/software/kobocloud/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    KoboCloud
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../kobo/info/software/nanoclock/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    NanoClock
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../kobo/info/software/nickelmenu/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    NickelMenu
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../kobo/info/software/nickelseries/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    NickelSeries
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../kobo/info/software/wallabako/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Wallabako
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6" >
+        
+          
+          <label class="md-nav__link" for="__nav_6" id="__nav_6_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Projects
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_6_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_6">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Projects
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../projects/taikomlpmod/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Taiko MLP Mod
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#overview" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Overview
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#configuring-yass" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Configuring Yass
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Configuring Yass">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#preferences" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Preferences
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#main-controls" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Main Controls
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Main Controls">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#moving-note-positions" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Moving note positions
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#pitching-notes" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Pitching notes
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#selecting-multiple-notes" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Selecting multiple notes
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#splitting-notes" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Splitting notes
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#deleting-notes" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Deleting notes
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#note-attributes" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Note attributes
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#adjusting-gap" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Adjusting GAP
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#playing-the-current-note" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Playing the current note
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#other-useful-shortcuts" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Other useful shortcuts
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#refining-the-gap" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Refining the GAP
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#fine-tuning-note-lengths" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Fine-tuning note lengths
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#refining-note-positions" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Refining note positions
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#positioning-notes-manually" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Positioning notes manually
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#deciding-on-note-types" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Deciding on note types
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Deciding on note types">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#normal-notes" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Normal notes
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#rap-notes" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Rap notes
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#freestyle-notes" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Freestyle notes
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#line-breaks" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Line breaks
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#takeaways-next-steps" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Takeaways / Next steps
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+<h1 id="part-5-finetuning">Part 5: Finetuning</h1>
+<div class="admonition abstract">
+<p class="admonition-title">TL;DR</p>
+<p>Fine-tuning is the most time-consuming part, but is also the most crucial. The general sequence of steps is as follows:</p>
+<ol>
+<li><strong>Refine the GAP</strong>. Use the 9 and 0 keys to adjust the GAP by 10ms at a time until the first line sounds perfect. Time and check a line in the middle to verify.<ul>
+<li>This is <strong>the most important step</strong>, as an incorrect GAP will have cascading effects throughout the rest of the song.</li>
+</ul>
+</li>
+<li><strong>Start timing notes</strong>: You can use the <strong>Ctrl + G</strong> shortcut to automatically move all notes to the nearest strong gray line, if they aren't already there.<ul>
+<li>You can use the waveform feature to get a visual aid on where notes should go. Generally speaking, peaks in the waveform indicate the beginning of a new note.</li>
+<li>For most very rhythmic songs, like this one, the strong gray lines will effectively perfectly time the song, because the vast majority of notes will start on one of them.</li>
+<li>Prioritize note timings -- the start of notes -- before moving onto note lengths. Use SHIFT and the arrow keys to move notes left and right.</li>
+<li>A note should start <strong>just after</strong> you audibly hear the aspiration from the start of the syllable.</li>
+<li>In most circumstances, <strong>no two notes should touch</strong>. Ideally, there is a gap of <strong>at least two units</strong> between each note, as that makes the chart more flexible to the various pieces of hardware that people have without making the game that much easier.</li>
+</ul>
+</li>
+<li><strong>Note lengths</strong>: A note should last until <strong>just before</strong> you hear the unpitched part of a syllable (for example, an "s" sound). If in doubt, you should bias towards ending the note earlier rather than later.<ul>
+<li>Use ALT and the arrow keys to shorten or lengthen a note by one unit, without changing the starting position.</li>
+<li>If, at this point, you've noticed a pitch change in a note that you did not account for in <a href="../part02">Part 2: Lyrics</a>, hit the - (minus) key to split the current note into two, then shorten the first note and move the second note (often a ~) to your desired location.</li>
+</ul>
+</li>
+<li>When you've finished a line, <strong>hit Ctrl + A, then Space</strong> to ensure that all notes in the line are timed correctly.<ul>
+<li>If a note is noticeably off, move it to the <em>right</em> if it is noticeably early, or to the <em>left</em> if it is noticeably late. Examples:<ul>
+<li>You hear the timing click sound <em>before</em> the singer begins vocalizing the note: it is early; move to the right</li>
+<li>You hear the timing click sound <em>after</em> the singer begins vocalizing the note: it is late; move to the left</li>
+</ul>
+</li>
+<li><strong>Line breaks and note timing warnings</strong>: Acknowledge and resolve all of them, even if marked as 'unsafe'. If you have a note that is marked as unsafe <em>and</em> with correct timing, chances are the note is just too long and you should shorten it so that people can more easily react to the next line (as the error says).</li>
+</ul>
+</li>
+<li><strong>Repeat</strong> until you get to the end of the song.<ul>
+<li>If you notice a line that repeats (e.g. a chorus), feel free to copy paste the timing.</li>
+</ul>
+</li>
+<li>Once all notes are correctly timed, you can start pitching.<ul>
+<li>You can also pitch each line after you've finished timing it, which is what I personally do. This may be faster -- especially when copy pasting identical sections that have the same pitches -- but requires you to be able to pitch effectively and reliably. It may be better to wait until you have finished timing everything to start pitching, or to allow someone else to pitch your well-timed chart.</li>
+</ul>
+</li>
+</ol>
+</div>
+<h2 id="overview">Overview</h2>
+<p>Arguably the most time-consuming part of song creation is <strong>finetuning</strong>. This is the process of taking the notes we tapped in <a href="../part04">Part 4</a> and adjusting them so that they're timed better, since human button presses are usually imperfect. For most normal songs, there will be around 300 to 400 different notes to time!</p>
+<p>Fine-tuning is the most important aspect to determine a song's playability. If the notes are not timed correctly, players will have a bad time. Pitches can be fixed; bad charts may have to be remade entirely.</p>
+<p>This finetuning process is normally accomplished with a <strong>song editor</strong>. A more verbose overview of the song editors that exist is available in <a href="../prefaceB">Preface B</a>, but we will be using <strong>Yass Reloaded</strong> in this tutorial for its convenience features.</p>
+<p>If you'd like, you can download the <a href="/resources/karaoke/not-the-same-pre-finetuning.txt">pre-finetuned version of the chart</a> and follow along, or manipulate it on your own. Don't forget the <a href="https://princewhateverer.bandcamp.com/track/not-the-same">audio</a>!</p>
+<h2 id="configuring-yass">Configuring Yass</h2>
+<p>If you've never opened Yass before, you will probably need to configure it. If you would like to reset your configuration, you can delete it from the <code>.yass</code> folder in your home directory (e.g. <code>C:\Users\lily\.yass</code> or <code>~/.yass</code>).</p>
+<p>When you first open Yass, you will be asked to point to where your songs are located:</p>
+<p><img alt="Yass Quick-Start" src="/resources/karaoke/yass-quickstart.png" /></p>
+<p>I obviously cannot tell you where you decided to place your songs, as it depends on where you installed the program. Click "New" and navigate to wherever your UltraStar Deluxe folder is. The rest of the fields should auto-populate, then you should be good to click "OK".</p>
+<p>Then you should see this dialogue box:</p>
+<p><img alt="Yass Spaces" src="/resources/karaoke/yass-spaces.png" /></p>
+<p>What you do here is up to you. Like I said earlier, I personally use Before Spaces as it makes it easier to troubleshoot whenever I need to manually modify the TXT, but some argue that you shouldn't do that anyway. Hitting "OK" will set it to After Spaces, while hitting "Cancel" will set it to Before Spaces.</p>
+<p>The last dialogue box about refreshing is mainly informational, just click OK.</p>
+<p>Finally, you will see Yass's main menu open. It will also probably spend a minute or two creating piano samples; let it do that.</p>
+<p><img alt="Yass Main Menu" src="/resources/karaoke/yass-main.png" /></p>
+<h3 id="preferences">Preferences</h3>
+<p>Before we continue, we should set some preferences. On the top bar, click Extras, then Preferences and you should see the preferences window appear. Here's what I would mainly configure:</p>
+<ul>
+<li>Library &gt; Locations: Set the location of ffmpeg if you haven't already. Aubio is also theoretically useful for help pitching songs, but I've never used it.</li>
+<li>Error Checking &gt; Tags &gt; Compatibility: Up to you<ul>
+<li>If you would like to use Aubio for pitch assistance, you will need to use SHINY (1.1.0) and to have a vocal (a cappella) track</li>
+<li>If you don't care about this, use UNITY (1.0.0)</li>
+<li>The main difference between 1.0.0 and 1.1.0 is that #MP3 is deprecated in 1.1.0, so if a track is made in 1.1.0 then #MP3 may automagically disappear, which will break compatibility with older games that do not recognise the new #AUDIO tag</li>
+</ul>
+</li>
+<li>Error Checking &gt; Page breaks &gt; Spacing: Up to you<ul>
+<li>This is where you can decide whether spaces should be before or after words</li>
+<li>I personally recommend "before"</li>
+<li>UltraStar-Creator will use "after" by default, so if set to before a bunch of errors will show up that can be automatically corrected</li>
+</ul>
+</li>
+<li>Editor &gt; Design: Check "Show beat" and "Show scale"<ul>
+<li>You can enable dark mode if you want</li>
+</ul>
+</li>
+<li>Advanced &gt; Audio/Video &gt; Piano &gt; Volume: Maximum</li>
+<li>Advanced &gt; Audio/Video &gt; Editor &gt; Accuracy: Check "Show waveform"</li>
+</ul>
+<p>Then, to start editing your song, you can either select it from the list and hit <strong>Ctrl + E</strong>, or click File (top bar) -&gt; Edit and navigate to the location of your TXT.</p>
+<p>If you close Yass, then you can quickly get back to the last song you opened by using <strong>Ctrl + R</strong>. (or File -&gt; Resume Editing).</p>
+<h2 id="main-controls">Main Controls</h2>
+<p>Before we start adjusting things, let's get used to the <strong>main controls</strong> of Yass. Yass can generally be navigated by key combinations, and that is what you will probably primarily use. However, there is also usually a button on the GUI that can accomplish what you want.</p>
+<div class="admonition example">
+<p class="admonition-title">Yass Editing Menu</p>
+<p><img alt="main editing menu" src="/resources/karaoke/yass-editing.png" /></p>
+</div>
+<p>If you forget a specific key combination, click on the top menu buttons (Edit / Play / View / Lyrics). A list of possible actions will be displayed, with their key combinations next to them.</p>
+<h3 id="moving-note-positions">Moving note positions</h3>
+<p>There are three main ways to move notes. These actions do not affect pitch; they only affect the point at which the note plays.</p>
+<details class="example">
+<summary>SHIFT + arrow key LEFT/RIGHT: Move the note</summary>
+<p>This moves the note to the left or right, while keeping its length.
+<img alt="Shift left+right" src="/resources/karaoke/ShiftLR.gif" /></p>
+</details>
+<details class="example">
+<summary>ALT + arrow key LEFT/RIGHT: Move note end position without changing start</summary>
+<p>This lengthens or shortens the note, while keeping its starting position.
+<img alt="Alt left+right" src="/resources/karaoke/AltLR.gif" /></p>
+</details>
+<details class="example">
+<summary>CTRL + arrow key LEFT/RIGHT: Move note start position without changing end</summary>
+<p>This lengthens or shortens the note at the beginning, while keeping its ending position.
+<img alt="Ctrl left+right" src="/resources/karaoke/CtrlLR.gif" /></p>
+</details>
+<h3 id="pitching-notes">Pitching notes</h3>
+<p>You can pitch notes by using CTRL + arrow key UP/DOWN. Hold SHIFT as well (CTRL+SHIFT+arrow key UP/DOWN) to change pitch by a full octave.</p>
+<details class="example">
+<summary>CTRL + arrow key UP/DOWN: change note pitch</summary>
+<p><img alt="Shift left+right" src="/resources/karaoke/CtrlUD.gif" /></p>
+</details>
+<h3 id="selecting-multiple-notes">Selecting multiple notes</h3>
+<p>You can select multiple notes with SHIFT + arrow key UP/DOWN. When multiple notes are selected, you can make the same adjustments as you would with just one note selected, using the same key combinations:</p>
+<details class="example">
+<summary>SHIFT + arrow key UP/DOWN: Select multiple notes</summary>
+<p><img alt="Shift up+down" src="/resources/karaoke/ShiftUD.gif" /></p>
+</details>
+<p>Use <strong>Ctrl + A</strong> to select the whole line, or <strong>Ctrl + Shift + A</strong> to select the whole song.</p>
+<h3 id="splitting-notes">Splitting notes</h3>
+<p>If you want a note to split into two (for example, to account for a new pitch), you can either click above it when a dotted line appears, or use the MINUS (-) key.</p>
+<details class="example">
+<summary>Splitting notes</summary>
+<p><img alt="Splitting notes" src="/resources/karaoke/NoteSplitting.gif" /></p>
+</details>
+<h3 id="deleting-notes">Deleting notes</h3>
+<p>You can delete a note by pressing <strong>CTRL + DELETE</strong>.</p>
+<details class="example">
+<summary>Deleting notes</summary>
+<p><img alt="Deleting notes" src="/resources/karaoke/CtrlDel.gif" /></p>
+</details>
+<h3 id="note-attributes">Note attributes</h3>
+<p>You can change the type of a note as follows:</p>
+<ul>
+<li><strong>F</strong>: Freestyle [pink] (lyric is displayed, but note is not displayed. Players do not have to sing this note)</li>
+<li><strong>G</strong>: Golden [gold] (note is worth double)</li>
+<li><strong>SHIFT + F</strong>: Rap [green] (note is displayed, but players can make any sound to get points on it)</li>
+<li><strong>SHIFT + G</strong>: Golden Rap [light green] (rap but worth double)</li>
+</ul>
+<details class="example">
+<summary>Changing note attributes with (Shift +) F/G</summary>
+<p><img alt="Note attributes" src="/resources/karaoke/NoteAttribute.gif" /></p>
+</details>
+<h3 id="adjusting-gap">Adjusting GAP</h3>
+<p>The GAP (position of the first note) can be adjusted with the <strong>9</strong> (earlier) and <strong>0</strong> (later) keys. The first note should <strong>always</strong> start at beat zero.</p>
+<p>If you move the first note to a position other than beat zero, it will appear as an error that you should correct. The gap will be updated accordingly.</p>
+<details class="example">
+<summary>Gap adjustment</summary>
+<p><img alt="Gap adjustment" src="/resources/karaoke/GapAdjustment.gif" /></p>
+</details>
+<h3 id="playing-the-current-note">Playing the current note</h3>
+<p>Something you will probably doing a bunch is playing the currently selected note(s). Use the <strong>SPACE</strong> button to do this.</p>
+<p>You can also press <strong>P</strong> to play the current line in its entirety.</p>
+<details class="example">
+<summary>Playing the current note</summary>
+<p><img alt="Current note" src="/resources/karaoke/SPACE.gif" /></p>
+</details>
+<h3 id="other-useful-shortcuts">Other useful shortcuts</h3>
+<ul>
+<li><strong>CTRL + Z</strong>: Undo the last action</li>
+<li><strong>CTRL + Y</strong>: Redo the last action</li>
+<li><strong>CTRL + C</strong>: Copy selection<ul>
+<li>There are multiple paste options available. The one I use most often is <strong>CTRL + SHIFT + V</strong>, to paste the notes <em>verbatim</em> over what existed before (usually a chorus).</li>
+</ul>
+</li>
+<li><strong>CTRL + G</strong>: Align all notes to their nearest strong gray line</li>
+<li><strong>CTRL + W</strong>: Toggle note click sound (this should almost always be on)</li>
+<li><strong>CTRL + B</strong>: Toggle piano sound (for use during pitching)</li>
+</ul>
+<h2 id="refining-the-gap">Refining the GAP</h2>
+<p>The first step of finetuning is to refine the GAP. Chances are, when you tapped out the song, you did not tap the first note in precisely the right place, even if it sounds like you did. Since the GAP affects the entire rest of the song, you should be as sure as you possibly can that you have it correct.</p>
+<p>Here's a video of me finding the GAP, with keypresses displayed on screen. You may note the following:</p>
+<ul>
+<li>I first played the line in its entirety, just to get an idea of how off the tapping was. (Is everything consistently off, or is it all over the place?)</li>
+<li>Then, I used the 9 key a bunch to move the GAP earlier (since in this case, everything was late).</li>
+<li>I then played the line again, and noticed everything was now slightly early (particularly in the "Po~ny~ville" part).</li>
+<li>So, I used the 0 key a couple time sto move the GAP slightly later.</li>
+<li>From there, the GAP was decent!</li>
+</ul>
+<details class="example">
+<summary>Refining GAP example video</summary>
+<p><video width="720" height="480" controls>
+<source src="/resources/karaoke/finding-gap.mp4" type="video/mp4">
+Your browser doesn't support embedded videos :(
+</video></p>
+</details>
+<p>We can verify the GAP we selected by going to somewhere in the middle of the sign, finetuning that (as necessary), and then seeing if everything is still on time.</p>
+<details class="example">
+<summary>Verifying GAP example video</summary>
+<p><video width="720" height="480" controls>
+<source src="/resources/karaoke/verifying-gap.mp4" type="video/mp4">
+Your browser doesn't support embedded videos :(
+</video></p>
+</details>
+<p>Since the clicks still sound on-beat when they're aligned, it seems like our BPM (120) and our GAP (21830) are correct!</p>
+<h2 id="fine-tuning-note-lengths">Fine-tuning note lengths</h2>
+<p>Once we have the correct GAP, we can start focussing on individual lines. Since we were already messing a bit with the first, let's continue messing with that:</p>
+<details class="example">
+<summary>Fine-tuning the first line</summary>
+<p><video width="720" height="480" controls>
+<source src="/resources/karaoke/finetuning-line-1.mp4" type="video/mp4">
+Your browser doesn't support embedded videos :(
+</video></p>
+</details>
+<p>In this instance, the note timings were already adjusted earlier, so it was mainly about the note lengths. Here are the principles I usually go by:</p>
+<ul>
+<li>Each note should be separated by <strong>at least</strong> two units. It doesn't make the song much easier (since people have to hit those pitches at roughly that time anyway), and it helps account for differences between computer hardware, which could affect GAP. You can also think about it this way: When you sing, you wouldn't be singing like a synthesizer where you switch from one pitch to another immediately. In most cases, you will have some gap between each note.<ul>
+<li>Is a gap of two units too much? In this case, a gap of one unit might suffice, since the BPM is low enough. However, I generally stick to a gap of at least two because...</li>
+</ul>
+</li>
+<li>If undecided, it is better to have a <strong>shorter</strong> note length than a <strong>longer</strong> one. If a note is too short, players are unlikely to notice it unless it is egrigeously short (think about a note being held for, say, 10 seconds straight, and that note is let go at the sixth second. Players WILL notice that and wonder why it's so short). On the contrary, if a note is too long, then players will be frustrated by the level of precision necessary.</li>
+</ul>
+<h2 id="refining-note-positions">Refining note positions</h2>
+<div class="admonition question">
+<p class="admonition-title">What to finetune first: note positions and note lengths?</p>
+<p>These days, I usually finetune note positions AND note lengths at the same time so that all that is necessary later on is pitching (actually, I usually pitch at the same time too, but that is besides the point). If you want to do things in a set order though, I would finetune note positions <strong>first</strong>.</p>
+<p>This is because note positions are the <strong>most important</strong> part of the chart. If the timing is off, people will notice and not be happy. If a note is a bit too long, or a pitch is wrong, people can more easily correct that if it bugs them, and even then they might not notice (unless all the notes are stuck together). </p>
+<p>With practice, you may be able to do all three at the same time without thinking about it (that is, position notes and their lengths as you work through it, then pitch them). But in the meantime, if you want to divide up the work to make it easier: first note positions, then note lengths, then pitches.</p>
+</div>
+<p>Our next lines might not necessarily be as well timed as the first one, so let's run through them to see what we might need to do:</p>
+<details class="example">
+<summary>Refining note positions for lines 2-6</summary>
+<p><video width="720" height="480" controls>
+<source src="/resources/karaoke/note-positions-line26.mp4" type="video/mp4">
+Your browser doesn't support embedded videos :(
+</video></p>
+</details>
+<p>Here are the things I would point out about this part:</p>
+<ul>
+<li><strong>Most of the notes were already in the right place</strong>. This is part of why good tapping is so important: it saves a LOT of time!</li>
+<li>Any lines that had problems -- most notably the "Life's getting better" line -- was pretty easily fixed with Ctrl+G. I didn't even have to move any of the notes left or right.</li>
+<li>After making corrections, I played the whole line once (with Ctrl+A and then Space, but pressing P would also work) to ensure that all the clicks were in time with the music.</li>
+<li>If they were, then I continued to the next line.</li>
+</ul>
+<p>This obviously won't be the case with <em>all</em> notes in <em>all</em> charts. This example song is 'easy' because the rhythms are very clearly defined, its notes go in relatively obvious places, there aren't any stupidly long notes, and most importantly, <strong>all of the notes (thus far) align with the strong gray line</strong>. When timing something more difficult, you will have to do things a bit more manually.</p>
+<h2 id="positioning-notes-manually">Positioning notes manually</h2>
+<p>For this example, I will be using an excerpt from a slightly more complex song. In this case, I'm using the first three lines of 4everfreebrony's <em>Little Librarian</em> (a parody of Don McLean's <em>American Pie</em>).</p>
+<p>See the video for more details:</p>
+<details class="example">
+<summary>Finetuning without assistance from a rhythmic song</summary>
+<p><iframe width="560" height="315" src="https://www.youtube.com/embed/PYPXPeUL5-Y?si=C6Eeye1brCJBzWa8" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe></p>
+</details>
+<div class="admonition tip">
+<p class="admonition-title">Main video takeaways</p>
+<ul>
+<li>Playing the whole line can help you zero in on notes that immediately sound very early or late.</li>
+<li>Move notes until you hear the aspirated start of the syllable (e.g. the "t" in "time"), then once you do, move it one to the right.</li>
+<li>End notes when the pitch becomes hard to hear, or when the syllable becomes unpitched (e.g. the hissing sound in a word that ends with "s").</li>
+<li>Unclear pitches should be marked as rap, either to analyze later or to indicate to the singer that the pitch does not matter for that note.</li>
+<li>Use the peaks of waveforms as an indicator of where the next note may be.</li>
+<li>Play through the whole line as a means of verifying the timing of each line.</li>
+</ul>
+</div>
+<details class="abstract">
+<summary>Detailed video notes/commentary</summary>
+<ul>
+<li>As you can see from the top bar, the BPM is set to 400. If I were to do the whole song, I would probably keep it this way because the BPM changes frequently.<ul>
+<li>The majority of the song has a BPM of 145, which would give me alternate options of 290 (probably not enough granularity), or 435 (multiplying by three, which is annoying). So I might as well just set it to 400 (especially since I'm only doing a beginning excerpt).</li>
+</ul>
+</li>
+<li>At the beginning, I'm trying to make sure that the GAP is correct. In this case, I actually tapped it pretty well, so the GAP only needed a minor adjustment (from 43 to 50), and even that might not have been necessary or noticeable.</li>
+<li>At around 0:16, I'm playing the whole line to see how it is as a whole. I can tell immediately that "time" was tapped very late, so that's one of the first things I target.</li>
+<li>I move it to the left until I'm hearing the main core of the "ime" sound (since "t" by itself is not really pitched). At 0:20, I move it one to the left, from beat 52 to beat 51. At this point, the "t" is audible, so it's too early, so I move it back to beat 52 and keep it there until the end.</li>
+<li>At 0:26, I'm shortening the "go" in "ago" because the sound has long trailed off. Same with the second 'long'.</li>
+<li>At around 1:00, I'm trying to figure out the time of the word "The" and realise that it's not really pitched. So, I pre-emptively mark it as rap.<ul>
+<li>This song is by no means a rap song, but I use a rap note to indicate an unclear pitch, either because it needs further verification or because a singer really should treat it as "sing whatever".</li>
+</ul>
+</li>
+<li>At 1:10, I'm pitching the "sis" in "sisters". Note that I cut it off as soon as you start hearing the hissing "s" sound at the end of "sis". A hiss isn't really pitched, so it shouldn't be considered to be part of the note, even though it is technically still part of the syllable "sis". The same thing happens with the s in "ters".</li>
+<li>Throughout the song, I'm using the peaks of waveforms to guesstimate where a new note starts. This is particularly easy for this excerpt, since the instrumental is not very loud.</li>
+<li>Finally, at 2:25, I run through all three lines at a time to make sure all notes sound like they start at the right place. While it may not be <em>perfect</em>, it is decent enough that people shouldn't have a problem if they were to play through it (and if it were pitched, of course).</li>
+</ul>
+</details>
+<h2 id="deciding-on-note-types">Deciding on note types</h2>
+<p>As covered earlier, there are five main normal types: normal, freestyle, rap, golden, and golden-rap.</p>
+<p>For now, we will ignore golden notes, as you should only start working on them after you have finished finetuning AND pitching. This means you only really have to focus on the difference between normal, freestyle, and rap. You can do this during finetuning or pitching -- it doesn't particularly matter -- but you should still be aware of them early on.</p>
+<h3 id="normal-notes">Normal notes</h3>
+<p>This is most notes. If the note has a discernable pitch, it should be a normal note. These points are scored based on whether the player is singing that pitch at the time that the note is playing, and for the entire length of the note (so if a player starts singing the pitch and then stops halfway, they won't get any points for the part where they did not sing).</p>
+<p>Notes will be normal notes by default, and will only end up as any other type (rap, freestyle, golden) if you declare it as such.</p>
+<h3 id="rap-notes">Rap notes</h3>
+<p>As the name suggests, rap notes are traditionally used for rap. Since rap is generally better described as a form of 'syncopated speaking', the pitch of rap is difficult or even impossible to discern. As such, scoring is based purely on whether the player is making a sound -- literally any sound, it doesn't even have to be words -- at the time that the note is playing. The same thing about length applies: if the rap note lasts for a long time (for example, it's being used to indicate someone SCREAMING in the middle of the song) and the player stops making any noise, then they won't get any points for the parts where they did not make any noise.</p>
+<p>However, I'd like to highlight another use of rap notes that is not as common in karaoke charts, but that I think should be popularized: <strong>using rap to indicate unclear pitches</strong>. In many songs, singers don't sing <em>every</em> pitch with absolute clarity. If you hear a sort of gravelly sound or vocal fry, it can't really be <em>pitched</em>, but it isn't like that shouldn't be <em>sung</em>, either. It's still a sound. So, I recommend setting those portions as rap notes. You will see me doing some of that in the examples, particularly in the pitching section of this guide.</p>
+<p>I also sometimes use rap notes in cases where a player might expect to sing a certain pitch melodically, but the singer ends up singing a different pitch. Singers aren't always perfect, but players shouldn't necessarily be penalized because the singer didn't quite hit the note.</p>
+<p>So: Use rap notes for actual rap, or for dialogue that you want a player to say out loud, or for words that should be sung but do not have a well-defined pitch. Treat rap as a 'you can sing whatever pitch you'd like, I don't care, just please make a sound here' type of note.</p>
+<h3 id="freestyle-notes">Freestyle notes</h3>
+<p>Freestyle notes are not scored. Players will not get any score for them. They can say them if they want, but the game will not read it or give bonus points or anything like that.</p>
+<p>I recommend using freestyle notes if the pitch is <em>inaudible</em> (e.g. a word is <em>implied</em> by the lyrics, but said so quietly that no one could possibly discern it), or for dialogue that you want to <em>show</em> but that you do not want the player to <em>speak out loud</em>.</p>
+<h2 id="line-breaks">Line breaks</h2>
+<div class="admonition warning">
+<p class="admonition-title">Yass and 'unsafe corrections'</p>
+<p>Some line break-related errors may be accompanied by a warning stating "This correction is not safe". This warning is because, if accepted, <strong>the note at the end of the offending line will be shortened</strong>. Usually, you want to leave at least 50ms of space on each side of a line break, which normally corresponds to about two UltraStar units on each side. Assuming that the timing is correct, I recommend always <strong>accepting these corrections</strong> because it makes for a more enjoyable play experience, even if it's technically less "accurate".</p>
+</div>
+<p>In some of the examples, you may have noticed a bunch of orange warnings. These are because of so-called 'uncommon line breaks'. Yass uses an algorithm to determine where line breaks should go.</p>
+<p>Honestly, I don't really care about them and just press Ctrl+T every once in a while when I'm charting things. You shouldn't really need to pay much attention to them either, other than the unsafe corrections thing. Just let Yass handle it and you won't even have to think about them.</p>
+<h2 id="takeaways-next-steps">Takeaways / Next steps</h2>
+<p>I know this was a lot of information, so I will end this section with a video of the rest of the finetuning done for the main example song.</p>
+<details class="example">
+<summary>Full finetuning video</summary>
+<p><iframe width="560" height="315" src="https://www.youtube.com/embed/S4FW4jy4ZHM?si=UtDR-AOe18ltceF_" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe></p>
+</details>
+<p>The main point that I think you should take away from this is: <strong>finetuning is hard</strong>. There will often be scenarios where you think one of two positions could work fine, and you don't know which one to pick. That's perfectly okay. You will get better at it over time if you internalize these rules and learn the keyboard combinations of your song editor, whether that be Yass or something else.</p>
+<p>At the same time, finetuning can be made easier if you give yourself less work to do. On a rhythmic song like this, nailing the initial tapping was key to making the finetuning a lot more trivial. Most of the changes just ended up being spamming Ctrl+G and refining note lengths, all because the work was put in <em>earlier</em> to ensure the BPM is correct (for note alignment) and to split the lyrics in advance (so that they don't need to be split during finetuning).</p>
+<p>This song was a particularly easy example of finetuning. On something with variable BPMs, like in our <a href="#positioning-notes-manually">Positioning notes manually</a> example, it is necessary to think about where each and every note goes. That is where finetuning gets a bit harder, and possibly mind-numbing. Hence why you should start with the more rhythmically consistent songs first.</p>
+<p>Once your song is finetuned, you're ready to start pitching!</p>
+<hr />
+<p><a class="md-button" href="../part04">&lt;&lt; Back to Part 4: Tapping</a>
+<a class="md-button" href="../part06">&gt;&gt; Continue to Part 6: Pitching</a></p>
+<hr />
+<p>Quick navigation: <a href="..">Index</a> / <a href="../prefaceA">Preface A</a> / <a href="../prefaceB">Preface B</a> / <a href="../part01">Part 1: Audio</a> / <a href="../part02">Part 2: Lyrics</a> / <a href="../part03">Part 3: BPM</a> / <a href="../part04">Part 4: Tapping</a> / <strong>Part 5: Finetuning</strong> / <a href="../part06">Part 6: Pitching</a> / <a href="../part07">Part 7: Golden Notes</a> / <a href="../part08">Part 8: Testing</a> / <a href="../part09">Part 9: Submission</a></p>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  Back to top
+</button>
+        
+      </main>
+      
+        
+<footer class="md-footer">
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-footer-copyright">
+        
+        Made with
+        <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+          Material for MkDocs
+        </a>
+        
+      </div>
+      
+<div class="md-social">
+  
+</div>
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "../../..", "features": ["navigation.top", "navigation.tabs", "content.footnote.tooltips"], "search": "../../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="../../../assets/javascripts/bundle.79ae519e.min.js"></script>
+      
+    
+  </body>
+</html>
