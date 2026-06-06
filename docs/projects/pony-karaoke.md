@@ -1,4 +1,4 @@
-# The Pony Karaoke Unreleased Song Pack
+# Pony Karaoke Unreleased Song Pack
 
 !!! info "Contact"
 
