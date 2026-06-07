@@ -241,6 +241,8 @@ Each `.tar.mlk` contains a `Downloads` folder, which contains the song itself (a
 
 The end result should be a `Downloads` folder which contains a bunch of songs. You can move this `Downloads` folder to your `songs` directory, such that you now have three folders in there: `Official` (official show songs), `Community` (fandom songs), and `Downloads` (new releases).
 
+![Image: Folder tree](../resources/mlk/folder_tree.png)
+
 On Windows, assuming you've used the My Little Karaoke web installer, double-clicking on a `.tar.mlk` file will automatically extract it to your My Little Karaoke install song directory. If you've installed an updated UltraStar Deluxe somewhere else, then it probably won't end up in the right place.
 
 ### Next steps

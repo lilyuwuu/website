@@ -48,6 +48,8 @@ This song pack is meant to be used with My Little Karaoke. You can use it by its
 
 To install these songs, create a folder inside of your `songs` folder (which would ordinarily contain `Official`, `Community`, and `Downloads`). I recommend naming this folder something like `Beta` or `Dev`. Then place the songs (e.g. Artist - Song Name) inside, folder by folder. You can keep them in subdirectories if you want.
 
+![Image: Folder tree](../resources/mlk/folder_tree.png)
+
 For reworks, you can technically drop them in place on their respective folders in the `Official` and `Community` folders, replacing existing files, since usually the only thing that is modified is the `.txt` file(s). Do keep in mind that this will make it **impossible to submit scores for those songs on the highscore leaderboard**, since they will no longer be in sync with the released versions. If you're fine with duplicates, I would just keep them in the Beta/Dev folder in their own subdirectory. In most cases, song reworks have `[RM]` appended to the song title, and will thus appear alongside the normal releases.
 
 ## Questions people might have
