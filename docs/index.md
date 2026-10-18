@@ -1,43 +1,79 @@
-# Homepage
+# Home
 
-Welcome to my personal website! There isn't much here right now, but you can usually get to where you want to go by using the navigation bar.
+Hi, I'm lily and this is my personal website! I mostly use this as a dumping ground for documentation I've written. If you're looking for something in particular, try the navigation bar/menu.
 
-## About
+## Things I do
 
-Hi, I'm lily. I like to do things on the Internet. Here are some of the things I dabble in...
+I do things, primarily on the Internet. Here are some of them:
 
 ### 3DS modding
 
-I've dabbled in the lands of DS/3DS homebrew for quite a while (having owned a DS flashcart since the late 2000s, a Sky3DS in 2015 and having dabbled with tubehax and menuhax in 2015-2016), but I would generally say I've been more directly involved in the 3DS homebrew/modding scene since around early 2017 (over seven years!), around the tail end of arm9loaderhax-based installations (it was quite complicated back then!). 
+I've been pretty directly involved in the 3DS homebrew/modding scene since around early 2017 (over nine years!), primarily by helping people mod their consoles over at [Nintendo Homebrew on Discord](https://discord.gg/C29hYvh). To that end, I've been helping to maintain the main community text guide, [3ds.hacks.guide](https://3ds.hacks.guide), since around late 2020. If you've used the guide (or even followed a YouTube guide!) to mod your 3DS in the past few years, chances are you've been following instructions I've written or contributed to! I hope you've had as much fun modding your console(s) as I've had in writing documentation that's hopefully [surprisingly easy](https://knowyourmeme.com/photos/2436665) to follow. :)
 
-I've always been inclined towards helping people, so it was around 2017 when I started helping people with 3DS-related issues for most of that time over at [Nintendo Homebrew on Discord](https://discord.gg/C29hYvh) - something I continue to do to this day. (I also hang around [GBATemp](https://gbatemp.net/forums/nintendo-3ds.199/) and Reddit sometimes.)
+### My Little Pony
 
-I've been helping maintain [3ds.hacks.guide](https://3ds.hacks.guide) since around late 2020, a few months after [Plailect](https://github.com/plailect) transferred hacks.guide to [ihaveahax](https://ihaveahax.net/). If you've used the guide (or even followed a YouTube guide!) to mod your 3DS in the past three years, chances are you've been following instructions I've written or contributed to! I hope you've had as much fun modding your console(s) as I've had in making documentation that's hopefully [surprisingly easy](https://knowyourmeme.com/photos/2436665) to follow. :)
+If you couldn't already tell from my online presence, I'm a fan of My Little Pony (or brony, or pegasister, or whatever you want to call people in the fandom). You can usually find me at conventions and meetups throughout the US and Europe, often in the games room playing or hosting pony karaoke if it's available. Beyond that, I also consume a fair bit of fandom content, primarily music and fanfic.
 
-### Documentation and guide-writing
+Links:
 
-As you can probably tell from this site, I like to write guides and documentation in my spare time, with the goal of making traditionally difficult topics easy enough for anyone to follow. Most of my guides are concentrated here (in wonderful, wonderful Markdown), but I've also written (or contributed to) English-language documentation about the rhythm games [Ongeki](https://docs.google.com/document/d/1HKCW7DWjYRnVjCmPzrQwDKC0wKTi41X-Y-dP1-ygliU/edit?usp=sharing) and [Groove Coaster (outdated)](https://docs.google.com/document/d/1W7LavJKqfvauztVIdbxeII_HtA1Z9XJ5U13g-I-DgJs/edit?usp=sharing).
+- [Fimfiction favourites shelf](https://www.fimfiction.net/bookshelf/1244885/favourites)
 
-### E-readers / e-ink
+### Karaoke
 
-I like reading books on e-readers! Well, fanfiction, mostly. I'm particularly a fan of the [Rakuten Kobo](https://kobo.com) line of e-readers as they are completely free of restrictions, allowing me to run my personal favourite reading application, [KOReader](https://github.com/koreader/koreader/).
+I also like to do karaoke, both inside and outside of the context of My Little Pony:
 
-Naturally, I've written some documentation on surface-level tinkering with Kobos over [here](kobo), but it's gotten a bit outdated, so I would heed caution in following anything I wrote there.
+- I chart My Little Pony show/fandom songs for [My Little Karaoke](https://www.mylittlekaraoke.com/), a song pack and theme for UltraStar Deluxe consisting of over 800 show and fandom songs
+- I help with My Little Karaoke setups at conventions or meetups I attend by:
+    - Hosting karaoke myself, with my own microphones and other equipment
+    - Helping to manage the song queue, helped by knowledge of the full song list
+    - Providing resources, such as unreleased songs (primarily from [my repository](projects/pony-karaoke), updated song lists, updated programs, configuration assistance...
+- I upload the (relatively few) non-pony songs I chart to [USDB](https://usdb.animux.de/), the main community resource for UltraStar TXT charts
+
+I've also written some documentation and provided some resources about karaoke, which are listed below:
+
+- [UltraStar Karaoke Charting / Song Creation Tutorial](guides/karaoke/): a step-by-step visual tutorial for charting UltraStar TXTs
+- [Running My Little Karaoke in 2026](guides/mlk): a stopgap tutorial for running more up to date pony karaoke software
+- [Pony Karaoke Unreleased Song Pack](projects/pony-karaoke/): a public repository for the pony-related songs that I've charted
 
 ### Rhythm games
 
-I like to play rhythm games, usually at the arcade! My personal favourites are [Ongeki](https://ongeki.sega.jp/), [Groove Coaster](https://groovecoaster.jp), [Chunithm](https://chunithm.sega.jp), and [Tetote Connect](https://tetoteconnect.jp), but I also dabble with [Taiko no Tatsujin](https://taiko.namco-ch.net/taiko/), SDVX, and IIDX. 
+I like to play rhythm games, usually at the arcade! These days I normally play [Ongeki](https://ongeki.sega.jp), [Chunithm](https://chunithm.sega.jp), [pop'n music](https://p.eagate.573.jp/game/popn/popn29/) and [Polaris Chord](https://p.eagate.573.jp/game/polarischord/pc/music/index.html), but I find most games relatively fun.
 
-I'll probably put some scores up on this website at some point, but for now, here's my [Ongeki Score Log](https://ongeki-score.net/user/7257/) profile. It'll stay roughly the same since it only gets updated if I go to Japan, though.
+Once upon a time, I played [arcade Groove Coaster](https://groovecoaster.jp) quite competitively, but not so much since the end of service.
 
-### Animated horse show
+Public profiles:
 
-It might not be super obvious from my profile... or this website..., but I do generally consider myself to be a fan of the [animated horse cartoon](https://www.equestriadaily.com/). In particular, I read a lot of fanfiction ([here](https://www.fimfiction.net/bookshelf/1244885/favourites) are my personal favourites) and listen to a lot of music (current favourites, subject to rotation, not necessarily still in pony fandom: [4everfreebrony](https://www.youtube.com/@4everfreebrony), [Koa](https://twitter.com/KoaPony), [Metajoker](https://www.youtube.com/@Metajoker), [CadetRedShirt](https://www.youtube.com/@CadetRedShirt), [Crusader!](https://www.youtube.com/@BandoTheBear), [Flittzy](https://www.youtube.com/@FlittzyMusic), [Forest Rain](https://www.youtube.com/@ForestRainMedia), [John Kenza](https://www.youtube.com/@RyleoGoldridge), [Vylet Pony](https://www.vyletpony.com/)).
+- [Ongeki Score Log](https://ongeki-score.net/user/7257/)
 
-Seriously, go check out some pony fandom music! The compilation group [Ponies@Dawn](https://poniesatdawn.bandcamp.com/) puts out a good 60-70 songs every few months in a variety of genres. It's also worth checking out [Luck Rock's monthly compilation list of fandom music](https://www.youtube.com/@LuckRockMusic/playlists) and the [Horse Music Herald](https://horsemusicherald.com/). You're bound to find something in a genre you like (with between a minimal amount and a bunch of pony references thrown in).
+### Typing
+
+Recently, I've gotten into semi-competitive typing. I practice primarily on [TypeGG](https://typegg.io/user/lilyuwuu).
+
+General statistics:
+
+- Top 10 world (among TypeGG users); #1 in Canada (technically)
+    - 37,000 pp (ppv0.8)
+- Speed:
+    - ~170 WPM on sustained (10,000 character) endurance quotes
+    - ~190 "normalized WPM" (adjusted for quote difficulty)
+    - ~200 WPM peak on random-word tests (1 minute)
+
+Quotes I'm most proud of:
+
+- Best play: [Linux Network Servers - List of Tables](https://typegg.io/solo/lotc1tb_0173) (~150 WPM for 13 minutes/9600 characters of mostly technical terms and newlines)
+- Best medium-length endurance: [The sport of mountain biking](https://typegg.io/solo/tsombio_9020) (~205 WPM for 3 minutes/3100 characters)
+- Best long-term endurance: [The New Science of Narcissism - Smart ways](https://typegg.io/solo/taswtun_1082) (~180 WPM for 8 minutes/7800 characters)
+
+### Public transit / smartcard collecting
+
+I'm a fan of taking public transit wherever I go, and also of collecting public transportation smart cards ("IC cards") as a memento/souvenir of the places I visit. To date, I've collected over a hundred cards, most of them from Japan.
+
+Resources:
+
+- [Eli Fessler's site for Japanese IC cards](https://japan.elifessler.com/ic-cards/)
 
 ## Contact me
 
-If you need something from me (or just want to chat), feel free to contact me! You can reach me **@lilyshy on Discord** (my friend requests should be open, but if you need a mutual server, try [Nintendo Homebrew](https://discord.gg/C29hYvh)).
+If you need something from me (or just want to chat), feel free to contact me! You can reach me at **@lilyshy on Discord** (my friend requests should be open, but if you need a mutual server, try [Nintendo Homebrew](https://discord.gg/C29hYvh)). If you don't send a message of some sort with your friend request I might just assume it's spam.
 
 Discord's the best way to contact me, but you can also contact me by e-mail (**lily at this domain**). I don't check it very often, though.
