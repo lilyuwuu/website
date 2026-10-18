@@ -132,16 +132,20 @@ While the old version of the program is technically *functional* (in particular 
 - An automatic count-in time when the first note is very early in the song
 - More verbose volume control
 - More precise scoring that uses the ones digit instead of rounding to the nearest 10
+- More highscore entries can be displayed at once
+- Saving scores for duet charts
 
 Audio format support is particularly important, as some charts may reference audio that will possibly crash the game if it is not sufficiently updated.
 
 ### Getting an updated UltraStar Deluxe
 
-You can get the latest release of UltraStar Deluxe from the [GitHub repository](https://github.com/UltraStar-Deluxe/USDX/releases/latest). 
+You can get the latest release of UltraStar Deluxe from the [GitHub repository](https://github.com/UltraStar-Deluxe/USDX/releases/latest).
+
+On all operating systems, you can compile from source by following the instructions [here](https://github.com/UltraStar-Deluxe/USDX/blob/master/COMPILING.md), but there is no real advantage to doing so for normal gameplay purposes. Commits and pull requests are automatically built by GitHub and can be downloaded ('artifacts') if you have a GitHub account.
 
 #### Windows
 
-Windows users can select `windows-installer` or `windows-portable`; the `installer` will have you select where to install things, while the `portable` will just be a bunch of files in an archive that you will have to unzip yourself to wherever you want to keep it.
+Windows users can select `windows-installer` or `windows-portable`; the `installer` will have you select where to install things, while the `portable` will just be a bunch of files in an archive that you will have to extract to your desired location.
 
 In theory, you can actually just drag and drop everything from the `portable` ZIP to your My Little Karaoke install directory, and then just replace any conflicting files. This will probably result in some unnecessary files being kept, so I would instead recommend installing it somewhere else.
 
@@ -149,32 +153,33 @@ In theory, you can actually just drag and drop everything from the `portable` ZI
 
 macOS users should select `mac-ARM` if they have an Apple Silicon-based Mac (any Mac released in 2020 and later, with an M1/M2/M3/M4/M5/A18 chip), and `mac-x86` if they have an Intel-based Mac (anything older). If you're not sure what you have, click on the Apple logo on the top left, then "About This Mac". It will tell you what chip/processor you have.
 
-The program is installed the same way as any other program on macOS: When you open the `.dmg` file, it'll be 'mounted' as a drive, then you can drag-and-drop UltraStar Deluxe into the Applications folder.
+The program is installed the same way as any other program on macOS: When you open the `.dmg` file, it'll be 'mounted' as a drive, and then you can drag-and-drop UltraStar Deluxe into the Applications folder.
 
 Due to Apple being extremely annoying with unsigned applications, you will need to manually give permission to actually run the program. See [here](https://wiki.hacks.guide/wiki/Open_unsigned_applications_on_macOS_Sequoia_and_newer) for instructions on how to do that. If you know what you're doing: `sudo xattr -d com.apple.quarantine /path/to/app`
 
 #### Linux
 
-UltraStar Deluxe on Linux is distributed as flatpak and AppImage. This is slightly problematic as the containerization does not currently *easily* support themes and avatars, meaning you will need to do some extra work to add the pony graphics.
+As of UltraStar Deluxe v2026.10.0, [loading custom assets is properly supported on AppImage and Flatpak](https://github.com/UltraStar-Deluxe/USDX/pull/1422). Hooray!
 
-If you are at all capable, I would instead recommend [compiling](https://github.com/UltraStar-Deluxe/USDX/blob/master/COMPILING.md) UltraStar Deluxe. Explicit instructions are provided for Debian/Ubuntu, Fedora, and Arch, but you can probably get it working on other distros too (I got it running on openSUSE, for example). Once compiled, you will end up with a `game` folder in your cloned repository, which is functionally equivalent to things like `windows-portable`. As usual, you may need to `chmod +x` the executable (`ultrastardx`) to actually run it.
-
-If you find AppImage/flatpak easier to use, I would recommend using the AppImage, as it is easier to extract and apply the theme/avatars to it. You will likely have to reapply it every time you update the program, though.
+On Linux, your options for running the game are:
+- AppImage: available on the repository (the file with the `AppImage` extension). You can launch it by just double-clicking on it (you may need to add a desktop entry for it to appear in your application list, depending on your desktop environment.)
+- Flatpak: available from [Flathub](https://flathub.org/en/apps/eu.usdx.UltraStarDeluxe), in which case a desktop entry may be automatically generated.
+- AUR: [here](https://aur.archlinux.org/packages/ultrastardx-git)
 
 ### Moving your songs over
 
-On Windows, the base songs are probably currently located in the MyLittleKaraoke install directory (e.g. `M:/MyLittleKaraoke/songs`.) You can simply move them over to wherever UltraStar Deluxe's song directory is. Alternatively, you can specify the song directory (or multiple song directories, even) with the `SongDir=...` arguments in `config.ini`.
+On Windows, the base songs are probably currently located in the MyLittleKaraoke install directory (e.g. `C:/MyLittleKaraoke/songs`.) You can simply move them over to wherever UltraStar Deluxe's song directory is. Alternatively, you can specify the song directory (or multiple song directories, even) with the `SongDir=...` arguments in `config.ini`.
 
 If you were following this guide for macOS and Linux, you will just have a `songs` folder in the working directory where the `download-mlk-songs` shell script was located. Just like on Windows, you can move them to UltraStar Deluxe's song directory, or specify a song directory in `config.ini`.
 
-- **macOS**: Songs can be stored in `~/Music/UltraStar Deluxe` (that is, your user account's `Music` folder). They can also be stored in `~/Library/Application Support/UltraStarDeluxevXXXX.XX.X`, but this folder will change every time you update the program and is hidden (you can unhide hidden folders and files with Command+Shift+Period).
-- **Linux AppImage**: `~/.ultrastardx/songs`
-- **Linux flatpak**: `~/.var/app/eu.usdx.UltraStarDeluxe/.ultrastardx/songs/`
-- **Linux compiled from source**: `songs` will be in the working directory of the `ultrastardx` executable (e.g. `~/karaoke/USDX/songs`, where the `USDX` folder contains the `ultrastardx` executable)
+- **macOS**: Songs can be stored in `~/Music/UltraStar Deluxe` (that is, your user account's `Music` folder). They can also be stored in `~/Library/Application Support/UltraStar Deluxe/songs`, but this folder is hidden by default (you can unhide hidden folders and files with Command+Shift+Period, or access it through Finder's "Go to Folder" menu option.)
+    - On versions prior to 2026.10.0, the user folder is `~/Library/Application Support/UltraStarDeluxevXXXX.XX.X`, and must be migrated between updates.
+- **Linux** (AppImage): `~/.ultrastardx/songs`
+- **Linux** (flatpak): `~/.var/app/eu.usdx.UltraStarDeluxe/.ultrastardx/songs/`.
 
 At this point, you can launch the game and see if it's working properly. If it is:
 - You should see over a thousand songs available on the song select screen
-- The current UltraStar Deluxe version should be 2026.5.0 or newer (or whatever the latest may be when you are following this guide)
+- The current UltraStar Deluxe version should be 2026.10.0 or newer (or whatever the latest may be when you are following this guide)
 
 ### Applying the My Little Karaoke theme and avatars
 
@@ -186,27 +191,11 @@ You can also get the avatars, provided separately, from [here](https://djazz.se/
 
 When you download the theme, you will see a `themes` folder, which will contain a `MyLittleKaraoke` folder and `MyLittleKaraoke.ini`. Move these to your `themes` folder. Avatars (the `.png` files from the `.tar` and `.mlu` archives) should go to your `avatars` folder:
 
-- **Windows**: `<install directory>/themes`, e.g. `C:/Games/UltraStarDeluxe/themes`
-- **macOS**: `~/Library/Application Support/UltraStarDeluxevXXXX.XX.X/themes` (*again, remember that a new `UltraStarDeluxe` folder will be generated for each UltraStar Deluxe version, so if you update the program you will probably need to move the folders around*)
-- **Linux compiled from source**: `themes` will be in the working directory of the `ultrastardx` executable
-- **Linux AppImage**: You cannot use custom themes and avatars by default. See the next header for a workaround.
-- **Linux flatpak**: You can use themes by following the instructions [here](https://github.com/UltraStar-Deluxe/USDX/issues/715), but not avatars.
+- **Windows**; macOS/Linux compiled from source: `<install directory>`, e.g. `C:/Games/UltraStarDeluxe`
+- **macOS**: `~/Library/Application Support/UltraStar Deluxe`
+- **Linux** (AppImage): `~/.ultrastardx`
+- **Linux** (flatpak): `~/.var/app/eu.usdx.UltraStarDeluxe/.ultrastardx`
 
-#### My Little Karaoke theme/avatars on Linux AppImage
-
-AppImage's containerization currently prevents themes and avatars from being loaded from `~/.ultrastardx`. To work around this, you will need to extract the AppImage and manually add the theme and avatar before (optionally) repacking it. *This will need to be repeated whenever you update the program.*
-
-To do this:
-
-- Open a Terminal window in the location of the UltraStar Deluxe AppImage
-- Run the AppImage with flag `--appimage-extract` (e.g. `./UltraStarDeluxe-linux-2026.4.0.AppImage --appimage-extract`)
-- Navigate to `./squashfs-root/usr/share/ultrastardx`, then copy `MyLittleKaraoke` (folder) and `MyLittleKaraoke.ini` to `themes`, and the avatar images to `avatars` (folder)
-- Download `appimagetool` from [here](github.com/AppImage/appimagetool/releases/latest)
-    - You may also need the runtime from [here](https://github.com/AppImage/type2-runtime/releases), `x86_64` for most computers
-- Rebuild the AppImage with `./appimagetool-x86_64.AppImage -vn squashfs-root`
-    - Your `appimagetool` may be different if you're running this from an ARM device
-    - You may need to manually add the flag `--runtime-file runtime-x86_64` if it is unable to automatically retrieve the runtime
-- The resulting AppImage (e.g. `UltraStar_Deluxe-x86_64.AppImage`) should now have the custom theme and avatar embedded
 
 ### Updating UltraStar Deluxe
 
@@ -215,15 +204,13 @@ UltraStar Deluxe receives updates on roughly a monthly basis. From time to time,
 How you update the program depends on your operating system:
 
 - On **Windows**, you can download the newest portable release and copy it to another directory. You can also try running the newest installer, which should recognise your existing install and install over it while retaining your data.
-- On **macOS**, you can run the `.dmg` file and copy `UltraStar Deluxe` to your `Applications` folder, replacing the existing one. Your data will not immediately appear in the updated software, but will be retained; macOS generates a new data folder in `~/Library/Application Support` for each version of UltraStar Deluxe that is used.
+- On **macOS**, you can run the `.dmg` file and copy `UltraStar Deluxe` to your `Applications` folder, replacing the existing one. As of v2026.10.0, your data should transfer over automatically.
 - On **Linux**:
     - **AppImage**: You can just download and run the new AppImage.
     - **flatpak**: You can update it just as you would any other flatpak. Updates may be delayed as they rely on flathub.
     - **Compiled from source**: If necessary, `git pull` the latest copy of the repository, then recompile with `./autogen.sh && ./configure && make`. Output will be in the `game` folder of your local copy of the repository.
 
-In all cases, you will probably want to copy data from your existing version to the new version. To do so, move `Ultrastar.db` (the score database), `songs`, `avatars`, and `config.ini` (game configuration) to the new installation directory (or to the newly generated `~/Library/Application Support/UltraStarDeluxevXXXX.XX.X/` folder). You may want to check to see if any changes were made to the [theme](https://github.com/barbeque-squared/usdx-mylittlekaraoke-theme) in the latest release; if not, you can also copy over `MyLittleKaraoke` and `MyLittleKaraoke.ini` to the `themes` folder of the new installation directory.
-
-Linux AppImage and flatpak users: Your data should should always remain in the same directory (`~/.ultrastardx` for AppImage and `~/.var/app/eu.usdx.UltraStarDeluxe/.ultrastardx` for flatpak), so you shouldn't need to move anything. Themes and avatars are either handled separately or not available, so if you're using those you may need to reapply them or continue to not use them.
+Sometimes, you might want to copy everything to a new install. To do so, move `Ultrastar.db` (the score database), `songs`, `avatars`, and `config.ini` (game configuration) to the new installation directory. You may want to check to see if any changes were made to the [theme](https://github.com/barbeque-squared/usdx-mylittlekaraoke-theme) in the latest release; if not, you can also copy over `MyLittleKaraoke` and `MyLittleKaraoke.ini` to the `themes` folder of the new installation directory.
 
 ### Next steps
 
