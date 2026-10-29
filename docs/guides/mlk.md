@@ -13,14 +13,10 @@ This guide, geared towards home users, convention hosts, and anyone in between, 
 This guide will be divided into a few main sections:
 
 - The first section will be about getting the base content of My Little Karaoke itself (the 'base game'). Because of changes in operating systems over the years, particularly on macOS and Linux, the experience is a bit less 'plug-and-play' on non-Windows operating systems, so the main goal of this section will just be to get the songs, rather than necessarily to get the game running.
-- The second section will be about updating the UltraStar Deluxe software itself, which is generally needed for compatibility with newer audio standards (e.g. OPUS, better compatibility on non-Windows operating systems, quality-of-life features).
+- The second section will be about updating the UltraStar Deluxe software itself, which is generally needed for compatibility with newer audio standards (e.g. OPUS, better compatibility on non-Windows operating systems, quality-of-life features). We'll also apply the My Little Karaoke themes and avatars so that you can see more horses in your game.
 - The third section will be about downloading 'new releases' from the online portal, which contain a hundred or so songs that are not directly included with the program.
-- The fourth section will be about acquiring the five hundred or so unreleased songs, which haven't been checked for artist permission or quality assurance, but are still generally playable. (This is what you sometimes see at conventions -- or at least, the cool ones!).
-- The final section acts as a sort of 'appendix' for things that are not necessarily covered by the main sections, such as:
-    - Using an Android device as a karaoke machine, and alternatives to UltraStar Deluxe
-    - Adding your own songs to the game, outside of the ones listed on this tutorial
-    - Creating charts for songs that aren't in the game yet
-    - Requesting charts for songs that aren't in the game yet
+- The fourth section will be about acquiring the five hundred or so unreleased songs, which haven't been checked for artist permission or quality assurance, but are still generally playable. (These are the extra songs you see at conventions -- or at least, the cool ones!).
+- The final section acts as a sort of 'appendix' for things that are not necessarily covered by the main sections, and will be updated more in the future.
 
 ## What You Need
 
@@ -30,11 +26,11 @@ My Little Karaoke primarily runs on computers running a desktop operating system
     - Due to the game frequently using video, you should ensure that your device has the hardware capability to decode video without severe performance issues. In the event that video is causing performance issues, you can [disable it from within config.ini](https://github.com/UltraStar-Deluxe/USDX/issues/12).
 - The game can run on most modern consumer operating systems (Windows, macOS, Linux) on x86 or ARM-based processors
 - The base game currently requires roughly 25GB of space, new releases around 3GB of space, and unreleased songs around 25GB of space, totalling around **53GB** of total space. This can be reduced after-the-fact by removing video (*.mp4) files, obviously at the expense of playing video.
-- You can use any USB microphone (e.g. SingStar PS2 microphones, Rock Band microphones). If you have a lot of money, you can also invest in proper wireless microphones connected to a mixer and have the game take them that way. If you're playing solo at home, even something like a laptop microphone will probably work, although you may end up also picking up audio from the game itself.
+- You can use any USB microphone (e.g. SingStar PS2 microphones, Rock Band microphones). If you have a higher budget, you can also invest in proper wireless microphones connected to a mixer and play that way. If you're playing solo at home, even something like a laptop microphone will probably work, but you may end up also picking up audio from your laptop speakers, so a standalone USB microphone of some sort is still recommended.
 
 ## If You Need Help
 
-If you need help with any of the instructions here, feel free to ask me on Discord (@horse.horsehorsehorsehorse.horse or @lilyshy). I can generally be found on the [My Little Karaoke Discord server](https://discord.gg/UsGcpnv).
+If you need help with any of these instructions, feel free to ask me on Discord (@horse.horsehorsehorsehorse.horse or @lilyshy). I can generally be found on the [My Little Karaoke Discord server](https://discord.gg/UsGcpnv).
 
 ## Section 1: Getting My Little Karaoke's base songs
 
@@ -50,7 +46,7 @@ Installing My Little Karaoke currently works the best on Windows. From the [game
 
 ![Image: MLK on Windows](/resources/mlk/windows_installer.png)
 
-Navigate to the location that the game is installed: in my case, that's M:/MyLittleKaraoke. Please remember this directory, as you will need it later.
+Note the installation directory (e.g. M:/MyLittleKaraoke2), as you will need it later if you intend to add songs or update UltraStar Deluxe.
 
 Once the game is installed, you'll be able to launch it by opening the "My Little Karaoke - Singing is Magic" application, then clicking on "Play My Little Karaoke". The game will actually work outright at this point, but I would recommend continuing to the next section of this guide to update the program.
 
@@ -83,17 +79,17 @@ By default, when you open Terminal, you will be in your home directory (~), so y
 
 ![Image: cd downloads](/resources/mlk/macos_cd_downloads.png)
 
-In this case, you can see I've also run `ls` to make sure that `download-mlk-songs-macos.sh` is in the directory I'm in.
+In this case, you can see I've also run `ls` to make sure that `download-mlk-songs-macos.sh` is in the directory I'm in. You don't need to do this, but it's always good to make sure.
 
 Once you are in the same directory as `download-mlk-songs-macos.sh`, you will need to give permission to execute it. You can do this by typing `chmod +x download-mlk-songs-macos.sh`, then hitting Return:
 
 ![Image: chmod](/resources/mlk/macos_chmod.png)
 
-Then simply type `./download-mlk-songs-macos.sh`, and then script should begin to execute:
+Then simply type `./download-mlk-songs-macos.sh`, hit Return, and then script should begin to execute:
 
 ![Image: script execution](/resources/mlk/macos_script_execute.png)
 
-When the script is done, you should see the message `My Little Karaoke, Singing is Magic 4 is now installed`. When you check your `Downloads` folder, you should see two folders: `songs` and `theme`.
+When the script is done, you should see the message `My Little Karaoke, Singing is Magic 4 is now installed`. When you check your `Downloads` folder (or wherever you've run the script from), you should see two folders: `songs` and `theme`.
 
 The `songs` folder contains the base songs of My Little Karaoke, and you'll want to keep it for the next steps. The `theme` folder can be deleted.
 
@@ -119,7 +115,7 @@ You should ultimately end up with two folders in your working directory (where `
 
 The `songs` folder contains the base songs of My Little Karaoke, and you'll want to keep it for the next steps. The `themes` folder can be deleted.
 
-For now, you may want to keep the `mlk.cache` file somewhere along with the `download-mlk-songs.sh`, as in the event that the base songs are updated, this will prevent you from needlessly redownloading things.
+For now, you may want to keep the `mlk.cache` file somewhere along with the `download-mlk-songs.sh`, as in the event that the base songs are updated, it may prevent you from needlessly redownloading things.
 
 ### Next steps
 
@@ -155,17 +151,17 @@ On all operating systems, you can compile from source by following the instructi
 
 #### Windows
 
-Windows users can select `windows-installer` or `windows-portable`; the `installer` will have you select where to install things, while the `portable` will just be a bunch of files in an archive that you will have to extract to your desired location.
+Windows users can use either `windows-installer` or `windows-portable`; the `installer` will have you select where to install things, while the `portable` will just be a bunch of files in an archive that you will have to extract to your desired location.
 
 In theory, you can actually just drag and drop everything from the `portable` ZIP to your My Little Karaoke install directory, and then just replace any conflicting files. This will probably result in some unnecessary files being kept, so I would instead recommend installing it somewhere else.
 
 #### macOS
 
-macOS users should select `mac-ARM` if they have an Apple Silicon-based Mac (any Mac released in 2020 and later, with an M1/M2/M3/M4/M5/A18 chip), and `mac-x86` if they have an Intel-based Mac (anything older). If you're not sure what you have, click on the Apple logo on the top left, then "About This Mac". It will tell you what chip/processor you have.
+macOS users should use `mac-ARM` if they have an Apple Silicon-based Mac (any Mac released in 2020 and later, with an M1/M2/M3/M4/M5/A18 chip), or `mac-x86` if they have an Intel-based Mac (anything older). If you're not sure what you have, click on the Apple logo on the top left of the screen, then "About This Mac". It will tell you what chip/processor you have.
 
 The program is installed the same way as any other program on macOS: When you open the `.dmg` file, it'll be 'mounted' as a drive, and then you can drag-and-drop UltraStar Deluxe into the Applications folder.
 
-Due to Apple being extremely annoying with unsigned applications, you will need to manually give permission to actually run the program. See [here](https://wiki.hacks.guide/wiki/Open_unsigned_applications_on_macOS_Sequoia_and_newer) for instructions on how to do that. If you know what you're doing: `sudo xattr -d com.apple.quarantine /path/to/app`
+Due to Apple being extremely annoying with unsigned applications, you will need to manually give permission to actually run the program. You will only have to do this once. See [here](https://wiki.hacks.guide/wiki/Open_unsigned_applications_on_macOS_Sequoia_and_newer) for instructions on how to do that. If you know what you're doing: `sudo xattr -d com.apple.quarantine /path/to/app`
 
 #### Linux
 
@@ -173,8 +169,8 @@ As of UltraStar Deluxe v2026.10.0, [loading custom assets is properly supported 
 
 On Linux, your options for running the game are:
 
-- AppImage: available on the repository (the file with the `AppImage` extension). You can launch it by just double-clicking on it (you may need to create a desktop entry for it to appear in your application list, depending on your desktop environment.)
-- Flatpak: available from [Flathub](https://flathub.org/en/apps/eu.usdx.UltraStarDeluxe), in which case a desktop entry may be automatically generated.
+- AppImage: available on the repository (the file with the `AppImage` extension). You can launch it by just double-clicking on it (you may need to create a desktop entry for it to appear in your application list, depending on your desktop environment)
+- Flatpak: available from [Flathub](https://flathub.org/en/apps/eu.usdx.UltraStarDeluxe), in which case a desktop entry may be automatically generated
 - AUR: [here](https://aur.archlinux.org/packages/ultrastardx-git)
 
 ### Moving your songs over
@@ -186,7 +182,7 @@ If you were following this guide on macOS or Linux, you will just have a `songs`
 - **macOS**: Songs can be stored in `~/Music/UltraStar Deluxe` (that is, your user account's `Music` folder). They can also be stored in `~/Library/Application Support/UltraStar Deluxe/songs`. (This folder is hidden by default; you can unhide hidden folders and files with Command+Shift+Period, or access it through Finder's "Go to Folder" menu option.)
     - On versions prior to 2026.10.0, the user folder is `~/Library/Application Support/UltraStarDeluxevXXXX.XX.X`, and must be migrated between updates.
 - **Linux** (AppImage): `~/.ultrastardx/songs`
-- **Linux** (flatpak): `~/.var/app/eu.usdx.UltraStarDeluxe/.ultrastardx/songs/`.
+- **Linux** (flatpak): `~/.var/app/eu.usdx.UltraStarDeluxe/.ultrastardx/songs/`
 
 At this point, you can launch the game and see if it's working properly. If it is:
 
@@ -195,7 +191,7 @@ At this point, you can launch the game and see if it's working properly. If it i
 
 ### Applying the My Little Karaoke theme and avatars
 
-No matter your operating system, you will probably have downloaded some form of the My Little Karaoke theme, but the theme will likely not work as-is due to updates to the theme system in newer version of UltraStar Deluxe.
+No matter your operating system, you will probably have downloaded some form of the My Little Karaoke theme, but the theme will likely not work as-is due to updates to the theme system in newer versions of UltraStar Deluxe.
 
 Fortunately, you can get an updated version of the theme from [here](https://github.com/barbeque-squared/usdx-mylittlekaraoke-theme/archive/refs/heads/master.zip).
 
@@ -218,8 +214,8 @@ How you update the program depends on your operating system:
 - On **Windows**, you can download the newest portable release and copy it to another directory. You can also try running the newest installer, which should recognise your existing install and install over it while retaining your data.
 - On **macOS**, you can run the `.dmg` file and copy `UltraStar Deluxe` to your `Applications` folder, replacing the existing one. As of v2026.10.0, your data should transfer over automatically, as the same Application Support folder will be used throughout.
 - On **Linux**:
-    - **AppImage**: You can just download and run the new AppImage. The same `.ultrastardx` directory should be used and retained.
-    - **Flatpak**: You can update it just as you would any other flatpak (from your app store or command line or otherwise). Updates may be delayed as they rely on Flathub.
+    - **AppImage**: You can just download and run the new AppImage. The same `.ultrastardx` directory from previous versions should be used and retained.
+    - **Flatpak**: You can update it just as you would any other flatpak (from your app store or command line or otherwise). Updates may be delayed, as they rely on Flathub.
     - **Compiled from source**: If necessary, `git pull` the latest copy of the repository, then recompile with `./autogen.sh && ./configure && make`. Output will be in the `game` folder of your local copy of the repository.
 
 Sometimes, you might want to copy everything to a new install. To do so, move `Ultrastar.db` (the score database), `songs`, `avatars`, and `config.ini` (game configuration) to the new installation directory.
@@ -253,9 +249,9 @@ Next, we will talk about acquiring unreleased songs.
 
 ## Section 4: Acquiring Unreleased Songs
 
-Despite the implication, 'unreleased' songs are generally not that low quality or unstable: in fact, if you've played at a convention, you've probably played at least some of them! 
+Despite the implication, 'unreleased' songs are generally not that low quality or unstable: in fact, if you've played My Little Karaoke at a convention, you've probably played at least some of them! 
 
-The reason some songs are 'unreleased' is that songs are individually and manually released after goign through QA, which generally falls on one person to do. As a result songs, are generally created faster than they can be added to the public game. These songs may also be waiting on permission from the artist who created or sang them, and may be missing things that would otherwise go in a 'complete release', such as a cover, background, video, or golden notes.
+The reason some songs are 'unreleased' is that songs are individually and manually released after going through QA, which currently falls on one person to do. As a result, songs are generally charted faster than they can be released. These songs may also be waiting on permission from the artist who created or sang them, and may be missing things that would otherwise go in a 'complete release', such as a cover, background, video, or golden notes.
 
 That being said, unreleased songs are a bit complicated to manage, mainly because there is no online centralized repository for them. Most of these songs are available in *some form* online, but not all of them, and not necessarily on the open Internet.
 
@@ -285,12 +281,12 @@ The vast majority of releases are also usually cross-posted to the [My Little Ka
 
 The easiest way to check if a song has a chart is to check [barbeque's song list](https://barbeque.one/pch/songlist), which is normally linked to at conventions. Songs that are 'unreleased' are marked as 'dev version'. As a rule of thumb:
 
-- Songs charted by myself (lily) are in my song repository
+- Songs charted by myself (lily) are in my [song repository](/projects/pony-karaoke))
 - Songs charted by barbeque (marked 'bbq dev version' or 'dev version') will probably be on the web forum, and cross-posted to the My Little Karaoke Discord server
 - Songs charted by BronyMike will only have been posted on the Discord server
 - Songs charted by anyone else may be on the web forum, posted to the Discord server, or not publicly available at all
 
-If you need a specific chart, you can ask me directly (@horse.horsehorsehorsehorse.horse or @lilyshy on Discord) and I can find where it is if it's posted publicly, or ask for permission if it's not.
+If you need a specific chart, you can ask me directly (@horse.horsehorsehorsehorse.horse or @lilyshy on Discord) and I can find where it is if it's posted publicly, or ask for permission from the chart author if it's not.
 
 ### Next steps
 
@@ -311,15 +307,15 @@ There are not really any further instructions past this; the appendix just conta
 
 As linked earlier, you can see the current list of pony karaoke songs on [barbeque's song list](https://barbeque.one/pch/songlist). I also maintain my own song list [here](https://docs.google.com/spreadsheets/d/15vsKDhYAiYU4wlFCvjzqbgbqRz_Fzh4PmRUXrcz8VRo/edit?usp=sharing), which may include some pony-adjacent songs that are only listed in the "non-pony" tab on barbeque's list.
 
-On both lists, songs that are vulgar or contain explicit material have been highlighted for your convenience, indicated with Q (Questionable), V (Vulgar), or E (Explicit) on barbeque's list, or highlighted with Sensitive, Explicit, or NSFW on my list. This is a convenience feature and may not be fully comprehensive; if you are running this game at an event where this is unacceptable, it is recommended to screen each song manually beforehand to ensure that they do not contain unacceptable content, or to use ONLY official/show songs (which are guaranteed to be appropriate for all ages).
+On both lists, songs that are vulgar or contain explicit material have been highlighted for your convenience, indicated with Q (Questionable), V (Vulgar), or E (Explicit) on barbeque's list, or highlighted with Sensitive, Explicit, or NSFW on my list. This is a convenience feature and may not be fully comprehensive; if you are running this game at an event where you need to be absolutely 100% sure that every song is kid-friendly, it is recommended to screen each song manually beforehand to ensure that they do not contain unacceptable content, or to use ONLY official/show songs (which are guaranteed to be appropriate for all ages).
 
 ### Creating your own charts for karaoke
 
-I actually have a separate in-depth tutorial for creating new UltraStar charts (i.e., if a song you want to sing has not been charted yet), if that is a thing you'd like to do. See [here](/guides/karaoke).
+If a song isn't yet available in pony karaoke, you can try charting it yourself. I have created an in-depth tutorial for doing so, which you can find [here](/guides/karaoke). Do note that creating a chart can take several hours of time.
 
 ### Requesting new songs
 
-If you don't have the time or ability to create your own charts, you can also ask me and I'll see what I can do. See [here](https://docs.google.com/forms/d/e/1FAIpQLSeMS-Pg-IsR2zx-s8dfXNokqvwASJ1P-I_Mah_E5G9dtptp5A/viewform?usp=dialog) for a form you can fill out. Please let me know on Discord (@horse.horsehorsehorse.horse or @lilyshy) if you fill this out, as I don't get notified when this form is filled out and I don't check it very often.
+If you don't have the time or ability to create your own charts, you can also ask me to chart it and I'll see what I can do. See [here](https://docs.google.com/forms/d/e/1FAIpQLSeMS-Pg-IsR2zx-s8dfXNokqvwASJ1P-I_Mah_E5G9dtptp5A/viewform?usp=dialog) for a form you can fill out. For now, please let me know on Discord (@horse.horsehorsehorse.horse or @lilyshy) if you fill this out, as I don't get notified when this form is filled out and I don't check the responses very often.
 
 ### Using other simulators
 
