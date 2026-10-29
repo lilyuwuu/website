@@ -37,11 +37,11 @@ To some extent, songs are further subdivided for ease of search/use; see inside 
 
 ## Installation
     
-This song pack is meant to be used with My Little Karaoke. You can use it by itself, or even with a standalone installation of [UltraStar Deluxe](https://usdx.eu) (or any other simulator that accepts UltraStar TXTs), but it **doesn't include most of the songs from the base My Little Karaoke game**. If you don't have it yet, modern installation instructions for My Little Karaoke can be found [here](/guides/mlk), but the existing instructions on the [site](https://mylittlekaraoke.com) should generally work fine for Windows or Linux. I would still recommend updating UltraStar Deluxe, though, to assure compatibility with all songs and because of quality-of-life features that have been added since the version bundled with My Little Karaoke.
+This song pack is meant to be used with My Little Karaoke. You can use it by itself, or even with a standalone installation of [UltraStar Deluxe](https://usdx.eu) (or any other simulator that accepts UltraStar TXTs), but it **doesn't include most of the songs from the base My Little Karaoke game**. If you don't have it yet, modern installation instructions for My Little Karaoke can be found [here](/guides/mlk), but the existing instructions on the [site](https://mylittlekaraoke.com) should generally work fine for Windows users. I would still recommend updating UltraStar Deluxe, though, to assure compatibility with all songs and because of quality-of-life features that have been added since the version bundled with My Little Karaoke.
 
 !!! warning "Song compatibility warning"
     
-    If you are using the version of UltraStar Deluxe bundled with My Little Karaoke, (versioned as '2020.4 stable' or '2017.x' depending on your operating system), **songs from the Compat folder will likely crash the game**, so please don't copy it. You can follow the instructions [here](/guide/mlk) to update the UltraStar Deluxe software that powers My Little Karaoke to a newer version. 
+    If you are using the version of UltraStar Deluxe bundled with My Little Karaoke (versioned as '2020.4 stable' or '2017.x' depending on your operating system), **songs from the Compat folder will likely crash the game**, so please don't copy it. You can follow the instructions [here](/guide/mlk) to update the UltraStar Deluxe software that powers My Little Karaoke to a newer version. 
 
 To install these songs, create a folder inside of your `songs` folder (which would ordinarily contain `Official`, `Community`, and `Downloads`). I recommend naming this folder something like `Beta` or `Dev`. Then place the songs (e.g. Artist - Song Name) inside, folder by folder. You can keep them in subdirectories if you want.
 
@@ -65,7 +65,7 @@ Of course! I always take requests (within reason). Fill in the form [here](https
 
 #### Why does this exist?
 
-In the past couple years, I've charted a lot of pony songs as part of My Little Karaoke (in fact, about half of the [new releases since 2022](https://www.mylittlekaraoke.com/store/beta/releases.html) are charts that I've made). However, they have not been added to My Little Karaoke at the same pace, simply because QA is done by one person and I can create new charts much faster than they can be cleared, checked, and released. In the meantime, I've been posting anything I've made on the [My Little Karaoke Discord server](https://discord.gg/UsGcpnv), but since I post everything individually as I release it, there isn't really a single download for everything I've made, meaning ordinarily people would have to go through and click each download, which would take quite a while. And, of course, Discord is semi-private, so the outer Internet won't even be able to find these links without making an account and joining.
+In the past couple years, I've charted a lot of pony songs as part of My Little Karaoke (in fact, about half of the [new releases since 2022](https://www.mylittlekaraoke.com/store/beta/releases.html) are charts that I've made). However, they have not been added to My Little Karaoke at the same pace, simply because QA is done by one person and I can create new charts much faster than they can be cleared, checked, and released. In the meantime, I've been posting anything I've made on the [My Little Karaoke Discord server](https://discord.gg/UsGcpnv). However, since I post everything individually as I release it, there hasn't really been a single download for everything I've made, meaning ordinarily people would have to go through and click each download link, which would take quite a while. And, of course, Discord is semi-private, so the outer Internet won't even be able to find these links without making an account and joining.
 
 At the same time, I know that people might see My Little Karaoke at some convention/event they go to and then wonder why they're missing some songs they saw at the event when they install the game at home or when they run the game at their own event. This song pack is sort of my answer to that, or at least as much of an answer as I can provide on my own.
 
@@ -86,12 +86,12 @@ In the case of song reworks, they usually have improved timing and pitching, whi
 
 #### Are any of these songs unplayable/lower quality than My Little Karaoke? Are they unstable or dangerous?
 
-I don't think so! I take pride in my work, and I like to think that I do a pretty good job at what I do. I usually test everything before I publish it and in my (and others') experience, everything is remarkably playable, or in some cases more playable than some of the older My Little Karaoke charts.
+I don't think so! I take pride in my work, and I like to think that I do a pretty good job at what I do. I usually test everything before I publish it and in my (and others') experience, everything is remarkably playable, or in some cases more playable than some of the older My Little Karaoke charts. Conventions are the testing ground!
 
 Any songs here contain at least:
 
 - The UltraStar TXT file itself (the chart for the song)
-- The song (often in MP3 format)
+- The song (often in MP3 or OGG format)
 
 And occasionally:
 
@@ -100,7 +100,7 @@ And occasionally:
 - Rarely a shell script (e.g. `extract.sh` or `extract-params.bat`) which contains the specific commands used to shorten or extract a video
 - Rarely a `.llc` file, used with LosslessCut which is a GUI-based program that I sometimes use to shorten/extract videos
 
-Songs that use more bespoke audio formats, like OPUS or FLAC, might cause the game to crash on older versions of UltraStar Deluxe, such as the one currently included with My Little Karaoke installs. This is why I recommend updating UltraStar Deluxe (while keeping My Little Karaoke's songs, obviously). Other than that, they are not really 'unstable' and will not cause the game to crash any more than it ordinarily would. (In fact, the program has only gotten more stable over time, in my opinion.)
+Songs that use more bespoke audio formats, like OPUS or FLAC, might cause the game to crash on older versions of UltraStar Deluxe, such as the one currently included with My Little Karaoke. This is why I recommend updating UltraStar Deluxe (while keeping My Little Karaoke's songs, obviously). Other than that, they are not really 'unstable' and will not cause the game to crash any more than it ordinarily would. (In fact, the program has only gotten more stable over time, in my opinion.)
 
 That being said, if you're unable to update the program, then please don't use songs from the `Compat` folder (or at least test them to see if they work on your end before you do).
 
@@ -112,7 +112,7 @@ If you opt to use reworked charts of existing My Little Karaoke songs, you won't
 
 Other than that, no. They are perfectly compliant UltraStar TXT files that you can play with and modify and whatever.
 
-When a song is 'officially released', simply delete it from your the `Dev` or `Beta` folder or whatever you created, and get the new release from the [new releases page](https://www.mylittlekaraoke.com/store/beta/releases.html) (or however else it's distributed)! Your scores may not carry over, though.
+When a song is 'officially released', simply delete it from your the `Dev` or `Beta` folder or whatever you created, and get the new release from the [new releases page](https://www.mylittlekaraoke.com/store/beta/releases.html) (or however else it's distributed). Your scores may not carry over, though.
 
 #### Can I share your charts with a friend?
 
@@ -150,7 +150,7 @@ I try my best to post anything I make on the My Little Karaoke Discord on **Sund
 
 #### I'm not sure how to use the pack / I'm having trouble installing the songs.
 
-If the installation instructions I've provided haven't helped, please reach out to me on Discord ()@horse.horsehorsehorsehorse.horse or @lilyshy) for one-on-one help.
+If the installation instructions I've provided haven't helped, please reach out to me on Discord (@horse.horsehorsehorsehorse.horse or @lilyshy) for one-on-one help.
 
 #### The song pack is still missing a song that I played at an event!
 
@@ -170,6 +170,6 @@ If you have any questions about what you have, feel free to reach out and I can 
 
 #### I am the artist of an included song and would like it removed.
 
-I'm sorry! Please bug me on Discord (@horse.horsehorsehorsehorse.horse or @lilyshy) and I can remove the audio file if you're mainly concerned about music piracy, or the TXT too if you just would not like it to be included at all.
+I'm sorry! Please let me know on Discord (@horse.horsehorsehorsehorse.horse or @lilyshy) and I can remove the audio file if you're mainly concerned about music piracy, or the TXT too if you just would not like it to be included at all.
 
-Note that everything is *purposely* encoded down to MP3@320kbps *specifically* so that people who want lossless audio will still have to buy it, while still maintaining decent audio quality when playing the actual game. If I've made a chart for a song, it's because I really like the song and figured people would enjoy singing along to it! But I will respect any requests to not have songs included, whatever the reason. My main goal has always been for people to have fun, not to piss people off.
+I should note that everything is *purposely* encoded down to MP3@320kbps or OGG (quality 7) *specifically* so that people who want "perfect" audio will still have to buy it, while still maintaining decent audio quality when playing the actual game. If I've made a chart for a song, it's because I think your song is really good and figured people would enjoy singing along to it! The nature of rhythm games is generally to chart first, ask for permission later, so I apologize if I have violated anyone's wishes by doing so, and will respect any takedown requests that I receive.
