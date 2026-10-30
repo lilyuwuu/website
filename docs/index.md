@@ -25,8 +25,8 @@ I also like to do karaoke, both inside and outside of the context of My Little P
 - I chart My Little Pony show/fandom songs for [My Little Karaoke](https://www.mylittlekaraoke.com/), a song pack and theme for UltraStar Deluxe consisting of over 800 show and fandom songs
 - I help with My Little Karaoke setups at conventions or meetups I attend by:
     - Hosting karaoke myself, with my own microphones and other equipment
-    - Helping to manage the song queue, helped by knowledge of the full song list
-    - Providing resources, such as unreleased songs (primarily from [my repository](projects/pony-karaoke), updated song lists, updated programs, configuration assistance...
+    - Managing the song queue / taking requests
+    - Providing resources, such as unreleased songs (primarily from [my repository](projects/pony-karaoke)), updated song lists, updated programs, configuration assistance...
 - I upload the (relatively few) non-pony songs I chart to [USDB](https://usdb.animux.de/), the main community resource for UltraStar TXT charts
 
 I've also written some documentation and provided some resources about karaoke, which are listed below:
