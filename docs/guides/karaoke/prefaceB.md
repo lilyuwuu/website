@@ -35,7 +35,7 @@ From there, you might be able to see how the components of the format come into 
 - **#BPM** was used to determine how 'fast' the chart should play
 - **#GAP** introduced a 1-second (1000 millisecond) gap before the song started
 
-These lines, called *attributes*, are always at the start of the chart and used to store metadata of the song.
+These lines, called *attributes*, are always at the start of the chart and are used to store the metadata of the song.
 
 Let's take a look at the notes of the song, from the line `: 0 6 2 Hel`:
 

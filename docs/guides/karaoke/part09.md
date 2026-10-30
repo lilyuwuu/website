@@ -3,7 +3,7 @@
 !!! abstract "TL;DR"
 
     - You should probably submit your song to [USDB](https://usdb.animux.de/).
-    - If it's a My Little Pony-related song, you can should submit it to [My Little Karaoke](https://www.mylittlekaraoke.com/forum/) ([Discord](https://discord.gg/UsGcpnv)) instead of USDB.
+    - If it's a My Little Pony-related song, you should submit it to [My Little Karaoke](https://www.mylittlekaraoke.com/forum/) ([Discord](https://discord.gg/UsGcpnv)) instead of USDB.
     - Only upload the TXT!!! If you got the audio from YouTube (or anywhere else), a link to that audio may be helpful, but you should NOT provide the audio yourself! That would be copyright infringement!
 
 ## Overview
@@ -11,6 +11,14 @@
 You've finally finished and tested your song! You should share it with the masses so that others can enjoy your fine work.
 
 The main place to upload TXT files is [USDB](https://usdb.animux.de/). Once logged in, click "Add songs" then "Browse..." to select the song's **TXT** file, then Submit. Once it goes through moderation, it will be available for anyone else to download!
+
+!!! warning "USDB and line endings"
+
+    At time of writing, USDB only supports CRLF line endings (the ones used by default on Windows). If the TXT file is using LF line endings, USDB will show a "failed to find artist or title" error on upload. To fix this, convert your TXT file to use CRLF line endings (e.g. using `unix2dos` in the command line).
+
+!!! abstract "About meta tags"
+
+    USDB uses something called "meta tags" to define things like audio source, cover/background/video source, and basic file manipulation. It is **highly recommended** to set up meta tags to reduce the burden for moderators. You can set them up using the Tools -> Create Meta Tags function in [USDB Syncer](https://github.com/bohning/usdb_syncer/releases/latest), or manually by following the instructions [here](https://github.com/bohning/usdb_syncer/wiki/Meta-Tags).
 
 !!! warning "About audio sources"
 
@@ -25,7 +33,7 @@ You can submit songs to My Little Karaoke on the [forum](https://www.mylittlekar
 
 ## Afterword
 
-I hope this tutorial was helpful in some way. If you have any comments about it, or would like clarification on one of the points within, you can always ask me about it. I can be most often reached on Discord (`@horse.horsehorsehorsehorse.horse` or `@lilyshy`), but I also have an e-mail if you prefer that (lily at `<this domain>`). I don't check my e-mail all that often though.
+I hope this tutorial was helpful in some way. If you have any comments about it, or would like clarification on one of the points within, you can always ask me. I can be most often reached on Discord (`@horse.horsehorsehorsehorse.horse` or `@lilyshy`), but I also have an e-mail if you prefer that (lily at `<this domain>`). I don't check my e-mail all that often though.
 
 If you have general questions about charting, whether that be about installing the programs you need or the actual mechanics of charting or pitching, I can always recommend the wonderful folks over at the [UltraStar Vocaluxe & Performus Community](https://discord.gg/tNEXZw2QJX) (Discord).
 

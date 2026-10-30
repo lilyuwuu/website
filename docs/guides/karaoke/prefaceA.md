@@ -8,7 +8,7 @@ A competitive karaoke game is a game where players have to sing on-key to gain p
 
 Notably, this means that competitive karaoke (SingStar, JOYSOUND/DAM, and the like) **is distinct** from those karaoke videos you might see on YouTube or from Karafun or at a bar or whatever. Those don't give you points! They're not competitive, and that's no fun.
 
-But, of course, this also means that competitive karaoke requires a bit more effort than a karaoke video to make. Unlike a video, where the only thing you have to focus on is sentence timing (and it doesn't even have to be all that accurate) competitive karaoke requires that you time each individual note correctly *and* ensure that each note has the correct pitch -- otherwise players will be frustrated by a low quality chart, just like they would for any other rhythm game.
+But, of course, this also means that competitive karaoke requires a bit more effort than a karaoke video to make. Unlike a video, where the only thing you have to focus on is sentence timing (and it doesn't even have to be all that accurate), competitive karaoke requires that you time each individual note correctly *and* ensure that each note has the correct pitch -- otherwise players will be frustrated by a low quality chart, just like they would for any other rhythm game.
 
 For our purposes, crowd-sourced competitive karaoke is based on the **UltraStar** format, named after the original SingStar simulator. This means that, for the most part, an UltraStar chart can be used in any other SingStar simulator and each game will parse them seamlessly. A few of the actively developed games are linked below:
 

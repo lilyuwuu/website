@@ -105,6 +105,7 @@ Your browser doesn't support embedded audio :(
     - The songs I chart often contain words that won't be in the lyric-split dictionary -- for example, "everypony".
     - While words *often* have an objective answer as to how they should be split into syllables, **this isn't always the case**. Singers can and will be creative.
     - Any mistakes that automatic lyric splitting may create (e.g. a word that is split when it shouldn't be, or vice versa) will have to be rectified by you anyway, so it's kind of a net zero in time saved, in my opinion.
+
 The next step is to split the lyrics into normal **syllables**. Singing is similar to talking, so *usually* the principles of spoken syllables also apply to sung words.
 
 This concept may already be intuitive to you, but in case it isn't: A syllable is often described as a 'beat' in language, generally made up of a vowel and its surrounding consonants. Let's examine the first six lines:
@@ -127,7 +128,7 @@ When splitting lyrics, you might need to ask yourself: "if I were to say it out 
     - Numbers can be spoken differently. In the case of 1985, you could read it as one-thousand nine-hundred and eighty-five or nineteen eighty-five or probably other ways too. A singer will have no way of knowing how the number should be read unless it is spelled out in full.
     - Numbers can span for more syllables than there are characters. "1985" is read as five syllables (nine+teen eigh+ty five), which is more than can be displayed in four characters without adding something like a tilde.
 
-If you want to practice splitting lyrics with this song, then try it and then compare it with the lyrics below once you're finished:
+If you want to practice splitting lyrics with this song, go for it, then compare it with the lyrics below once you're finished:
 
 ??? info "First six lines split by syllable"
 

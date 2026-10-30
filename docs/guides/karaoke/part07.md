@@ -19,7 +19,7 @@ The main guidelines for golden notes are as follows:
     - If you're deciding between being slightly *above* the middle (the 'ideal') and slightly *below* the middle, opt for *below*. It's generally better to have too few golden notes than to have too many golden notes, for score balancing purposes.
 - What notes should be set as golden? It is entirely up to you. The **general recommendation** is to select things that are **hard to sing** or **possibly unexpected to the player**. A golden note essentially indicates to the player, "hey, this part is hard, and you will get extra points if you nail it".
 - **Don't** set super long notes as golden notes. That will end up being kind of boring, because it's not particularly difficult to stay on one pitch for a long time (unless the song you're doing gives you basically no breaks). It is also a pretty big waste of your *limited* golden note quota that you should stay within.
-- You can set things as golden notes for other reasons, too. Maybe the song has the lyric "shiny" or "sparkle" or "gold" or whatever, and a golden note would be thematic there. Maybe the song ahs something funny that you want to highlight. You can set those as those as golden too, if you want.
+- You can set things as golden notes for other reasons, too. Maybe the song has the lyric "shiny" or "sparkle" or "gold" or whatever, and a golden note would be thematically appropriate there. Maybe the song has something funny that you want to highlight. You can set those as those as golden too, if you want.
 - Ultimately, golden note placement is **up to you**. Bad golden note placement won't necessarily kill a song, and a lack of golden note placement might not even be noticed by some players.
 
 ### "Suggest Golden Notes"

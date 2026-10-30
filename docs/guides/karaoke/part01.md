@@ -8,7 +8,7 @@
 
     1. Acquire your audio. Most people will do this from YouTube, as it makes it easy for other people to download the same audio.
         + For your first song, you may want to select something that is rhythmically consistent and with an unchanging BPM. For this tutorial, I'll be using **Not the Same** by **Green Hay** (a parody of Green Day's "Whatsername").
-    1. Convert your audio as necessary. I personally usually use **MP3 320kbps CBR** for compatibility reasons, but you are free to use anything you want, or even change your audio later.
+    1. Convert your audio as necessary. I personally usually use **MP3 320kbps CBR** or **OGG Vorbis quality 7** for compatibility reasons, but you are free to use anything you want, or even change your audio later.
         + The MP3 format adds roughly a 30ms delay compared to other formats.
         + UltraStar-Creator only supports MP3, M4A (AAC), and OGG.
     1. If you have a vocal stem / a cappella (voice only) of the song, you may want to keep it for later, or create one using a vocal isolation tool.
@@ -52,11 +52,11 @@ Once you have your audio, you should place it in a folder in your songs director
 
 !!! note "A note on YouTube music, GAPs, and CD audio"
 
-    Depending on the song or album, the gap may differ between the audio ripped from a CD and the audio that exists on YouTube. For the purposes of song distribution, even if you have a lossless CD that you want to use as audio from your private collection, you may want to distribute a version of your TXT that uses the gap from a public YouTube release, just for accessibility reasons.
+    Depending on the song or album, the gap may differ between the audio ripped from a CD and the audio that exists on YouTube. For the purposes of song distribution, even if you have a lossless CD that you want to use as audio for your private collection, you may want to distribute a version of your TXT that uses the gap from a public YouTube release, just for accessibility reasons.
 
 ## Supported audio formats
 
-*Generally speaking*, karaoke software (covering games *and* song editors) can handle most of the common formats -- MP3, AAC, FLAC, OGG, WAV -- but might struggle with some more obscure formats, like ATRAC. The current bottleneck is the tapping software UltraStar-Creator, which only supports M4A(AAC), MP3 and OGG. For these reasons, **I usually use MP3 320kbps CBR** for anything I distribute. You're free to use any other format -- you might just have to convert it multiple times depending on what programs you use.
+*Generally speaking*, karaoke software (covering games *and* song editors) can handle most of the common formats -- MP3, AAC, FLAC, OGG, WAV -- but might struggle with some more obscure formats, like ATRAC. The current bottleneck is the tapping software UltraStar-Creator, which only supports M4A(AAC), MP3 and OGG. For these reasons, **I usually use MP3 320kbps CBR** or **OGG Vorbis quality 7** for anything I distribute. You're free to use any other format -- you might just have to convert it multiple times depending on what programs you use.
 
 !!! warning "MP3 delay"
 
@@ -64,7 +64,7 @@ Once you have your audio, you should place it in a folder in your songs director
 
 !!! tip "Re-encoding audio with ffmpeg"
 
-    The general syntax for converting audio that I use in ffmpeg is `ffmpeg -i <filename> -ab <bitrate> <output filename>` -- for example, `ffmpeg -i song.flac -ab 320k output.mp3`.
+    The general syntax for converting audio that I use in ffmpeg is `ffmpeg -i <filename> -ab <bitrate> <output filename>` -- for example, `ffmpeg -i song.flac -ab 320k output.mp3`. For Ogg Vorbis: `ffmpeg -i song.flac -q:a 7 song.ogg`
 
 ## Vocal stems
 

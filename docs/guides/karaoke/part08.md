@@ -23,7 +23,7 @@ All that remains is to **test** the song. You may wonder why this is necessary, 
 The difficulty and goal largely depends on your personal skill in comepttiive karaoke games. I generally recommend that people test on **Medium**. This is because:
 
 - **Easy** is generally too lenient with pitch recognition. If you have incorrect pitches and you test on Easy, then you might not even know it because the game will just mark your singing as correct.
-- **Hard**, by contrast, is a bit too strict (at least for most people). Personally, my scores on Hard tend to fluctuate between 7000 and 9000 on a really good chart, so it's hard to tell if a low score is because of a currently present skill issue or because the song is mechanically difficult.
+- **Hard**, by contrast, is a bit too strict (at least for most people). Personally, my scores on Hard tend to fluctuate between 7000 and 9000 on a really good chart, so it's hard to tell if a low score is because of an issue with the chart or because the song is mechanically difficult.
 
 Your target score should be whatever score you can normally get on Medium. This might not mean much until around the 7500+ mark, but the idea is: if you're getting similar scores on your chart to the ones that you get on known well-made charts, then your chart is probably pretty good. (Of course, if you're unable to get decent scores on well-made charts *and* on your own chart, that would suggest a skill ceiling that you have yet to break, or a calibration issue on your end. Regardless, you can always ask someone to test the song for you before you release it more widely.)
 

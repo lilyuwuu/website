@@ -37,9 +37,9 @@ Some useful tips while you tap:
 - If you don't know the song that well, or the song is very fast, **try using the slowdown option (playback speed) above the playback buttons**.
 - If you make a mistake, **press X** and the song will undo the last note tapped and go back one second. Press X multiple times in succession if you realise you've made several mistakes that you'd like to correct (for example, an off-by-one error from an unsplit note).
 - Use the **space bar** to tap. It is generally going to be more precise and reliable than clicking.
-- **Hold the space bar** for roughly the length of the syllable. It doesn't need to be perfect -- you can always shorten or lengthen notes as necessary later -- but holding the space bar for at least some length of time (rather than just quickly pressing space) will mean less work, since you won't be guaranteed to lengthen every single note.
+- **Hold the space bar** for roughly the length of the syllable. It doesn't need to be perfect -- you can always shorten or lengthen notes as necessary later -- but holding the space bar for at least some length of time (rather than just quickly pressing space) will mean less work, since you won't be guaranteed to need to lengthen every single note.
 
-When you **let go** of the space bar on the **last syllable**, UltraStar-Creator will stop playing the song and ask you if you wuold like to save what you've done. Click on "Great! Save the file.", then Save in the File Explorer window that appears. (UltraStar-Creator will save the TXT to the same location as the MP3 -- for example, if your audio file is in `C:\Games\UltraStar Deluxe\songs\Green Hay - Not the Same`, then that is where it will save.)
+When you **let go** of the space bar on the **last syllable**, UltraStar-Creator will stop playing the song and ask you if you wuold like to save what you've done. Click on "Great! Save the file.", then Save in the File Explorer window that appears. (UltraStar-Creator will save the TXT to the same location as the audio file -- for example, if your audio file is in `C:\Games\UltraStar Deluxe\songs\Green Hay - Not the Same`, then that is where it will save.)
 
 !!! warning "About undoing mistakes"
 
@@ -74,7 +74,7 @@ Here's a video of me tapping this song in real time:
 
     <iframe width="560" height="315" src="https://www.youtube.com/embed/DMzdnMCFObU?si=x0okzUcG7H511QKI" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
 
-The song is tapped, meaning we now have our baseline TXT. All that is left is to fine-tune the positions of the notes, pitch them, add golden notes, and then our song is complete!
+The song is tapped, meaning we now have our baseline TXT. All that is left is to fine-tune the positions of the notes, pitch them, add golden notes, and then our chart is complete!
 
 Here's a video of the gameplay of this baseline chart. Notice how all pitches are the same and some note positions don't quite make sense, but other than that the notes seem pretty on time (at least visually). The better you get at tapping, the closer you can get to this baseline, which means less work during finetuning and pitching!
 

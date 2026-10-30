@@ -134,7 +134,7 @@ In our case, since the song's true BPM is 120, we'll double it to 240 (which is,
 
 ## Songs with an inconsistent BPM
 
-If this is your first song, **I highly recommend against doing a song with variable BPMs**. It is generally more complicated to explain, and worst-case scenario, you will have to align each note individually, which can really kill your motivation.
+If this is your first song, **I highly recommend against doing a song with variable BPMs**. It is generally more complicated to chart, and worst-case scenario, you will have to align each note individually, which can really kill your motivation.
 
 Otherwise, what you should do depends on the nature of the song's variable BPMs.
 
