@@ -1,0 +1,19 @@
+@font-face {
+	font-family: 'Equestria';
+	src: url('Equestria.otf');
+}
+h1 {
+	font-family: 'Equestria', Fallback, sans-serif;
+	font-size: 250%;
+}
+h2 {
+	font-family: 'Equestria', Fallback, sans-serif;
+	font-size: 200%;
+}
+h3 {
+	font-family: 'Equestria', Fallback, sans-serif;
+	font-size: 150%;
+}
+body {
+	background-color: pink;
+}
