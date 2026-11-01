@@ -13,7 +13,7 @@ The *Pony Karaoke Unreleased Song Pack* is an add-on package of UltraStar TXT-co
 - G6 songs (yes, seriously)
 - Modern (and older) fandom songs from artists such as 4everfreebrony, Koa, PrinceWhateverer, and Vylet Pony
 
-...and many more. For a full list, see my [song tracking spreadsheet](https://docs.google.com/spreadsheets/d/1WeCvwP6gfaCMreJkmoB1zXO-3RzdamK-E2U1AZ6qzK4/edit?gid=0#gid=0). (The song pack does not include songs highlighted in yellow, which are released and publicly available [here](https://mylittlekaraoke.com/store/beta/releases.html), as well as songs marked with an "N", which indicate non-pony songs.)
+...and many more. For a full list, you can check my [song tracking spreadsheet](https://docs.google.com/spreadsheets/d/1WeCvwP6gfaCMreJkmoB1zXO-3RzdamK-E2U1AZ6qzK4/edit?gid=0#gid=0). (The song pack does not include songs highlighted in yellow, which are released and publicly available [here](https://mylittlekaraoke.com/store/beta/releases.html), as well as songs marked with an "N", which indicate non-pony songs.)
 
 It also contains quality improvements for many songs included with My Little Karaoke ('reworks'), which will generally make scoring more accurate, increasing the number of points you will get when the song is sung correctly.
 
@@ -29,7 +29,7 @@ Songs are separated into the following folders:
 
 - **Show**: Contains songs from official MLP media (e.g. G4 and G5).
 - **Fandom**: Contains songs created by the fandom.
-- **Explicit**: Contains songs that have strong language (*shit* or worse) or suggestive content.
+- **Filtered**: Contains songs that have strong language (*shit* or worse) or suggestive/questionable content.
 - **Compat**: Contains songs from any category that use OPUS/FLAC audio, which may crash older versions of UltraStar Deluxe (such as the one included with My Little Karaoke).
 - **Reworks**: Contains existing songs from My Little Karaoke that I've modified, usually for playability reasons.
 
@@ -142,7 +142,7 @@ For reference, here is a list of My Little Karaoke's base/released songs with st
 - (new release) Vylet Pony - ANTONYMPH
 - (new release) Vylet Pony - BONNIE
 
-### How do I know when new songs are added?
+#### How do I know when new songs are added?
 
 I try my best to post anything I make on the My Little Karaoke Discord on **Sundays**, so check back around then. This repository usually gets updated whenever anything is posted on the Discord. You can see a list of changes in the CHANGELOG.TXT in the root of the repository.
 
@@ -167,6 +167,16 @@ When I or other karaoke horses attend an event where we are not running karaoke,
 If you have any questions about what you have, feel free to reach out and I can take a look.
 
 ### Legal
+
+#### Analytics / Privacy
+
+When you download files from the repository, the following information is tracked and passed to me:
+
+- The amount of bandwidth that has been used (not necessarily by you individually, but an aggregate of the amount of bandwidth used at a particular time)
+- The number of times a file has been downloaded (which will be incremented by one for each download)
+
+**I have no control over this**; the platform tracks how much bandwidth is used because the cost of bandwidth is ultimately passed down to me. This is also somewhat useful to me, as it gives me a rough sense of how much the repository is actually being used. **I have no way of identifying you**, and I don't think the platform host does either. In any case, if you would prefer to get things a different way, let me know.
+
 
 #### I am the artist of an included song and would like it removed.
 
